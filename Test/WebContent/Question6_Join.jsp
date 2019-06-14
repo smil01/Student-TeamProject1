@@ -17,24 +17,24 @@
 				<table align="center">
 					<tr>
 						<td>ID</td>
-						<td><input type="text" required="required"></td>
+						<td><input type="text" required="required" name="id"></td>
 						<td rowspan="5"><input type="submit" value="가입"></td>
 					</tr>
 					<tr>
 						<td>PW</td>
-						<td><input type="password" required="required"></td>
+						<td><input type="password" required="required" name="pw"></td>
 					</tr>
 					<tr>
 						<td>NICKNAME</td>
-						<td><input type="text" required="required"></td>
+						<td><input type="text" required="required" name="nick"></td>
 					</tr>
 					<tr>
 						<td>EMAIL</td>
-						<td><input type="text" required="required"></td>
+						<td><input type="text" required="required" name="email"></td>
 					</tr>
 					<tr>
 						<td>TEL</td>
-						<td><input type="text" required="required"></td>
+						<td><input type="text" required="required" name="tel"></td>
 					</tr>
 				</table>
 			</form>

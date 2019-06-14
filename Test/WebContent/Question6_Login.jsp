@@ -11,7 +11,7 @@
 	<div>
 		<fieldset>
 			<legend><h1>도서관리프로그램</h1></legend>
-				<form>
+				<form action="Question6_Main" method="post">
 					<table align="center">
 						<tr>
 							<td>ID</td>
