@@ -86,4 +86,29 @@ public class BookDAO {
 
 		return cnt;
 	}
+
+	public BookDTO login(BookDTO m) {
+		BookDTO dto = null;
+		try {
+			getCon();
+
+			String sql = "select * from book_member where id=? and pw=?";
+			pst = conn.prepareStatement(sql);
+
+			pst.setString(1, m.getId());
+			pst.setString(2, m.getPw());
+
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				dto = new BookDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return dto;
+	}
 }
