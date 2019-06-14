@@ -1,26 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="myCSS.css"> 
+<fmt:requestEncoding value="UTF-8"/>
 </head>
 <body>
 	<div>
 		<fieldset>
-			<legend><h1>·Î±×ÀÎÇÑ ¾ÆÀÌµð¸¦ Ãâ·ÂÇÏ½Ã¿À</h1></legend>
-			<!-- ÀÏ¹ÝÈ¸¿ø ·Î±×ÀÎ ÇÒ °æ¿ì µµ¼­°Ë»ö,³ªÀÇÃ¥¹æ,Áñ°ÜÃ£±â,È¸¿øÁ¤º¸ ¹öÆ°¸¸ ³ª¿À°ÔÇÏ±â -->
-				<button>µµ¼­°Ë»ö</button>
-				<button>³ªÀÇÃ¥¹æ</button>
-				<button>Áñ°ÜÃ£±â</button>
-				<button>È¸¿øÁ¤º¸</button>
-			<!-- admin ·Î±×ÀÎ ÇÒ °æ¿ì È¸¿ø°ü¸®,µµ¼­°ü¸®,´ë¿©ÇöÈ²,Àç°í°ü¸® ¹öÆ°¸¸ ³ª¿À°ÔÇÏ±â -->
-				<button>È¸¿ø°ü¸®</button>
-				<button>µµ¼­°ü¸®</button>
-				<button>´ë¿©ÇöÈ²</button>
-				<button>Àç°í°ü¸®</button>
+				<legend><h1>${sessionScope.nick}</h1></legend>
+				<c:choose>
+					<c:when test="${sessionScope.nick == 'admin'}">
+					<!-- ì¼ë°˜íšŒì› ë¡œê·¸ì¸ í•  ê²½ìš° ë„ì„œê²€ìƒ‰,ë‚˜ì˜ì±…ë°©,ì¦ê²¨ì°¾ê¸°,íšŒì›ì •ë³´ ë²„íŠ¼ë§Œ ë‚˜ì˜¤ê²Œí•˜ê¸° -->
+						<button>íšŒì›ê´€ë¦¬</button>
+						<button>ë„ì„œê´€ë¦¬</button>
+						<button>ëŒ€ì—¬í˜„í™©</button>
+						<button>ìž¬ê³ ê´€ë¦¬</button>
+					</c:when>
+					<c:otherwise>
+					<!-- admin ë¡œê·¸ì¸ í•  ê²½ìš° íšŒì›ê´€ë¦¬,ë„ì„œê´€ë¦¬,ëŒ€ì—¬í˜„í™©,ìž¬ê³ ê´€ë¦¬ ë²„íŠ¼ë§Œ ë‚˜ì˜¤ê²Œí•˜ê¸° -->
+						<button>ë„ì„œê²€ìƒ‰</button>
+						<button>ë‚˜ì˜ì±…ë°©</button>
+						<button>ì¦ê²¨ì°¾ê¸°</button>
+						<button>íšŒì›ì •ë³´</button>
+					</c:otherwise>
+				</c:choose>
 		</fieldset>
 	</div>
 </body>
