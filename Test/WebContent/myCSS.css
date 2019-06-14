@@ -1,0 +1,17 @@
+@charset "EUC-KR";
+body {
+	background-color: whitesmoke;
+}
+div{
+	margin:0px auto;
+	margin-top : 15%;
+	width: 500px;
+}
+fieldset {
+	border: 3px dotted blue;
+	text-align: center;
+}
+button {
+	width: 100px;
+	height: 100px;
+}
