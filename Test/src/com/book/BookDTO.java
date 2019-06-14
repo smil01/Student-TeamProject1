@@ -16,6 +16,12 @@ public class BookDTO {
 		this.tel = tel;
 	}
 
+	public BookDTO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+
 	public String getId() {
 		return id;
 	}
