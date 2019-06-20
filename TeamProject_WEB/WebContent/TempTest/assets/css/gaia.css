@@ -166,7 +166,7 @@ a:hover {
 }
 
 .title-modern {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "BMHANNAPRO", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
 }
 
@@ -359,7 +359,7 @@ body > .navbar-collapse a {
 }
 
 *::selection {
-  background: #e78b90;
+  background: #2ecc71; !important;
   color: #FFFFFF;
 }
 
@@ -1115,6 +1115,9 @@ a,
 }
 .filter.filter-color-red:before {
   background: #de6168;
+}
+.filter.filter-color-main:before {
+  background: #44bd32;
 }
 .filter.filter-gradient-black:before {
   background: #1f1c2c;
