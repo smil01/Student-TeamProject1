@@ -6,6 +6,12 @@
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
+/* 가운데 판넬 영역 */
+.panel-success > .panel-heading {
+  color: #ffffff;
+  background-color: #009432;
+  border-color: #009432;
+}
 a {
 	color: #000000;
 	text-decoration: none;
@@ -17,11 +23,18 @@ a:hover {
 	cursor: pointer;
 }
 
+/* 가운데 바 영역 */
+.panel-primary > .panel-heading{ 
+	background-color: #009432;
+	border-color: #009432;
+}
+
 /* 네비게이션바 영역 */
 .navbar-default{ /* 배경색 */
-	background-color: #137acc;
-	border-color: #137acc;
+	background-color: #009432;
+	border-color: #009432;
 }
+
 
 .navbar-default .navbar-brand{ /* 브랜드 부분 글씨색 */
 	color: #ffffff;
@@ -36,7 +49,7 @@ a:hover {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus{ /* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
 	color: white;
-	background-color: #1358cc;
+	background-color: #A3CB38;
 }
 
 .navbar-default .navbar-nav > li > a{ /* 네비게이션 메뉴바 글씨색 */
@@ -46,14 +59,14 @@ a:hover {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{ /* 네비게이션바 메뉴바 커서 또는 클릭상태 */
 	color: white;
-	background-color: #1369cc;
+	background-color: #A3CB38;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus{ /* 드랍다운 배경색 및 글씨색 */
 	color: #000000;
-	background-color: #1369cc;
+	background-color: #A3CB38;
 	text-decoration: none;
 }
 
@@ -86,8 +99,8 @@ a:hover {
 
 /* 푸터영역 영역 */
 footer {
-	background-color: #137acc;
-	border-color: #137acc;
+	background-color: #009432;
+	border-color: #009432;
 	color: #ffffff;
 }
 
@@ -105,4 +118,10 @@ footer .container .row .col-sm-2 h4{
 
 .row .modal-body{
 	text-align: center;
+}
+
+.btn .btn-primary .btn-lg{
+	
+	background-color: #009432;
+	border-color: #009432;
 }

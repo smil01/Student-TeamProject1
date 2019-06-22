@@ -3110,8 +3110,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #009432;
+  border-color: #009432;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -5536,7 +5536,7 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #337ab7;
+  border-color: #009432;
 }
 .panel-primary > .panel-heading {
   color: #fff;
@@ -5553,13 +5553,16 @@ a.list-group-item-danger.active:focus {
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #337ab7;
 }
+
 .panel-success {
-  border-color: #d6e9c6;
+  border-color: #009432;
+  background-color: #3c763d;
+  border-color: #3c763d;
 }
 .panel-success > .panel-heading {
   color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+  background-color: #3c763d;
+  border-color: #3c763d;
 }
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #d6e9c6;
