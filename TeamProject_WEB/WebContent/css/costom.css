@@ -1,17 +1,23 @@
 @charset "UTF-8";
 
 /* 전체영역 */
-@import:url(https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap);
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
 * {
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family:'Do Hyeon', sans-serif;
+	
 }
 
 /* 가운데 판넬 영역 */
 .panel-success > .panel-heading {
   color: #ffffff;
-  background-color: #009432;
-  border-color: #009432;
+  background-color: #bbbbbb;
+  border-color: #bbbbbb;
 }
+/*강의목록 선 색깔*/
+.panel-success{
+ border-color: #bbbbbb;
+}
+
 a {
 	color: #000000;
 	text-decoration: none;
@@ -25,14 +31,14 @@ a:hover {
 
 /* 가운데 바 영역 */
 .panel-primary > .panel-heading{ 
-	background-color: #009432;
-	border-color: #009432;
+	background-color: #44bd32;
+	border-color: #44bd32;
 }
 
 /* 네비게이션바 영역 */
 .navbar-default{ /* 배경색 */
-	background-color: #009432;
-	border-color: #009432;
+	background-color: #44bd32;
+	border-color: #44bd32;
 }
 
 
@@ -49,7 +55,7 @@ a:hover {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus{ /* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
 	color: white;
-	background-color: #A3CB38;
+	background-color: #f8b62e;
 }
 
 .navbar-default .navbar-nav > li > a{ /* 네비게이션 메뉴바 글씨색 */
@@ -59,14 +65,14 @@ a:hover {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{ /* 네비게이션바 메뉴바 커서 또는 클릭상태 */
 	color: white;
-	background-color: #A3CB38;
+	background-color: #f8b62e;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus{ /* 드랍다운 배경색 및 글씨색 */
 	color: #000000;
-	background-color: #A3CB38;
+	background-color: #f8b62e;
 	text-decoration: none;
 }
 
@@ -99,8 +105,8 @@ a:hover {
 
 /* 푸터영역 영역 */
 footer {
-	background-color: #009432;
-	border-color: #009432;
+	background-color: #44bd32;
+	border-color: #44bd32;
 	color: #ffffff;
 }
 
@@ -122,6 +128,6 @@ footer .container .row .col-sm-2 h4{
 
 .btn .btn-primary .btn-lg{
 	
-	background-color: #009432;
-	border-color: #009432;
+	background-color: #44bd32;
+	border-color: #44bd32;
 }
