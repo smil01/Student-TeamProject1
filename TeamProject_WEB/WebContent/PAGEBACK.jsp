@@ -11,8 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-id : ${param.id}<br>
-name : ${param.name}<br>
-<img alt="프로필 이미지" src="${param.profile_image}" style="border-radius: 100%; width: 150px; height: 150px;">
+id : ${sessionScope.member.id}<br>
+name : ${sessionScope.member.name}<br>
+<img alt="프로필 이미지" src="${sessionScope.member.src}" style="border-radius: 100%; width: 150px; height: 150px;">
+<a href="logoutService.do">로그아웃</a>
 </body>
 </html>

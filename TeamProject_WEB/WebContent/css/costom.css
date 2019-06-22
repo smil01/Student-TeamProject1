@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* 전체영역 */
+@import:url(https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap);
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 가운데 판넬 영역 */
+.panel-success > .panel-heading {
+  color: #ffffff;
+  background-color: #009432;
+  border-color: #009432;
+}
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #bbbbbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 가운데 바 영역 */
+.panel-primary > .panel-heading{ 
+	background-color: #009432;
+	border-color: #009432;
+}
+
+/* 네비게이션바 영역 */
+.navbar-default{ /* 배경색 */
+	background-color: #009432;
+	border-color: #009432;
+}
+
+
+.navbar-default .navbar-brand{ /* 브랜드 부분 글씨색 */
+	color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{ /* 브랜드 커서나 포커스 */
+	color: #bbbbbb;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{ /* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
+	color: white;
+	background-color: #A3CB38;
+}
+
+.navbar-default .navbar-nav > li > a{ /* 네비게이션 메뉴바 글씨색 */
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{ /* 네비게이션바 메뉴바 커서 또는 클릭상태 */
+	color: white;
+	background-color: #A3CB38;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus{ /* 드랍다운 배경색 및 글씨색 */
+	color: #000000;
+	background-color: #A3CB38;
+	text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a{ /* 네비게이션 기본색상 */
+	color: white;
+}
+
+@media(max-width: 767px){
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+		color: #ffffff; 
+	}
+	
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
+		color: #bbbbbb; 
+	}
+	
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
+		color: #bbbbbb; 
+	}
+}
+
+/* 점보트론 영역 */
+.jumbotron {
+	/* 편하려구 이미지 다운 대신 링크로 넣음 */
+	background-image: url("https://source.unsplash.com/featured/?movie");
+	background-size: cover;
+	text-shadow: black 0.2em 0.2em 0.2em;
+	color: white;
+}
+
+/* 푸터영역 영역 */
+footer {
+	background-color: #009432;
+	border-color: #009432;
+	color: #ffffff;
+}
+
+footer .container .row .col-sm-3{
+	text-align: center;
+}
+
+.row .col-sm-2 h4{
+	text-align: center;
+}
+
+footer .container .row .col-sm-2 h4{
+	text-align: center;
+}
+
+.row .modal-body{
+	text-align: center;
+}
+
+.btn .btn-primary .btn-lg{
+	
+	background-color: #009432;
+	border-color: #009432;
+}

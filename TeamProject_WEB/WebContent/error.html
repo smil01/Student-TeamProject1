@@ -42,13 +42,11 @@
                 <div class="content">
                     <div class="title-area" style="height: 250px;">
                         <p></p>
-                        <h1 class="title-modern" style="margin: 0px;">기후 및 토양 데이터 기반의</h1><br>
-                        <h1 class="title-modern" style="margin: 0px; margin-bottom: 30px;">농작물 탐색 관리 시스템</h1>
-                        <h3 class="sub-title"> 미래창조농업부</h3>
+                        <h1 class="title-modern" style="margin: 0px;">error페이지</h1><br>
+                        <h1 class="title-modern" style="margin: 0px; margin-bottom: 30px;">잘못된 접근을 하였습니다.</h1>
                         <div class="separator line-separator">♦</div>
 	                    <!-- 버튼영역 -->
-	                    <div class="button-get-started" style="margin-bottom: 10px;"><a id="kakao-login-btn"></a></div>
-	                	<div id="naver_id_login"></div>
+	                	<a class="btn btn-danger" style="background-color: #DA524E; color: black;" href="main.do">홈으로 이동</a>
                     </div>
                 </div>
 
@@ -158,52 +156,5 @@
 <!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
 <script type="text/javascript" src="assets/js/gaia.js"></script>
 
-<script type="text/javascript">
-	var naver_id_login = new naver_id_login("XsWuw1QRFltibzeqedSC",
-			"http://goddaegeun.ml/CALLBACK.html");
-	var state = naver_id_login.getUniqState();
-	naver_id_login.setButton("green", 3, 48);
-	naver_id_login.setDomain("http://goddaegeun.ml");
-	naver_id_login.setState(state);
-	naver_id_login.setPopup();
-	naver_id_login.init_naver_id_login();
-///////////////////// 위 네이버 아래 카카오 ////////////////////////////////////////////////
-	//<![CDATA[
-	// 사용할 앱의 JavaScript 키를 설정해 주세요.
-	Kakao.init('2c31ce0bfdf6ac450e55f852bdb19a2a');
-	// 카카오 로그인 버튼을 생성합니다.
-	Kakao.Auth
-			.createLoginButton({
-				container : '#kakao-login-btn',
-				success : function(authObj) {
-					//alert(JSON.stringify(authObj));
-					Kakao.API
-							.request({
-								url : '/v1/user/me',
-								success : function(res) {
-									///////////////////////////////////////////////////////////////////////////////////////////////////////
-									console.log(res);
 
-									var userID = res.id; //유저의 카카오톡 고유 id
-									var userNickName = res.properties.nickname; //유저가 등록한 별명
-									var src = res.properties.profile_image;
-
-									page_href('loginService.do?id='+userID+"&name="+encodeURI(userNickName)+"&profile_image="+encodeURI(src)+"&access=k");
-									///////////////////////////////////////////////////////////////////////////////////////////////////////
-								},
-								fail : function(error) {
-									alert(JSON.stringify(error));
-								}
-							});
-				},
-				fail : function(err) {
-					alert(JSON.stringify(err));
-				}
-			});
-	
-		function page_href(URL) {
-			location.href = URL;
-		}
-	//]]>
-</script>
 </html>
