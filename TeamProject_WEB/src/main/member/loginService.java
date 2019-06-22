@@ -19,9 +19,10 @@ public class loginService implements CommandService {
 		sessionDTO sdto = new sessionDTO(request.getParameter("id"), request.getParameter("name"),
 				request.getParameter("profile_image") != null ? request.getParameter("profile_image") : "img/std.gif",
 				request.getParameter("access"));
-		
-		if(sdto.getId()==null) return "error.do";
-		
+
+		if (sdto.getId() == null)
+			return "error.do";
+
 		memberDAO dao = memberDAO.getDao();
 		memberDTO dto = dao.selectId(sdto.getId());
 

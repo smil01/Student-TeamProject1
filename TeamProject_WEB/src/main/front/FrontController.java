@@ -19,16 +19,17 @@ public class FrontController extends HttpServlet {
 
 		String command = CommandUtil.getCommand(request);
 		CommandService input = CommandMapper.getMap().get(command);
-		if(input == null) {
+
+		if (input == null) {
 			response.sendRedirect("error.do");
-		} else if(input.getType()) {
+		} else if (input.getType()) {
 			response.sendRedirect(input.execute(request, response));
 		} else {
 			ServletContext context = request.getServletContext();
 			RequestDispatcher dispatcher = context.getRequestDispatcher("/" + input.execute(request, response));
 			dispatcher.forward(request, response);
 		}
-		
+
 	}
 
 }
