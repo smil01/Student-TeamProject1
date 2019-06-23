@@ -20,6 +20,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 부트스트랩js 임포트 -->
 <script src="js/bootstrap.js"></script>
+<meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">
 <fmt:requestEncoding value="UTF-8"/>
 </head>
 <body>
@@ -79,7 +80,7 @@
 							width="36px">&nbsp;${sessionScope.member.name}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">개인정보수정</a></li>
-							<li><a href="logoutService.do">로그아웃</a></li>
+							<li><a id="logout">로그아웃</a></li>
 						</ul></li>
 				</ul>
 				<!-- 1-2-5 다섯번째 로그인 메뉴 끝 -->
@@ -253,5 +254,46 @@
 		</div>
 	</div>
 	<!-- 4 모달영역 끝 -->
+	<script type="text/javascript">
+		function init() { // 시작하자 마자 커넥션
+			console.log('init');
+			gapi.load('auth2', function() { 
+				console.log('auth2');
+				window.gauth = gapi.auth2.init({
+					client_id: '183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com'
+				});
+				gauth.then(function() {
+					console.log('google auth success');
+				}, function() {
+					console.log('google auth fail');
+				});
+			});
+		}
+         $(document).ready(function(){
+        	var access = "${sessionScope.member.access}";
+            $('#logout').on('click', function(){
+            	if(access == 'k'){
+	            	var logout = window.open('https://developers.kakao.com/logout', '_blank');
+	            	setTimeout(function() {
+	            		  	logout.close();
+	            		  	location.href="main.do";
+	            	}, 2000);
+            	} else if(access == 'n'){
+	            	var logout = window.open('https://nid.naver.com/nidlogin.logout', '_blank');
+	            	setTimeout(function() {
+	            		  	logout.close();
+	            		  	location.href="main.do";
+	            	}, 2000);
+            	} else if(access == 'g'){
+            		if(gauth.isSignedIn.get()){
+            			gauth.signOut().then(function() {
+            				location.href="main.do";
+            			});
+            		}
+            	}
+            });
+        });
+	</script>
+<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </body>
 </html>

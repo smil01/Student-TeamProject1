@@ -30,8 +30,7 @@
 <script type="text/javascript"
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
 	charset="utf-8"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">
 
 <script>
@@ -106,8 +105,10 @@
 	                    <!-- 버튼영역 -->
 	                    <div class="button-get-started" style="margin-bottom: 10px;"><a id="kakao-login-btn"></a></div>
 	                	<div id="naver_id_login" style="margin-bottom: 10px;"></div>
-	                	<div class="google">
-	                		<a id="googlebtn" onclick="clickkLoginStatus()">구글로그인</a>
+	                	<div class="google" align="center">							      
+							<a onclick="clickkLoginStatus()">
+								<img src="img/googleBtn.png" style="width: 222px; height: 48px; border-radius: 3px;">
+							</a>
 	                	</div>
                     </div>
                 </div>
@@ -242,13 +243,14 @@
 								url : '/v1/user/me',
 								success : function(res) {
 									///////////////////////////////////////////////////////////////////////////////////////////////////////
-									console.log(res);
+									//console.log(res);
 
 									var userID = res.id; //유저의 카카오톡 고유 id
 									var userNickName = res.properties.nickname; //유저가 등록한 별명
 									var src = res.properties.profile_image;
+									var token = JSON.stringify(authObj.access_token);
 
-									page_href('loginService.do?id='+userID+"&name="+encodeURI(userNickName)+"&profile_image="+encodeURI(src)+"&access=k");
+									page_href('loginService.do?id='+userID+"&name="+encodeURI(userNickName)+"&profile_image="+encodeURI(src)+"&access=k&token=" + encodeURI(token));
 									///////////////////////////////////////////////////////////////////////////////////////////////////////
 								},
 								fail : function(error) {
