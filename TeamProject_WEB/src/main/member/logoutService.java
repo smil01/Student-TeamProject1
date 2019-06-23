@@ -19,8 +19,8 @@ public class logoutService implements CommandService{
 		HttpSession session = request.getSession();
 
 		sessionDTO sdto = (sessionDTO)session.getAttribute("member");
-		
 		if(sdto==null) {
+			System.out.println("logoutService. logout (std) : " + sdto);
 			url = "error.do";
 		} else {
 			session.removeAttribute("member");

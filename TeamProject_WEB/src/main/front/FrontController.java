@@ -19,8 +19,9 @@ public class FrontController extends HttpServlet {
 
 		String command = CommandUtil.getCommand(request);
 		CommandService input = CommandMapper.getMap().get(command);
-
+		System.out.println("================ 커멘드 확인 : " + command);
 		if (input == null) {
+			System.out.println("0. input : " + input);
 			response.sendRedirect("error.do");
 		} else if (input.getType()) {
 			response.sendRedirect(input.execute(request, response));

@@ -5,13 +5,15 @@ public class sessionDTO {
 	private String name;
 	private String src;
 	private String access;
+	private String token;
 
-	public sessionDTO(String id, String name, String src, String access) {
+	public sessionDTO(String id, String name, String src, String access, String token) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.src = src;
 		this.access = access;
+		this.token = token;
 	}
 
 	public String getId() {
@@ -46,9 +48,18 @@ public class sessionDTO {
 		this.access = access;
 	}
 
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
 	@Override
 	public String toString() {
-		return "sessionDTO [id=" + id + ", name=" + name + ", profile_image=" + src + ", access=" + access + "]";
+		return "sessionDTO [id=" + id + ", name=" + name + ", src=" + src + ", access=" + access + ", token=" + token
+				+ "]";
 	}
 
 }

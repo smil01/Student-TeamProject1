@@ -32,11 +32,68 @@
 	charset="utf-8"></script>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">
+
+<script>
+/* 	function checkLoginStatus() {
+		var googlebtn = document.querySelector('#googlebtn');
+		 if(gauth.isSignedIn.get()){
+             console.log('logined');
+             googlebtn.innerHTML = 'Logout';
+         } else {
+             console.log('logouted');
+             googlebtn.innerHTML = 'Login';
+         }
+	}
+	 */
+
+	function clickkLoginStatus() {
+		if(gauth.isSignedIn.get()){
+			gauth.signOut().then(function() {
+    			console.log('gauth.signOut()');
+    			//checkLoginStatus();
+			});
+			
+    		gauth.signIn().then(function() {
+    			console.log('gauth.signIn()');
+    			var profile = gauth.currentUser.get().getBasicProfile();
+    			page_href('loginService.do?id='+profile.getId()+"&name="+encodeURI(profile.getName())+"&profile_image="+encodeURI(profile.getImageUrl())+"&access=g");
+    			//checkLoginStatus();                
+			});
+		} else {
+    		gauth.signIn().then(function() {
+    			console.log('gauth.signIn()');
+    			var profile = gauth.currentUser.get().getBasicProfile();
+    			page_href('loginService.do?id='+profile.getId()+"&name="+encodeURI(profile.getName())+"&profile_image="+encodeURI(profile.getImageUrl())+"&access=g");
+    			//checkLoginStatus();
+			});
+    	}/*  else {
+    		gauth.signOut().then(function() {
+    			console.log('gauth.signOut()');
+    			//checkLoginStatus();
+			});
+    	} */
+	}
+
+	function init() { // 시작하자 마자 커넥션
+		console.log('init');
+		gapi.load('auth2', function() { 
+			console.log('auth2');
+			window.gauth = gapi.auth2.init({
+				client_id: '183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com'
+			});
+			gauth.then(function() {
+				console.log('google auth success');
+			}, function() {
+				console.log('google auth fail');
+			});
+		});
+	}
+</script>
 </head>
     <div class="section section-header">
         <div class="parallax filter filter-color-main">
-            <div class="image"
-                style="background-image: url('assets/img/web-20180213131343139200.png')">
+            <div class="image" style="background-image: url(assets/img/web-20180213131343139200.png);">
             </div>
             <div class="container">
                 <div class="content">
@@ -48,7 +105,10 @@
                         <div class="separator line-separator">♦</div>
 	                    <!-- 버튼영역 -->
 	                    <div class="button-get-started" style="margin-bottom: 10px;"><a id="kakao-login-btn"></a></div>
-	                	<div id="naver_id_login"></div>
+	                	<div id="naver_id_login" style="margin-bottom: 10px;"></div>
+	                	<div class="google">
+	                		<a id="googlebtn" onclick="clickkLoginStatus()">구글로그인</a>
+	                	</div>
                     </div>
                 </div>
 
@@ -160,10 +220,10 @@
 
 <script type="text/javascript">
 	var naver_id_login = new naver_id_login("XsWuw1QRFltibzeqedSC",
-			"http://goddaegeun.ml/CALLBACK.html");
+			"http://goddaegeun.ml:8081/CALLBACK.html");
 	var state = naver_id_login.getUniqState();
 	naver_id_login.setButton("green", 3, 48);
-	naver_id_login.setDomain("http://goddaegeun.ml");
+	naver_id_login.setDomain("http://goddaegeun.ml:8081");
 	naver_id_login.setState(state);
 	naver_id_login.setPopup();
 	naver_id_login.init_naver_id_login();
@@ -206,4 +266,5 @@
 		}
 	//]]>
 </script>
+<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </html>
