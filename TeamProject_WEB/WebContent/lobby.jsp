@@ -79,7 +79,7 @@
 							class="img-circle" src="${sessionScope.member.src}" alt="프로필" height="36px"
 							width="36px">&nbsp;${sessionScope.member.name}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">개인정보수정</a></li>
+							<li><a data-target="#modal" data-toggle="modal">계정연동</a></li>
 							<li><a id="logout">로그아웃</a></li>
 						</ul></li>
 				</ul>
@@ -239,16 +239,123 @@
 	<!-- 4 모달영역 시작 -->
 	<div class="row">
 		<div class="modal" id="modal" tabindex="-1">
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						대근 부스터 특징
-						<button class="close" data-dismiss="modal">&times;</button>
+						<h2>계정연동</h2>
+						<!-- <button class="close" data-dismiss="modal">&times;</button> -->
 					</div>
-					<div class="modal-body">
-						저희 서비스의 특징은 별다른게 없습니다.<br> 하지만 참 재미있는 것이 있습니다.<br> <br>
-						<img src="https://source.unsplash.com/featured/?movie"
-							id="imagepreview" height="256px" width="256px">
+					<div class="modal-body" style="text-align: left;">
+						<!-- 판넬 -->
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;계정목록
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div class="media">
+									<div class="media-left">
+										<c:if test="${sessionScope.list[0] != null}">
+										<a href="#"><img class="media-object" src="${sessionScope.list[0].src}"
+											height="120px" width="120px" style="border-radius: 3px;"></a>
+										</c:if>
+										<c:if test="${sessionScope.list[0] == null}">
+										<a href="#"><img class="media-object" src="img/kakao_log.png"
+											height="120px" width="120px" style="border-radius: 3px;"></a>
+										</c:if>
+									</div>
+									<div class="media-body">
+										<c:if test="${sessionScope.list[0] != null}">
+										<h4 class="media-heading">
+											카카오톡&nbsp;&nbsp;<c:if test="${sessionScope.member.token == 'k'}"><span class="badge">대표계정</span></c:if>&nbsp;<c:if test="${sessionScope.member.access == 'k'}"><span class="badge ">로그인中</span></c:if>
+										</h4>
+										회원번호: ${sessionScope.list[0].id}<br>
+										닉네임 : ${sessionScope.list[0].name}<br>
+										<c:if test="${sessionScope.member.token != 'k'}">
+										<a class="btn btn-info" href="#">대표계정 설정</a>
+										</c:if>
+										<a class="btn btn-danger" href="#">연결해체</a>
+										<c:if test="${sessionScope.member.access == 'k'}">
+										<a class="btn btn-default" href="#">회원정보 수정</a>
+										</c:if>
+										</c:if>
+										<c:if test="${sessionScope.list[0] == null}">
+										<a class="btn btn-warning" href="#">카카오 계정 연결</a>
+										</c:if>
+									</div>
+								</div>
+								<hr>
+								<div class="media">
+								<c:if test="${sessionScope.list[1] != null}">
+									<div class="media-left">
+										<a href="#"><img class="media-object" src="${sessionScope.list[1].src}"
+											height="120px" width="120px" style="border-radius: 3px;"></a>
+									</div>
+								</c:if>
+								<c:if test="${sessionScope.list[1] == null}">
+									<div class="media-left">
+										<a href="#"><img class="media-object" src="img/naver_log.jpg"
+											height="120px" width="120px" style="border-radius: 3px;"></a>
+									</div>
+								</c:if>
+								<div class="media-body">
+									<c:if test="${sessionScope.list[1] != null}">
+									<h4 class="media-heading">
+										네이버&nbsp;&nbsp;<c:if test="${sessionScope.member.token == 'n'}"><span class="badge">대표계정</span></c:if>&nbsp;<c:if test="${sessionScope.member.access == 'n'}"><span class="badge ">로그인中</span></c:if>
+									</h4>
+									회원번호: ${sessionScope.list[1].id}<br>
+									닉네임 : ${sessionScope.list[1].name}<br>
+									<c:if test="${sessionScope.member.token != 'n'}">
+									<a class="btn btn-info" href="#">대표계정 설정</a>
+									</c:if>
+									<a class="btn btn-danger" href="#">연결해체</a>
+									<c:if test="${sessionScope.member.access == 'n'}">
+									<a class="btn btn-default" href="#">회원정보 수정</a>
+									</c:if>
+									</c:if>
+									<c:if test="${sessionScope.list[1] == null}">
+									<a class="btn btn-success" href="#">네이버 계정 연결</a>
+									</c:if>
+								</div>
+								</div>
+								<hr>
+								<div class="media">
+								<c:if test="${sessionScope.list[2] != null}">
+									<div class="media-left">
+										<a href="#"><img class="media-object" src="${sessionScope.list[2].src}"
+											height="120px" width="120px" style="border-radius: 3px;"></a>
+									</div>
+								</c:if>
+								<c:if test="${sessionScope.list[2] == null}">
+									<div class="media-left">
+										<a href="#"><img class="media-object" src="img/google_log.jpg"
+											height="120px" width="120px" style="border-radius: 3px;"></a>
+									</div>
+								</c:if>
+								<div class="media-body">
+									<c:if test="${sessionScope.list[2] != null}">
+									<h4 class="media-heading">
+										구글&nbsp;&nbsp;<c:if test="${sessionScope.member.token == 'g'}"><span class="badge">대표계정</span></c:if>&nbsp;<c:if test="${sessionScope.member.access == 'g'}"><span class="badge ">로그인中</span></c:if>
+									</h4>
+									회원번호: ${sessionScope.list[2].id}<br>
+									닉네임 : ${sessionScope.list[2].name}<br>
+									<c:if test="${sessionScope.member.token != 'g'}">
+									<a class="btn btn-info" href="#">대표계정 설정</a>
+									</c:if>
+									<a class="btn btn-danger" href="#">연결해체</a>
+									<c:if test="${sessionScope.member.access == 'g'}">
+									<a class="btn btn-default" href="#">회원정보 수정</a>
+									</c:if>
+									</c:if>
+									<c:if test="${sessionScope.list[2] == null}">
+									<a class="btn btn-primary" href="#">구글 계정 연결</a>
+									</c:if>
+								</div>
+								</div>
+							</div>
+						</div>
+						<!-- 판넬 -->
 					</div>
 				</div>
 			</div>

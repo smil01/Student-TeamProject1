@@ -221,10 +221,10 @@
 
 <script type="text/javascript">
 	var naver_id_login = new naver_id_login("XsWuw1QRFltibzeqedSC",
-			"http://goddaegeun.ml:8081/CALLBACK.html");
+			"http://192.168.0.20:8081/CALLBACK.html");
 	var state = naver_id_login.getUniqState();
 	naver_id_login.setButton("green", 3, 48);
-	naver_id_login.setDomain("http://goddaegeun.ml:8081");
+	naver_id_login.setDomain("http://192.168.0.20:8081");
 	naver_id_login.setState(state);
 	naver_id_login.setPopup();
 	naver_id_login.init_naver_id_login();
@@ -250,7 +250,7 @@
 									var src = res.properties.profile_image;
 									var token = JSON.stringify(authObj.access_token);
 
-									page_href('loginService.do?id='+userID+"&name="+encodeURI(userNickName)+"&profile_image="+encodeURI(src)+"&access=k&token=" + encodeURI(token));
+									page_href('loginService.do?id='+userID+"&name="+encodeURI(userNickName)+"&profile_image="+encodeURI(src)+"&access=k");
 									///////////////////////////////////////////////////////////////////////////////////////////////////////
 								},
 								fail : function(error) {

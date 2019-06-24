@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class memberDAO {
@@ -163,6 +164,49 @@ public class memberDAO {
 		return result;
 	}
 
+	public ArrayList<socialDTO> selectSocial(int id) {
+		ArrayList<socialDTO> list = new ArrayList<socialDTO>();
+		try {
+			getCon();
+			String sql = "select * from kakao where kakao_id = (select KAKAO_ID from member where MEMBER_CODE = ?)";
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				list.add(new socialDTO(rs.getString(1), rs.getString(2), rs.getString(3)));
+			} else {
+				list.add(null);
+			}
+
+			sql = "select * from naver where naver_id = (select NAVER_ID from member where MEMBER_CODE = ?)";
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				list.add(new socialDTO(rs.getString(1), rs.getString(2), rs.getString(3)));
+			} else {
+				list.add(null);
+			}
+
+			sql = "select * from google where google_id = (select GOOGLE_ID from member where MEMBER_CODE = ?)";
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				list.add(new socialDTO(rs.getString(1), rs.getString(2), rs.getString(3)));
+			} else {
+				list.add(null);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return list;
+	}
+
 	public boolean Join(memberDTO dto) {
 		try {
 			getCon();
@@ -199,7 +243,6 @@ public class memberDAO {
 			pst.setString(3, scdto.getSrc());
 
 			if (pst.executeUpdate() > 0) {
-				close();
 				return true;
 			}
 		} catch (Exception e) {
