@@ -4,16 +4,18 @@ public class sessionDTO {
 	private String id;
 	private String name;
 	private String src;
-	private String access;
-	private String token;
+	private String access; // 로그인 소셜 유형
+	private String token;// 메인 소셜 유형
+	private int member_id;
 
-	public sessionDTO(String id, String name, String src, String access, String token) {
+	public sessionDTO(String id, String name, String src, String access, String token, int member_id) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.src = src;
 		this.access = access;
 		this.token = token;
+		this.member_id = member_id;
 	}
 
 	public String getId() {
@@ -56,10 +58,18 @@ public class sessionDTO {
 		this.token = token;
 	}
 
+	public int getMember_id() {
+		return member_id;
+	}
+
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
+	}
+
 	@Override
 	public String toString() {
 		return "sessionDTO [id=" + id + ", name=" + name + ", src=" + src + ", access=" + access + ", token=" + token
-				+ "]";
+				+ ", member_id=" + member_id + "]";
 	}
 
 }

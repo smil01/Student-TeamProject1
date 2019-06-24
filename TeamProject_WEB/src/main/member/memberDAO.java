@@ -253,4 +253,47 @@ public class memberDAO {
 
 		return false;
 	}
+
+	public boolean deleteMember(int member_code) {
+		try {
+			getCon();
+			String sql = "delete from member where MEMBER_CODE = ?";
+
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, member_code);
+
+			if (pst.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return false;
+	}
+
+	public boolean updateMember(String socialId, int MEMBER_CODE, String table) {
+		try {
+			getCon();
+			String sql = "update MEMBER set " + table + " = ? where MEMBER_CODE = ?";
+
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, socialId);
+			pst.setInt(2, MEMBER_CODE);
+
+			if (pst.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return false;
+	}
+
+
 }

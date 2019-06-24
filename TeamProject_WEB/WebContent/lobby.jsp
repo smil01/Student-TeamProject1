@@ -1,3 +1,5 @@
+<%@page import="main.member.socialDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -16,11 +18,13 @@
 <link rel="icon" type="image/png" sizes="96x96"
 	href="assets/img/favicon.png">
 <title>스미원 - 미래창조농업부 </title>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">
 <!-- 제이쿼리 임포트 -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 부트스트랩js 임포트 -->
 <script src="js/bootstrap.js"></script>
-<meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">
 <fmt:requestEncoding value="UTF-8"/>
 </head>
 <body>
@@ -242,8 +246,8 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h2>계정연동</h2>
-						<!-- <button class="close" data-dismiss="modal">&times;</button> -->
+						<button class="close" data-dismiss="modal">&times;</button>
+						<br>
 					</div>
 					<div class="modal-body" style="text-align: left;">
 						<!-- 판넬 -->
@@ -281,7 +285,7 @@
 										</c:if>
 										</c:if>
 										<c:if test="${sessionScope.list[0] == null}">
-										<a class="btn btn-warning" href="#">카카오 계정 연결</a>
+										<div class="button-get-started"><a id="kakao-login-btn"></a></div>
 										</c:if>
 									</div>
 								</div>
@@ -315,7 +319,7 @@
 									</c:if>
 									</c:if>
 									<c:if test="${sessionScope.list[1] == null}">
-									<a class="btn btn-success" href="#">네이버 계정 연결</a>
+									<div id="naver_id_login"></div>
 									</c:if>
 								</div>
 								</div>
@@ -349,7 +353,11 @@
 									</c:if>
 									</c:if>
 									<c:if test="${sessionScope.list[2] == null}">
-									<a class="btn btn-primary" href="#">구글 계정 연결</a>
+				                	<div class="google" align="left">							      
+										<a onclick="">
+											<img src="img/googleBtn.png" style="width: 222px; height: 48px; border-radius: 3px;">
+										</a>
+				                	</div>
 									</c:if>
 								</div>
 								</div>
@@ -363,6 +371,7 @@
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
+		window.alert = function() {};
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');
 			gapi.load('auth2', function() { 
@@ -378,6 +387,15 @@
 			});
 		}
          $(document).ready(function(){
+        	<%
+        	 	String check = (String)session.getAttribute("check");
+        	 
+        	 	if(check != null){
+        	 		%>$('div.modal').modal();<%
+        	 		
+        	 		session.removeAttribute("check");
+        	 	}
+        	%>
      		var jumbotron = document.getElementById('jimg');
     		var jtext = document.getElementById('jtitle');
     		var jurl =  document.getElementById('jurl');
@@ -431,6 +449,53 @@
             	}
             });
         });
+
+     	var naver_id_login = new naver_id_login("XsWuw1QRFltibzeqedSC",
+				"http://192.168.0.20:8081/CALLBACK2.html");
+		var state = naver_id_login.getUniqState();
+		naver_id_login.setButton("green", 3, 48);
+		naver_id_login.setDomain("http://192.168.0.20:8081");
+		naver_id_login.setState(state);
+		naver_id_login.setPopup();
+		naver_id_login.init_naver_id_login();
+
+       //<![CDATA[
+     	// 사용할 앱의 JavaScript 키를 설정해 주세요.
+     	Kakao.init('2c31ce0bfdf6ac450e55f852bdb19a2a');
+     	// 카카오 로그인 버튼을 생성합니다.
+     	Kakao.Auth
+     			.createLoginButton({
+     				container : '#kakao-login-btn',
+     				success : function(authObj) {
+     					//alert(JSON.stringify(authObj));
+     					Kakao.API
+     							.request({
+     								url : '/v1/user/me',
+     								success : function(res) {
+     									///////////////////////////////////////////////////////////////////////////////////////////////////////
+     									//console.log(res);
+
+     									var userID = res.id; //유저의 카카오톡 고유 id
+     									var userNickName = res.properties.nickname; //유저가 등록한 별명
+     									var src = res.properties.profile_image;
+     									var token = JSON.stringify(authObj.access_token);
+
+     									page_href('reLoginService.do?id='+userID+"&name="+encodeURI(userNickName)+"&profile_image="+encodeURI(src)+"&access=k");
+     									///////////////////////////////////////////////////////////////////////////////////////////////////////
+     								},
+     								fail : function(error) {
+     								}
+     							});
+     				},
+     				fail : function(err) {
+     				}
+     			});
+     	
+     		function page_href(URL) {
+     			location.href = URL;
+     		}
+     	//]]>  
+
 	</script>
 <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </body>

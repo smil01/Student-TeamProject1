@@ -106,7 +106,7 @@
 	                    <div class="button-get-started" style="margin-bottom: 10px;"><a id="kakao-login-btn"></a></div>
 	                	<div id="naver_id_login" style="margin-bottom: 10px;"></div>
 	                	<div class="google" align="center">							      
-							<a onclick="clickkLoginStatus()">
+							<a onclick="">
 								<img src="img/googleBtn.png" style="width: 222px; height: 48px; border-radius: 3px;">
 							</a>
 	                	</div>
@@ -254,12 +254,10 @@
 									///////////////////////////////////////////////////////////////////////////////////////////////////////
 								},
 								fail : function(error) {
-									alert(JSON.stringify(error));
 								}
 							});
 				},
 				fail : function(err) {
-					alert(JSON.stringify(err));
 				}
 			});
 	
