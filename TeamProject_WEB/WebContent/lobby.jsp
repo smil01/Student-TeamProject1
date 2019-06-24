@@ -93,15 +93,16 @@
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
 		<!-- 2-1 점보트론 div라인 시작 -->
-		<div class="jumbotron">
-			<h1 class="text-center">대근 부스터를 소개합니다.</h1>
-			<!-- 2-1-1 내용물 -->
-			<p class="text-center">대근 부스터는 IT 교육 사이트입니다. IT관련 무료 및 유료 강의가
-				존재합니다.</p>
-			<p class="text-center">
-				<a class="btn btn-success btn-lg" href="index_table.html"
-					role="button">강사진 소개</a>
-			</p>
+		<div class="jumbotron" id='jimg'>
+		
+			<br>
+			<!-- 2-1-1 내용물 --><br>
+			<p class="text-center" id='jtitle'></p>
+			<p class="text-center" >
+			<br>
+				<a class="btn btn-success btn-lg" id='jurl'
+					role="button">뉴스보기</a>
+			</p><br><br>
 		</div>
 		<!-- 2-1 점보트론 div라인 끝 -->
 
@@ -270,6 +271,36 @@
 			});
 		}
          $(document).ready(function(){
+     		var jumbotron = document.getElementById('jimg');
+    		var jtext = document.getElementById('jtitle');
+    		var jurl =  document.getElementById('jurl');
+
+        	 var img_arr = new Array("news1.jpg", "news2.jpg","news3.jpg",
+        			 "news4.jpg","news5.jpg","news6.jpg","news7.jpg","news8.jpg");
+        	 var txt_arr = new Array("RPC 벼 매입자금 배정 ‘중복평가’ 논란", "해남군, 상반기 농민수당 지급 ‘가속’","“신규 농업인 영농 정착 도와요”",
+        			 "진안, 우렁이 친환경 농법 확대","익산시, 농번기 일손 지원 확대 나서","양파·마늘 등 수확시 작업비 지원","여름철 재해 대책, 농작물 피해 예방한다",
+        			 "아직도 잡지 못했니 ‘논잡초’…‘후기제초제’로 '방제'");
+        	
+        	 var jurl_arr = new Array("https://www.newsfarm.co.kr/news/articleView.html?idxno=50804",
+        							"https://www.newsfarm.co.kr/news/articleView.html?idxno=50816",
+        						    "https://www.newsfarm.co.kr/news/articleView.html?idxno=50814",
+        						    "https://www.newsfarm.co.kr/news/articleView.html?idxno=50818",
+        							"https://www.newsfarm.co.kr/news/articleView.html?idxno=50739",
+        							"http://www.nongupin.co.kr/news/articleView.html?idxno=65360",
+        							"http://www.newsfarm.co.kr/news/articleView.html?idxno=50735",
+        							"http://www.newsfarm.co.kr/news/articleView.html?idxno=50782");
+        	 
+        	 var i = 0;
+    	      setInterval(function() {
+    	    	  if(i == 8) i = 0;
+    	    	  
+    	    	  jumbotron.style.backgroundImage = "url(img/"+img_arr[i]+")";
+    	    	  jtext.innerHTML = txt_arr[i];
+    	    	  jurl.setAttribute( 'href', jurl_arr[i]); 
+    	    	  i++;
+    	      }, 3000);
+    		
+    		
         	var access = "${sessionScope.member.access}";
             $('#logout').on('click', function(){
             	if(access == 'k'){
