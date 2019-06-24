@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /* 전체영역 */
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 * {
-	font-family:'Do Hyeon', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	
 }
 
@@ -48,7 +48,7 @@ a:hover {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus{ /* 브랜드 커서나 포커스 */
-	color: #44bd32;
+	color: #bbbbbb;
 }
 
 .navbar-default .navbar-nav > .active > a,
