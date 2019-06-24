@@ -10,12 +10,12 @@
 /* 가운데 판넬 영역 */
 .panel-success > .panel-heading {
   color: #ffffff;
-  background-color: #bbbbbb;
-  border-color: #bbbbbb;
+  background-color: #44bd32;
+  border-color: #44bd32;
 }
 /*강의목록 선 색깔*/
 .panel-success{
- border-color: #bbbbbb;
+ border-color: #44bd32;
 }
 
 a {
@@ -24,7 +24,7 @@ a {
 }
 
 a:hover {
-	color: #bbbbbb;
+	color: #44bd32;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -48,7 +48,7 @@ a:hover {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus{ /* 브랜드 커서나 포커스 */
-	color: #bbbbbb;
+	color: #44bd32;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -86,11 +86,11 @@ a:hover {
 	}
 	
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
-		color: #bbbbbb; 
+		color: #44bd32; 
 	}
 	
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
-		color: #bbbbbb; 
+		color: #44bd32; 
 	}
 }
 
