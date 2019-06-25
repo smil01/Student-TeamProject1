@@ -534,6 +534,7 @@ th {
 }
 .glyphicon-chevron-left:before {
   content: "\e079";
+  
 }
 .glyphicon-chevron-right:before {
   content: "\e080";

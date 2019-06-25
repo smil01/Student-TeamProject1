@@ -125,8 +125,7 @@
 	<div class="container">
 		<!-- 2-1 점보트론 div라인 시작 -->
 		<div class="jumbotron" id='jimg'>
-			<div style="float: left;"><a><span class="glyphicon glyphicon-chevron-left"></span></a></div>
-			<div style="float: right;"><a><span class="glyphicon glyphicon-chevron-right"></span></a></div>
+		
 			<br>
 			<!-- 2-1-1 내용물 --><br>
 			<p class="text-center" id='jtitle'></p>
@@ -147,7 +146,7 @@
 					<h4 style="margin: 0px;">농림축산식품부</h4>
 					</div>
 					<div class="panel-body" id="panel-body-costom">
-						 <a href=""><img class="panel-img-costom" src="img/main3.JPG"></a>
+						 <a href="www.mafra.go.kr/"><img class="panel-img-costom" src="img/main3.JPG"></a>
 					</div>
 				</div>
 				
@@ -158,7 +157,7 @@
 					<h4 style="margin: 0px;">농촌진흥청</h4>
 					</div>
 					<div class="panel-body" id="panel-body-costom">
-						<a href=""><img class="panel-img-costom" src="img/main1.JPG"></a>
+						<a href="www.rda.go.kr/"><img class="panel-img-costom" src="img/main1.JPG"></a>
 					</div>
 				</div>
 				
@@ -169,7 +168,7 @@
 					<h4 style="margin: 0px;">농사로</h4>
 						</div>
 					<div class="panel-body" id="panel-body-costom">
-						<a href=""><img class="panel-img-costom" src="img/main2.JPG"></a>
+						<a href="www.nongsaro.go.kr/"><img class="panel-img-costom" src="img/main2.JPG"></a>
 					</div>
 				</div>
 			</div>

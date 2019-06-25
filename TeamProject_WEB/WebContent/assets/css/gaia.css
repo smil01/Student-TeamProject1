@@ -16,7 +16,10 @@
 
 /*      light colors         */
 
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
+@font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff')
+ format('woff'); font-weight: normal; font-style: normal; }
+ 
+ 
 html {
   font-size: 14px;
   -ms-text-size-adjust: 100%;
@@ -169,12 +172,11 @@ a:hover {
 }
 
 .title-modern {
-  font-family:'Do Hyeon', sans-serif;
+font-family: 'BMJUA';
   font-weight: 200;
 }
 .sub-title{
-	
- font-family:'Do Hyeon', sans-serif;	
+font-family: 'BMJUA';
 }
 .text-gray {
   color: #777777;
@@ -2784,7 +2786,7 @@ a,
     margin: 0;
   }
   .section-header .content h1 {
-    font-size: 2.3em;
+    font-size: 2.5em;
     letter-spacing: 0.07em;
     line-height: 1.7;
   }

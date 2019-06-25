@@ -6,6 +6,9 @@
 @font-face { font-family: 'BMHANNAPro'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') 
 format('woff'); font-weight: normal; font-style: normal; }
 
+@font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') 
+format('woff'); font-weight: normal; font-style: normal; }
+
 .panel-primary {
   border-color: #44bd32;
 }
@@ -43,6 +46,7 @@ format('woff'); font-weight: normal; font-style: normal; }
 }
 
 a {
+	font-family: 'Handon3gyeopsal600g'; 
 	color: #000000;
 	text-decoration: none;
 }
