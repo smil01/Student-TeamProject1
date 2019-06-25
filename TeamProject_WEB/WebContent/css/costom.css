@@ -11,13 +11,17 @@ format('woff'); font-weight: normal; font-style: normal; }
 }
 #jtitle{
 	font-family: 'BMHANNAPro';
-}
+	
+	}
+
 #jurl{
 	font-family: 'BMHANNAPro';
 }
 .media-heading{
 	font-family: 'BMHANNAPro';
 }
+
+
 #bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li > a{
 	font-family: 'BMHANNAPro';
 }
