@@ -42,7 +42,7 @@
 				<!-- 시작부터 윗부분은 사용을 위한 형식적인 의미없는 부분(아직은) -->
 
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 시작 --> 
-				<a class="navbar-brand" href="lobbyService.do">미래창조농업부</a>
+				<a class="navbar-brand" href="lobbyService.do">미래창조농업부      </a>
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 끝 -->
 			</div>
 			<!-- 1-1 헤더부분 끝-->
@@ -55,6 +55,7 @@
 					<li class="active"><a href="#">소개</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li><a href="index_table.html">강사</a></li>
+					<li><a href="index_table.html">소통광장</a></li>
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"

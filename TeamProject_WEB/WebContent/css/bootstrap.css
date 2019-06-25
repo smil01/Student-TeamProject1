@@ -4162,7 +4162,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   height: 50px;
   padding: 15px 15px;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 20px;
 }
 .navbar-brand:hover,
@@ -4419,7 +4419,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #ddd;
+  background-color: #f8b62e;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #888;
@@ -4852,7 +4852,7 @@ a.badge:focus {
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 50px;
   font-weight: 200;
 }
 .jumbotron > hr {
