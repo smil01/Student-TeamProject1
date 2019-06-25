@@ -3,9 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+div{
+	width: 300px;
+	height: 300px;
+	background-color: red;
+
+	transition-property: all; /* 무슨 효과까지 적용할지 width, height*/
+	transition-duration: 1s; /* 변화에 걸리는 시간 */
+	transition-timing-function: linear; /* 어떤느낌으로 변화할지 페이드인 같은 */
+}
+div:hover{
+	width: 900px;
+	height: 900px;
+	background-color: green;
+}
+</style>
 </head>
 <body>
-<img src="http://images.websnapr.com/?url=https://www.naver.com" alt=""/>
-
+<div></div>
 </body>
 </html>

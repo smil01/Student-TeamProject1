@@ -146,7 +146,7 @@
 					<h4 style="margin: 0px;">농림축산식품부</h4>
 					</div>
 					<div class="panel-body" id="panel-body-costom">
-						 <a href="www.mafra.go.kr/"><img class="panel-img-costom" src="img/main3.JPG"></a>
+						 <a href="http://www.mafra.go.kr/sites/mafra/index.do"><img class="panel-img-costom" src="img/main3.JPG"></a>
 					</div>
 				</div>
 				
@@ -157,7 +157,7 @@
 					<h4 style="margin: 0px;">농촌진흥청</h4>
 					</div>
 					<div class="panel-body" id="panel-body-costom">
-						<a href="www.rda.go.kr/"><img class="panel-img-costom" src="img/main1.JPG"></a>
+						<a href="http://www.rda.go.kr/main/mainPage.do"><img class="panel-img-costom" src="img/main1.JPG"></a>
 					</div>
 				</div>
 				
@@ -168,7 +168,7 @@
 					<h4 style="margin: 0px;">농사로</h4>
 						</div>
 					<div class="panel-body" id="panel-body-costom">
-						<a href="www.nongsaro.go.kr/"><img class="panel-img-costom" src="img/main2.JPG"></a>
+						<a href="http://www.nongsaro.go.kr/portal/portalMain.ps?menuId=PS00001"><img class="panel-img-costom" src="img/main2.JPG"></a>
 					</div>
 				</div>
 			</div>
@@ -179,50 +179,61 @@
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;최신 강의
-					목록
+					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;최신 영상 보기
 				</h3>
 			</div>
 			<div class="panel-body">
 				<div class="media">
 					<div class="media-left">
-						<a href="#"><img class="media-object" src="img/YouTube.png"
-							alt="강의 유튜브" height="120px" width="120px"></a>
+						<a href="https://www.youtube.com/watch?v=TwT7DiQJjnk"><img class="media-object" src="https://i.ytimg.com/vi/TwT7DiQJjnk/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCJ0D7cDDrGqV6qCwBydkxftV9OWg"
+							height="120px" width="120px" style="border-radius: 5px;"></a>
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading">
-							C언어 프로그래밍 강의<a href="#">&nbsp;</a><span class="badge">New</span>
+							<a href="https://www.youtube.com/watch?v=TwT7DiQJjnk">솥뚜껑 닭불고기 먹방│농사직방&nbsp;</a><span class="badge" style="background-color: red;">New</span>
 						</h4>
-						그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-						부탁드립니다.
+						<small>
+						게시자: 농사직방<br>
+						게시일: 3주 전<br>
+						길&nbsp;&nbsp;&nbsp;이: 4분 58초<br>
+						조회수: 402회
+						</small>
 					</div>
 				</div>
 				<hr>
 				<div class="media">
 					<div class="media-left">
-						<a href="#"><img class="media-object" src="img/YouTube.png"
-							alt="강의 유튜브" height="120px" width="120px"></a>
+						<a href="https://www.youtube.com/watch?v=GhKHAcwMGbQ"><img class="media-object" src="https://i.ytimg.com/vi/GhKHAcwMGbQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBqJ-lDI4EP5FbxrQJzcwJFa4QDvg"
+							height="120px" width="120px" style="border-radius: 5px;"></a>
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading">
-							Spring 프로그래밍 강의<a href="#">&nbsp;</a><span class="badge">New</span>
+							<a href="https://www.youtube.com/watch?v=GhKHAcwMGbQ">문재인대통령이 탄 자율주행이앙기위에서 컵라면 먹방│농사직방&nbsp;</a><span class="badge" style="background-color: red;">New</span>
 						</h4>
-						그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-						부탁드립니다.
+						<small>
+						게시자: 농사직방<br>
+						게시일: 3주 전<br>
+						길&nbsp;&nbsp;&nbsp;이: 4분 58초<br>
+						조회수: 402회
+						</small>
 					</div>
 				</div>
 				<hr>
 				<div class="media">
 					<div class="media-left">
-						<a href="#"><img class="media-object" src="img/YouTube.png"
-							alt="강의 유튜브" height="120px" width="120px"></a>
+						<a href="https://www.youtube.com/watch?v=YnWb_K5TgSs"><img class="media-object" src="https://i.ytimg.com/vi/YnWb_K5TgSs/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLB46GuChb_KFjodLjiBzaIjovPWpQ"
+							height="120px" width="120px" style="border-radius: 5px;"></a>
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading">
-							JAVA 프로그래밍 강의<a href="#">&nbsp;</a><span class="badge">New</span>
+							<a href="https://www.youtube.com/watch?v=YnWb_K5TgSs">텃밭에 씨앗뿌리는 꿀팁 [3분농법]│농사직방&nbsp;</a><span class="badge" style="background-color: red;">New</span>
 						</h4>
-						그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-						부탁드립니다.
+						<small>
+						게시자: 농사직방<br>
+						게시일: 3주 전<br>
+						길&nbsp;&nbsp;&nbsp;이: 4분 58초<br>
+						조회수: 402회
+						</small>
 					</div>
 				</div>
 			</div>
