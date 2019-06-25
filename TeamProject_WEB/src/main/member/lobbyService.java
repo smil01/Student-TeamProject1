@@ -20,13 +20,14 @@ public class lobbyService implements CommandService {
 
 		sessionDTO sdto = (sessionDTO) session.getAttribute("member");
 
-		if (sdto == null) {
-			System.out.println("lobbyService. sdto : " + sdto);
-			url = "error.do";
-		} else {
-			url = "lobby.jsp";
-		}
-		return url;
+//		if (sdto == null) {
+//			System.out.println("lobbyService. sdto : " + sdto);
+//			url = "error.do";
+//		} else {
+//			url = "lobby.jsp";
+//		}
+//		return url;
+		return "lobby.jsp";
 	}
 
 	@Override

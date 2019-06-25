@@ -77,6 +77,7 @@
 				<!-- 1-2-4 네번째 검색창 끝 -->
 
 				<!-- 1-2-5 다섯번째 로그인 메뉴 시작 -->
+				<c:if test="${sessionScope.member != null}">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -88,6 +89,19 @@
 							<li><a id="logout">로그아웃</a></li>
 						</ul></li>
 				</ul>
+				</c:if>
+				<c:if test="${sessionScope.member == null}">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false" style="padding: 7px;"><img
+							class="img-circle" src="img/m_img.png" alt="프로필" height="36px"
+							width="36px">&nbsp;로그인<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a id="login" href="main.do">로그인하로 가기</a></li>
+						</ul></li>
+				</ul>
+				</c:if>
 				<!-- 1-2-5 다섯번째 로그인 메뉴 끝 -->
 			</div>
 			<!-- 1-2 브렌드 우측부터 들어가는 개별적 메뉴들 끝 -->
