@@ -125,7 +125,8 @@
 	<div class="container">
 		<!-- 2-1 점보트론 div라인 시작 -->
 		<div class="jumbotron" id='jimg'>
-		
+			<div style="float: left;"><a><span class="glyphicon glyphicon-chevron-left"></span></a></div>
+			<div style="float: right;"><a><span class="glyphicon glyphicon-chevron-right"></span></a></div>
 			<br>
 			<!-- 2-1-1 내용물 --><br>
 			<p class="text-center" id='jtitle'></p>
