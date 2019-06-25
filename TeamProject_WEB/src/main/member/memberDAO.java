@@ -295,5 +295,24 @@ public class memberDAO {
 		return false;
 	}
 
+	public boolean updateCode(int member_id, String _code) {
+		try {
+			getCon();
+			String sql = "update MEMBER set MAIN_CODE = ? where MEMBER_CODE = ?";
+
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, _code);
+			pst.setInt(2, member_id);
+
+			if (pst.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return false;
+	}
 
 }

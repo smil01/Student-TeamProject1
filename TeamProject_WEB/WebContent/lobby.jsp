@@ -246,8 +246,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button class="close" data-dismiss="modal">&times;</button>
-						<br>
+						<h1>계정연동 페이지</h1>
 					</div>
 					<div class="modal-body" style="text-align: left;">
 						<!-- 판넬 -->
@@ -277,10 +276,10 @@
 										회원번호: ${sessionScope.list[0].id}<br>
 										닉네임 : ${sessionScope.list[0].name}<br>
 										<c:if test="${sessionScope.member.token != 'k'}">
-										<a class="btn btn-info" href="#">대표계정 설정</a>
+										<a class="btn btn-info" href="reLoginService2.do?_code=k">대표계정 설정</a>
 										</c:if>
 										<c:if test="${sessionScope.member.access == 'k'}">
-										<a class="btn btn-danger" href="#">회원정보 수정</a>
+										<a class="btn btn-danger" href="https://cs.kakao.com/helps?category=226&locale=ko&service=8">회원정보 수정</a>
 										</c:if>
 										</c:if>
 										<c:if test="${sessionScope.list[0] == null}">
@@ -310,10 +309,10 @@
 									회원번호: ${sessionScope.list[1].id}<br>
 									닉네임 : ${sessionScope.list[1].name}<br>
 									<c:if test="${sessionScope.member.token != 'n'}">
-									<a class="btn btn-info" href="#">대표계정 설정</a>
+									<a class="btn btn-info" href="reLoginService2.do?_code=n">대표계정 설정</a>
 									</c:if>
 									<c:if test="${sessionScope.member.access == 'n'}">
-									<a class="btn btn-danger" href="#">회원정보 수정</a>
+									<a class="btn btn-danger" href="https://nid.naver.com/user2/help/myInfo.nhn?lang=ko_KR">회원정보 수정</a>
 									</c:if>
 									</c:if>
 									<c:if test="${sessionScope.list[1] == null}">
@@ -343,10 +342,10 @@
 									회원번호: ${sessionScope.list[2].id}<br>
 									닉네임 : ${sessionScope.list[2].name}<br>
 									<c:if test="${sessionScope.member.token != 'g'}">
-									<a class="btn btn-info" href="#">대표계정 설정</a>
+									<a class="btn btn-info" href="reLoginService2.do?_code=g">대표계정 설정</a>
 									</c:if>
 									<c:if test="${sessionScope.member.access == 'g'}">
-									<a class="btn btn-danger" href="#">회원정보 수정</a>
+									<a class="btn btn-danger" href="https://myaccount.google.com/personal-info">회원정보 수정</a>
 									</c:if>
 									</c:if>
 									<c:if test="${sessionScope.list[2] == null}">
@@ -359,6 +358,9 @@
 								</div>
 								</div>
 							</div>
+						</div>
+						<div align="center">
+							<button data-dismiss="modal" class="btn btn-success"><h3 style="margin: 0px;">닫기</h3></button>
 						</div>
 						<!-- 판넬 -->
 					</div>
@@ -386,10 +388,8 @@
          $(document).ready(function(){
         	<%
         	 	String check = (String)session.getAttribute("check");
-        	 
         	 	if(check != null){
         	 		%>$('div.modal').modal();<%
-        	 		
         	 		session.removeAttribute("check");
         	 	}
         	%>
