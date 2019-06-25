@@ -9,6 +9,7 @@ import main.member.logoutService;
 import main.member.mainService;
 import main.member.reLoginService;
 import main.member.reLoginService2;
+import main.menu.introService;
 
 public class CommandMapper {
 	public static HashMap<String, CommandService> getMap() {
@@ -20,6 +21,7 @@ public class CommandMapper {
 		map.put("lobbyService.do", new lobbyService());
 		map.put("reLoginService.do", new reLoginService());
 		map.put("reLoginService2.do", new reLoginService2());
+		map.put("introService.do", new introService());
 		map.put("error.do", new errorService());
 
 		return map;
