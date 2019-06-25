@@ -132,11 +132,11 @@
 			<p class="text-center" >
 			<br>
 				<a class="btn btn-success btn-lg" id='jurl'
-					role="button">뉴스보기</a>
+					role="button" style="margin-bottom: 5px;">뉴스보기</a>
 			</p>
 		</div>
 		<!-- 2-1 점보트론 div라인 끝 -->
-		<br>
+		
 		<!-- 2-2 콘텐트 시작 -->
 		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
 		<div class="row">
@@ -145,8 +145,8 @@
 					<div class="panel-heading">
 					<h4 style="margin: 0px;">농림축산식품부</h4>
 					</div>
-					<div class="panel-body" style="padding: 7px;">
-						 <img src="img/main3.JPG" alt="" style="width: 100%; height: 100%; margin: 0px; ">
+					<div class="panel-body" id="panel-body-costom">
+						 <a href=""><img class="panel-img-costom" src="img/main3.JPG"></a>
 					</div>
 				</div>
 				
@@ -156,8 +156,8 @@
 					<div class="panel-heading">
 					<h4 style="margin: 0px;">농촌진흥청</h4>
 					</div>
-					<div class="panel-body" style="padding: 7px;">
-						<img src="img/main1.JPG" alt="" style="width: 100%; height: 100%; margin: 0px; ">
+					<div class="panel-body" id="panel-body-costom">
+						<a href=""><img class="panel-img-costom" src="img/main1.JPG"></a>
 					</div>
 				</div>
 				
@@ -167,15 +167,14 @@
 					<div class="panel-heading">
 					<h4 style="margin: 0px;">농사로</h4>
 						</div>
-					<div class="panel-body" style="padding: 7px;">
-						<a><img src="img/main2.JPG" alt="" style="width: 100%; height: 100%; margin: 0px; "></a>
+					<div class="panel-body" id="panel-body-costom">
+						<a href=""><img class="panel-img-costom" src="img/main2.JPG"></a>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
-		<hr>
+		<hr style="margin-top: 0px;">
 		<!-- 두번째 라인 시작(유튜브 버튼 있는곳) -->
 		<div class="panel panel-success">
 			<div class="panel-heading">
