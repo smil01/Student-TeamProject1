@@ -5,11 +5,21 @@
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); .jejugothic * { font-family: 'Jeju Gothic', sans-serif; }
 @font-face { font-family: 'BMHANNAPro'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') 
 format('woff'); font-weight: normal; font-style: normal; }
-p{
-	font-family: 'BMHANNAPro'
-}
+
 .panel-primary {
   border-color: #44bd32;
+}
+#jtitle{
+	font-family: 'BMHANNAPro';
+}
+#jurl{
+	font-family: 'BMHANNAPro';
+}
+.media-heading{
+	font-family: 'BMHANNAPro';
+}
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li > a{
+	font-family: 'BMHANNAPro';
 }
 /* 가운데 판넬 영역 */
 .panel-success > .panel-heading {
@@ -20,6 +30,12 @@ p{
 /*강의목록 선 색깔*/
 .panel-success{
  border-color: #44bd32;
+}
+.panel-title{
+	font-family: 'BMHANNAPro'
+}
+.col-md-4 h4{
+	font-family: 'BMHANNAPro'
 }
 
 a {
@@ -51,9 +67,11 @@ a:hover {
 }
 
 
-.navbar-default .navbar-brand{ /* 브랜드 부분 글씨색 */
+.navbar-default .navbar-brand { /* 브랜드 부분 글씨색 */
+	font-family: 'BMHANNAPro';
 	color: #ffffff;
 }
+
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus{ /* 브랜드 커서나 포커스 */
@@ -91,7 +109,7 @@ a:hover {
 
 @media(max-width: 767px){
 	.jumbotron p {
-	  font-size: 20px;
+	  font-size: 25px;
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a{
 		color: #ffffff; 

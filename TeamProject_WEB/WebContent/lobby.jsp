@@ -42,7 +42,7 @@
 				<!-- 시작부터 윗부분은 사용을 위한 형식적인 의미없는 부분(아직은) -->
 
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 시작 --> 
-				<a class="navbar-brand" href="lobbyService.do">미래창조농업부      </a>
+				<a class="navbar-brand" href="lobbyService.do">미래창조농업부&nbsp;&nbsp;      </a>
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 끝 -->
 			</div>
 			<!-- 1-1 헤더부분 끝-->
@@ -52,21 +52,33 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<!-- 1-2-1 첫번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="active"><a href="#">소개</a></li>
+
+					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li><a href="index_table.html">강사</a></li>
-					<li><a href="index_table.html">소통광장</a></li>
+					<li><a href="#">소통광장&nbsp;</a></li>
+
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">강의<span class="caret"></span></a>
+						aria-expanded="false">작물이야기&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">C언어</a></li>
-							<li><a href="#">자바</a></li>
-							<li><a href="#">Spring</a></li>
+							<li><a href="index_dropdown_menu_1.html">복숭아</a></li>
+							<li><a href="#">사과</a></li>
+							<li><a href="#">포도</a></li>
 						</ul></li>
+					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->	
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="index_dropdown_menu_1.html">애플망고</a></li>
+							<li><a href="#">파파야</a></li>
+							<li><a href="#">뭐죠</a></li>
+						</ul></li>	
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
+
+				
 
 				<!-- 1-2-4 네번째 검색창 시작 -->
 				<form action="#" class="navbar-form navbar-left">
@@ -416,7 +428,7 @@
         			 "news4.jpg","news5.jpg","news6.jpg","news7.jpg","news8.jpg");
         	 var txt_arr = new Array("RPC 벼 매입자금 배정 ‘중복평가’ 논란", "해남군, 상반기 농민수당 지급 ‘가속’","“신규 농업인 영농 정착 도와요”",
         			 "진안, 우렁이 친환경 농법 확대","익산시, 농번기 일손 지원 확대 나서","양파·마늘 등 수확시 작업비 지원","여름철 재해 대책, 농작물 피해 예방한다",
-        			 "아직도 잡지 못했니 ‘논잡초’…‘후기제초제’로 '방제'");
+        			 "잡지 못했니 ‘논잡초’…‘후기제초제’로 '방제'");
         	
         	 var jurl_arr = new Array("https://www.newsfarm.co.kr/news/articleView.html?idxno=50804",
         							"https://www.newsfarm.co.kr/news/articleView.html?idxno=50816",
