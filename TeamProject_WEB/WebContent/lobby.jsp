@@ -279,9 +279,8 @@
 										<c:if test="${sessionScope.member.token != 'k'}">
 										<a class="btn btn-info" href="#">대표계정 설정</a>
 										</c:if>
-										<a class="btn btn-danger" href="#">연결해체</a>
 										<c:if test="${sessionScope.member.access == 'k'}">
-										<a class="btn btn-default" href="#">회원정보 수정</a>
+										<a class="btn btn-danger" href="#">회원정보 수정</a>
 										</c:if>
 										</c:if>
 										<c:if test="${sessionScope.list[0] == null}">
@@ -313,9 +312,8 @@
 									<c:if test="${sessionScope.member.token != 'n'}">
 									<a class="btn btn-info" href="#">대표계정 설정</a>
 									</c:if>
-									<a class="btn btn-danger" href="#">연결해체</a>
 									<c:if test="${sessionScope.member.access == 'n'}">
-									<a class="btn btn-default" href="#">회원정보 수정</a>
+									<a class="btn btn-danger" href="#">회원정보 수정</a>
 									</c:if>
 									</c:if>
 									<c:if test="${sessionScope.list[1] == null}">
@@ -347,9 +345,8 @@
 									<c:if test="${sessionScope.member.token != 'g'}">
 									<a class="btn btn-info" href="#">대표계정 설정</a>
 									</c:if>
-									<a class="btn btn-danger" href="#">연결해체</a>
 									<c:if test="${sessionScope.member.access == 'g'}">
-									<a class="btn btn-default" href="#">회원정보 수정</a>
+									<a class="btn btn-danger" href="#">회원정보 수정</a>
 									</c:if>
 									</c:if>
 									<c:if test="${sessionScope.list[2] == null}">
