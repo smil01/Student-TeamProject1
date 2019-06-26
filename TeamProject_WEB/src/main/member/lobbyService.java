@@ -19,6 +19,8 @@ public class lobbyService implements CommandService {
 		HttpSession session = request.getSession();
 
 		sessionDTO sdto = (sessionDTO) session.getAttribute("member");
+		
+		request.setAttribute("video", top3Util.get(3));
 
 //		if (sdto == null) {
 //			System.out.println("lobbyService. sdto : " + sdto);

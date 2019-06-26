@@ -183,59 +183,27 @@
 				</h3>
 			</div>
 			<div class="panel-body">
+			<hr style="margin-top: 12px;">
+				<c:forEach var="dto" items="${video}">
 				<div class="media">
 					<div class="media-left">
-						<a href="https://www.youtube.com/watch?v=TwT7DiQJjnk"><img class="media-object" src="https://i.ytimg.com/vi/TwT7DiQJjnk/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCJ0D7cDDrGqV6qCwBydkxftV9OWg"
+						<a onclick="video('${dto.title}', '${dto.link}')"><img class="media-object" src="${dto.src}"
 							height="120px" width="120px" style="border-radius: 5px;"></a>
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading">
-							<a href="https://www.youtube.com/watch?v=TwT7DiQJjnk">솥뚜껑 닭불고기 먹방│농사직방&nbsp;</a><span class="badge" style="background-color: red;">New</span>
+							<a onclick="video('${dto.title}', '${dto.link}')">${dto.title}&nbsp;</a><span class="badge" style="background-color: red;">New</span>
 						</h4>
 						<small>
-						게시자: 농사직방<br>
-						게시일: 3주 전<br>
-						길&nbsp;&nbsp;&nbsp;이: 4분 58초<br>
-						조회수: 402회
+						게시일: ${dto.time}<br>
+						길&nbsp;&nbsp;&nbsp;이: ${dto.lenth}<br>
+						조회수: ${dto.count}
 						</small>
 					</div>
 				</div>
 				<hr>
-				<div class="media">
-					<div class="media-left">
-						<a href="https://www.youtube.com/watch?v=GhKHAcwMGbQ"><img class="media-object" src="https://i.ytimg.com/vi/GhKHAcwMGbQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBqJ-lDI4EP5FbxrQJzcwJFa4QDvg"
-							height="120px" width="120px" style="border-radius: 5px;"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">
-							<a href="https://www.youtube.com/watch?v=GhKHAcwMGbQ">문재인대통령이 탄 자율주행이앙기위에서 컵라면 먹방│농사직방&nbsp;</a><span class="badge" style="background-color: red;">New</span>
-						</h4>
-						<small>
-						게시자: 농사직방<br>
-						게시일: 3주 전<br>
-						길&nbsp;&nbsp;&nbsp;이: 4분 58초<br>
-						조회수: 402회
-						</small>
-					</div>
-				</div>
-				<hr>
-				<div class="media">
-					<div class="media-left">
-						<a href="https://www.youtube.com/watch?v=YnWb_K5TgSs"><img class="media-object" src="https://i.ytimg.com/vi/YnWb_K5TgSs/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLB46GuChb_KFjodLjiBzaIjovPWpQ"
-							height="120px" width="120px" style="border-radius: 5px;"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">
-							<a href="https://www.youtube.com/watch?v=YnWb_K5TgSs">텃밭에 씨앗뿌리는 꿀팁 [3분농법]│농사직방&nbsp;</a><span class="badge" style="background-color: red;">New</span>
-						</h4>
-						<small>
-						게시자: 농사직방<br>
-						게시일: 3주 전<br>
-						길&nbsp;&nbsp;&nbsp;이: 4분 58초<br>
-						조회수: 402회
-						</small>
-					</div>
-				</div>
+				</c:forEach>
+				<div align="center"><a class="btn btn-success" href="#">&nbsp;더 보기&nbsp;</a></div>
 			</div>
 		</div>
 		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
@@ -413,9 +381,47 @@
 			</div>
 		</div>
 	</div>
+
+		<!-- 4 모달영역 시작 -->
+		<div class="row">
+			<div class="modal" id="modal2" tabindex="-1">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-body" style="text-align: left;">
+							<!-- 판넬 -->
+							<div class="panel panel-success">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;<a id="modal2-title"></a>&nbsp;<span class="badge" style="background-color: red;">New</span>
+									</h3>
+								</div>
+								<div class="panel-body">
+										<div class="embed-responsive embed-responsive-16by9">
+											<iframe class="embed-responsive-item"
+												src="" id="modal2-video"></iframe>
+									</div>
+								</div>
+							</div>
+							<div align="center">
+								<button data-dismiss="modal" class="btn btn-success"><h3 style="margin: 0px;">닫기</h3></button>
+							</div>
+							<!-- 판넬 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
 		window.alert = function() {};
+
+		function video(title, link){
+			document.getElementById("modal2-title").innerText = title;
+			document.getElementById("modal2-video").src = link;
+
+			$('div#modal2').modal();
+		}
+
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');
 			gapi.load('auth2', function() { 
