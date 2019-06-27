@@ -1,17 +1,19 @@
-package test;
+package main.board;
 
-public class testDTO {
+public class boardDTO {
 	private int num;
 	private String title;
 	private String content;
 	private int member_code;
+	private String date;
 
-	public testDTO(int num, String title, String content, int member_code) {
+	public boardDTO(int num, String title, String content, int member_code, String date) {
 		super();
 		this.num = num;
 		this.title = title;
 		this.content = content;
 		this.member_code = member_code;
+		this.date = date;
 	}
 
 	public int getNum() {
@@ -46,10 +48,18 @@ public class testDTO {
 		this.member_code = member_code;
 	}
 
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	@Override
 	public String toString() {
-		return "testDTO [num=" + num + ", title=" + title + ", content=" + content + ", member_code=" + member_code
-				+ "]";
+		return "boardDTO [num=" + num + ", title=" + title + ", content=" + content + ", member_code=" + member_code
+				+ ", date=" + date + "]";
 	}
 
 }

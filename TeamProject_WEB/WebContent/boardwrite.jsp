@@ -52,10 +52,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<!-- 1-2-1 첫번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="active main"></li>
-					<li><a href="#">스미원 소개&nbsp;</a></li>
+
+					<li ><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li><a href="#">소통광장&nbsp;</a></li>
+					<li class="active"><a href="#">소통광장&nbsp;</a></li>
 
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -122,106 +122,23 @@
 	<!-- 1 네이게이션바 라인 끝 -->
 
 	<!-- 2 컨테이너 div라인 시작 -->
-	<div class="container">
-		<!-- 2-1 점보트론 div라인 시작 -->
-		<div class="jumbotron" id='jimg'>
-		
-			<br>
-			<!-- 2-1-1 내용물 --><br>
-			<p class="text-center" id='jtitle'></p>
-			<p class="text-center" >
-			<br>
-				<a class="btn btn-success btn-lg" id='jurl'
-					role="button">뉴스보기</a>
-			</p><br><br>
-		</div>
-		<!-- 2-1 점보트론 div라인 끝 -->
-
-		<!-- 2-2 콘텐트 시작 -->
-		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
-		<div class="row">
-			<div class="col-md-4">
-				<h4>대근 부스터의 특징</h4>
-				<p>대근 부스터는 비교적 깔끔한 구성을 보여줍니다. 모든 페이지가 사용자 접근하고 읽기 편하게 나름 정교하게
-					구성되어 있습니다.</p>
-				<p>
-					<a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히
-						알아보기</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h4>대근 부스터의 종류</h4>
-				<p>머 없습니다. 그냥 부트스트랩에 가장 표준화 되는 모델을 지향합니다. 손가락에 피날때 까지 코딩하는 방법이
-					준비되어있습니다.</p>
-				<p>
-					<a class="btn btn-default" href="#">자세히 알아보기</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h4>대근 부스터의 연혁</h4>
-				<p>대근 부스터의 연혁을 소개하고 있습니다. 그외 기타내용도 기입되어 있습니다.
-					으아아아아아아아아아아아아아아아아아아아아아아</p>
-				<p>
-					<a class="btn btn-default" href="#">자세히 알아보기</a>
-				</p>
-			</div>
-		</div>
-		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
-		<hr>
-		<!-- 두번째 라인 시작(유튜브 버튼 있는곳) -->
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;최신 강의
-					목록
-				</h3>
-			</div>
-			<div class="panel-body">
-				<div class="media">
-					<div class="media-left">
-						<a href="#"><img class="media-object" src="img/YouTube.png"
-							alt="강의 유튜브" height="120px" width="120px"></a>
+	<div class="container" id="title">
+	
+	
+					<label>제목</label>
+					<input type="text" name="title" size="50" class="form-control">
+					
+					<label>내용</label>
+					<textarea class="form-control" rows="5" id="formtext" name="commentContent"></textarea>
+					
+					<div class="btnsubmit">
+					
+					<button type="submit" class="btn pull" id="btnsubmit">취소</button>
+					<button type="submit" class="btn pull" id="btnsubmit">글등록</button>
+					<br>
 					</div>
-					<div class="media-body">
-						<h4 class="media-heading">
-							C언어 프로그래밍 강의<a href="#">&nbsp;</a><span class="badge">New</span>
-						</h4>
-						그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-						부탁드립니다.
-					</div>
-				</div>
-				<hr>
-				<div class="media">
-					<div class="media-left">
-						<a href="#"><img class="media-object" src="img/YouTube.png"
-							alt="강의 유튜브" height="120px" width="120px"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">
-							Spring 프로그래밍 강의<a href="#">&nbsp;</a><span class="badge">New</span>
-						</h4>
-						그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-						부탁드립니다.
-					</div>
-				</div>
-				<hr>
-				<div class="media">
-					<div class="media-left">
-						<a href="#"><img class="media-object" src="img/YouTube.png"
-							alt="강의 유튜브" height="120px" width="120px"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">
-							JAVA 프로그래밍 강의<a href="#">&nbsp;</a><span class="badge">New</span>
-						</h4>
-						그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-						부탁드립니다.
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
-		<!-- 2-2 콘텐트 끝 -->
+	
+	
 	</div>
 	<!-- 2 컨테이너 div라인 끝 -->
 

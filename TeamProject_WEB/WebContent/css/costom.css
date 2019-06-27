@@ -16,12 +16,36 @@ format('woff'); font-weight: normal; font-style: normal; }
 	font-family: 'BMHANNAPro';
 	
 	}
+.pull-right{
+	font-size:15px;	
+	font-family: 'Handon3gyeopsal600g';
+}	
+
+#title{
+	background-color: #bdc3c7;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top:5px;
+
+	padding-bottom:5px;
+	border-radius: 10px;
+	color: white;
+}	
+#formtext{
+ 	height: 300px;
+}	
+#btnsubmit{
+	margin-left: 10px;	
+}
 
 #jurl{
 	font-family: 'BMHANNAPro';
 }
 .media-heading{
 	font-family: 'BMHANNAPro';
+}
+.pull-right{
+	
 }
 
 
@@ -130,6 +154,10 @@ a:hover {
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
 		color: #000000;
 	}
+	td, th{
+		font-size:15px;
+	}
+
 }
 
 /* 점보트론 영역 */
@@ -143,7 +171,18 @@ a:hover {
 	padding: 0px;
 }
 
-
+.boardbutton{
+	
+	margin: 10px;
+}
+#boardwrite{
+	font-size: 12px;
+}
+.btnsubmit{
+	text-align: right;
+	margin-top: 10px;
+	color: gray;
+}
 
 /* 푸터영역 영역 */
 footer {

@@ -2,6 +2,7 @@ package main.front;
 
 import java.util.HashMap;
 
+import main.board.boardService;
 import main.member.errorService;
 import main.member.lobbyService;
 import main.member.loginService;
@@ -23,7 +24,7 @@ public class CommandMapper {
 		map.put("reLoginService2.do", new reLoginService2());
 		map.put("introService.do", new introService());
 		map.put("error.do", new errorService());
-
+		map.put("boardService.do", new boardService());
 		return map;
 	}
 }
