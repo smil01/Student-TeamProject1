@@ -10,15 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("*.do")
+@WebServlet("*.do") // 127.0.0.1/service.do
 public class FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		String command = CommandUtil.getCommand(request);
-		CommandService input = CommandMapper.getMap().get(command);
+		String command = CommandUtil.getCommand(request); // 127.0.0.1/service.do -> String command = service.do;
+
+		CommandService input = CommandMapper.getMap().get(command); // service.do -> 내가 만든 서비스 클래스로 이동
+
 		System.out.println("================ 커멘드 확인 : " + command);
 		if (input == null) {
 			System.out.println("0. input : " + input);
