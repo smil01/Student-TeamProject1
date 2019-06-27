@@ -3,6 +3,12 @@ package main.front;
 import java.util.HashMap;
 
 import main.board.boardService;
+import main.board.deleteService;
+import main.board.insertService;
+import main.board.modifyService;
+import main.board.selectService;
+import main.board.updateService;
+import main.board.writeService;
 import main.member.errorService;
 import main.member.lobbyService;
 import main.member.loginService;
@@ -25,6 +31,12 @@ public class CommandMapper {
 		map.put("introService.do", new introService());
 		map.put("error.do", new errorService());
 		map.put("boardService.do", new boardService());
+		map.put("writeService.do", new writeService());
+		map.put("insertService.do", new insertService());
+		map.put("selectService.do", new selectService());
+		map.put("deleteService.do", new deleteService());
+		map.put("modifyService.do", new modifyService());
+		map.put("updateService.do", new updateService());		
 		return map;
 	}
 }

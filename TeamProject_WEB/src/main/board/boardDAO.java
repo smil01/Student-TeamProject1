@@ -22,8 +22,6 @@ public class boardDAO {
 		return dao;
 	}
 
-	
-	
 	private void getCon() {
 		try {
 			InputStream in = this.getClass().getResourceAsStream("../../db.properties");
@@ -41,8 +39,6 @@ public class boardDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	
 
 	private void close() {
 		try {
@@ -62,21 +58,20 @@ public class boardDAO {
 		}
 	}
 
-	
-	
 	public ArrayList<boardDTO> selectAll() {
 		ArrayList<boardDTO> list = new ArrayList<boardDTO>();
 		try {
 			getCon();
 
-			String sql = "select * from board";
+			String sql = "select * from board order by num desc";
 
 			pst = conn.prepareStatement(sql);
 
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
-				list.add(new boardDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4),rs.getString(5)));
+				list.add(new boardDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5),
+						rs.getString(6)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,8 +82,6 @@ public class boardDAO {
 		return list;
 	}
 
-	
-	
 	public boardDTO selectNum(int num) {
 
 		boardDTO result = null;
@@ -104,7 +97,8 @@ public class boardDAO {
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
-				result = new boardDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
+				result = new boardDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5),
+						rs.getString(6));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -115,19 +109,18 @@ public class boardDAO {
 		return result;
 	}
 
-	
-	
 	public boolean insert(boardDTO dto) {
 
 		try {
 			getCon();
-			String sql = "insert into board values(BOARD_NUM_SEQ.NEXTVAL, ?, ?, ?, ADD_MONTHS(SYSDATE,0))";
+			String sql = "insert into board values(BOARD_NUM_SEQ.NEXTVAL, ?, ?, ?, ADD_MONTHS(SYSDATE,0), ?)";
 
 			pst = conn.prepareStatement(sql);
 
 			pst.setString(1, dto.getTitle());
 			pst.setString(2, dto.getContent());
 			pst.setInt(3, dto.getMember_code());
+			pst.setString(4, dto.getWriter());
 
 			if (pst.executeUpdate() > 0) {
 				close();
@@ -144,7 +137,7 @@ public class boardDAO {
 	}
 
 	public boolean update(String content, int num) {
-		
+
 		try {
 			getCon();
 			String sql = "update board set content=? where num=?";
@@ -152,8 +145,7 @@ public class boardDAO {
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, content);
 			pst.setInt(2, num);
-			
-			
+
 			if (pst.executeUpdate() > 0) {
 				return true;
 			}
@@ -165,8 +157,6 @@ public class boardDAO {
 
 		return false;
 	}
-	
-	
 
 	public boolean delete(int num) {
 
@@ -190,5 +180,3 @@ public class boardDAO {
 	}
 
 }
-
-

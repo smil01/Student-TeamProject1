@@ -55,7 +55,7 @@
 					<li class="active main"></li>
 					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li><a href="talkService.do">소통광장&nbsp;</a></li>
+					<li><a href="boardService.do">소통광장&nbsp;</a></li>
 
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"

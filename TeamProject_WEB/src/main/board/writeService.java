@@ -1,7 +1,6 @@
 package main.board;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,17 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import main.front.CommandService;
 
-public class boardService implements CommandService{
+public class writeService implements  CommandService{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		boardDAO dao = boardDAO.getDao();//준비자
-		ArrayList<boardDTO> list = dao.selectAll();
-
-		request.setAttribute("boardlist", list);//전달자
-
-		return "board.jsp"; // 화면에 보여질 위치
+		return "boardwrite.jsp";
 	}
 
 	@Override
@@ -28,6 +22,4 @@ public class boardService implements CommandService{
 		return false;
 	}
 
-	
-	
 }

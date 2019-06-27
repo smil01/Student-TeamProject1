@@ -52,8 +52,8 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<!-- 1-2-1 첫번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="active main"></li>
-					<li><a href="#">스미원 소개&nbsp;</a></li>
+
+					<li ><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li class="active"><a href="#">소통광장&nbsp;</a></li>
 
@@ -122,52 +122,48 @@
 	<!-- 1 네이게이션바 라인 끝 -->
 
 	<!-- 2 컨테이너 div라인 시작 -->
-	<div class="container">
+	<form action="updateService.do" method="post">
+	<div class="container" >
 			<div class="row">
 			<div class="col-xs-12">
 				<div class="panel panel-primary">
 					<div class="panel panel-heading" >
 						<h3 class="panel-title">
 							<span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;소통광장
-							<c:if test="${sessionScope.member != null}">
-							<button type="submit" class="btn pull-right" ><a href="writeService.do" >글쓰기</a></button>
-							</c:if>
 						</h3>
 					</div>
 
-					<table class="table">
+					<table class="table" height="350">
 						<thead>
 							<tr>
-							
-								<th>글번호</th>
-								<th>글쓴이</th>
-								<th>글제목</th>
-								<th>작성일</th>
+								<td>${select.num}<input type="hidden" value="${select.num}" name="num"></td>
+								<td>${select.title}</td>
+								<td>${select.writer}</td>
+								<td>${select.date}</td>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="dto" items="${boardlist}">
 							<tr>
-								<td><a onclick="select('${dto.num}')">${dto.num}</a></td>
-								<td><a onclick="select('${dto.num}')">${dto.writer}</a></td>
-								<td><a onclick="select('${dto.num}')">${dto.title}</a></td>
-								<td><a onclick="select('${dto.num}')">${dto.date}</a></td>
+								<td colspan="4">
+								<br>
+									<textarea class="form-control" rows="5" id="formtext" name="content">${select.content}</textarea>
+								</td>
+								
 							</tr>
-							</c:forEach>
+
 						</tbody>
 					</table>
+					<div class="boardbutton" align="right">		
+							<button class="btn pull" onclick="back('${select.num}')">돌아아가기</button>				
+							<button class="btn pull" type="submit">수정</button>
+					</div>
 				</div>
 			</div>
-			
-			
 		</div>
-
-					
-	
-		
 	</div>
-
+	</form>
 	<!-- 2 컨테이너 div라인 끝 -->
+
 	<!-- 3 푸터라인 시작 -->
 	<footer>
 		<div class="container">
@@ -340,10 +336,8 @@
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
-		function select(num){
-			
+		function back(num) {
 			location.href="selectService.do?num="+num;
-			
 		}
 		window.alert = function() {};
 		function init() { // 시작하자 마자 커넥션

@@ -136,28 +136,29 @@
 					<table class="table" height="350">
 						<thead>
 							<tr>
-								<td>1</td>
-								<td>블루베리는 키우는법</td>
-								<td> 이승경</td>
-								<td> 19-06-26</td>
+								<td>${select.num}</td>
+								<td>${select.title}</td>
+								<td>${select.writer}</td>
+								<td>${select.date}</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td colspan="4">
 								<br>
-								블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다
-								블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다
-블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다블루베리는 맛있씁니다
+									${select.content}
 								</td>
 								
 							</tr>
 
 						</tbody>
 					</table>
-					<div class="boardbutton" align="right">								
-							<button type="submit" class="btn pull">삭제 </button>
-							<button type="submit" class="btn pull">수정</button>
+					<div class="boardbutton" align="right">		
+							<button class="btn pull" onclick="back()">돌아가기</button>
+							<c:if test="${select.member_code == member.member_id}">					
+							<button class="btn pull" onclick="delect('${select.num}')">삭제 </button>
+							<button class="btn pull" onclick="modify('${select.num}')">수정</button>
+							</c:if>
 					</div>
 				</div>
 			</div>
@@ -341,6 +342,15 @@
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
+		function back() {
+			location.href="boardService.do"
+		}
+		function delect(num){
+			location.href="deleteService.do?num="+num;
+		}
+		function modify(num){
+			location.href="modifyService.do?num="+num;
+		}
 		window.alert = function() {};
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');

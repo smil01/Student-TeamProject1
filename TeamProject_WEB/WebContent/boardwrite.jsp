@@ -123,21 +123,19 @@
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container" id="title">
-	
-	
+			<form action="insertService.do" method="post">
 					<label>제목</label>
 					<input type="text" name="title" size="50" class="form-control">
 					
 					<label>내용</label>
-					<textarea class="form-control" rows="5" id="formtext" name="commentContent"></textarea>
+					<textarea class="form-control" rows="5" id="formtext" name="content"></textarea>
 					
 					<div class="btnsubmit">
-					
-					<button type="submit" class="btn pull" id="btnsubmit">취소</button>
-					<button type="submit" class="btn pull" id="btnsubmit">글등록</button>
+						<button class="btn pull" onclick="back()">취소</button>
+						<button type="submit" class="btn pull" >글등록</button>
 					<br>
 					</div>
-	
+			</form>
 	
 	</div>
 	<!-- 2 컨테이너 div라인 끝 -->
@@ -314,6 +312,11 @@
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
+		function back() {
+			history.back();
+		}
+	
+	
 		window.alert = function() {};
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');
