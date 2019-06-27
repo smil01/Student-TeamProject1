@@ -17,6 +17,7 @@ import main.member.mainService;
 import main.member.reLoginService;
 import main.member.reLoginService2;
 import main.menu.introService;
+import main.menu.movieService;
 
 public class CommandMapper {
 	public static HashMap<String, CommandService> getMap() {
@@ -37,6 +38,7 @@ public class CommandMapper {
 		map.put("deleteService.do", new deleteService());
 		map.put("modifyService.do", new modifyService());
 		map.put("updateService.do", new updateService());
+		map.put("movieService.do", new movieService());
 
 		return map;
 	}

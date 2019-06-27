@@ -123,56 +123,12 @@
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
-		<!-- 2-1 점보트론 div라인 시작 -->
-		<div class="jumbotron" id='jimg'>
 		
-			<br>
-			<!-- 2-1-1 내용물 --><br>
-			<p class="text-center" id='jtitle'></p>
-			<p class="text-center" >
-			<br>
-				<a class="btn btn-success btn-lg" id='jurl'
-					role="button" style="margin-bottom: 5px;">뉴스보기</a>
-			</p>
-		</div>
 		<!-- 2-1 점보트론 div라인 끝 -->
 		
 		<!-- 2-2 콘텐트 시작 -->
 		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
-		<div class="row">
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h4 style="margin: 0px;">농림축산식품부</h4>
-					</div>
-					<div class="panel-body" id="panel-body-costom">
-						 <a href="http://www.mafra.go.kr/sites/mafra/index.do"><img class="panel-img-costom" src="img/main3.JPG"></a>
-					</div>
-				</div>
-				
-			</div>
-					<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h4 style="margin: 0px;">농촌진흥청</h4>
-					</div>
-					<div class="panel-body" id="panel-body-costom">
-						<a href="http://www.rda.go.kr/main/mainPage.do"><img class="panel-img-costom" src="img/main1.JPG"></a>
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h4 style="margin: 0px;">농사로</h4>
-						</div>
-					<div class="panel-body" id="panel-body-costom">
-						<a href="http://www.nongsaro.go.kr/portal/portalMain.ps?menuId=PS00001"><img class="panel-img-costom" src="img/main2.JPG"></a>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
 		<hr style="margin-top: 0px;">
 		<!-- 두번째 라인 시작(유튜브 버튼 있는곳) -->
@@ -200,13 +156,12 @@
 						<small>
 						게시일 ${dto.time}<br>
 						길&nbsp;&nbsp;&nbsp;이 ${dto.lenth}<br>
-						${dto.count}
+						 ${dto.count}
 						</small>
 					</div>
 				</div>
 				<hr>
 				</c:forEach>
-				<div align="center"><a class="btn btn-success" href="movieService.do">&nbsp;더 보기&nbsp;</a></div>
 			</div>
 		</div>
 		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
