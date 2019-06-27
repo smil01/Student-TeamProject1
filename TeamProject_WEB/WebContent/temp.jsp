@@ -123,94 +123,14 @@
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
-		<!-- 2-1 점보트론 div라인 시작 -->
-		<div class="jumbotron" id='jimg'>
-		
-			<br>
-			<!-- 2-1-1 내용물 --><br>
-			<p class="text-center" id='jtitle'></p>
-			<p class="text-center" >
-			<br>
-				<a class="btn btn-success btn-lg" id='jurl'
-					role="button" style="margin-bottom: 5px;">뉴스보기</a>
-			</p>
-		</div>
-		<!-- 2-1 점보트론 div라인 끝 -->
-		
-		<!-- 2-2 콘텐트 시작 -->
-		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
-		<div class="row">
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h4 style="margin: 0px;">농림축산식품부</h4>
-					</div>
-					<div class="panel-body" id="panel-body-costom">
-						 <a href="http://www.mafra.go.kr/sites/mafra/index.do"><img class="panel-img-costom" src="img/main3.JPG"></a>
-					</div>
-				</div>
-				
-			</div>
-					<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h4 style="margin: 0px;">농촌진흥청</h4>
-					</div>
-					<div class="panel-body" id="panel-body-costom">
-						<a href="http://www.rda.go.kr/main/mainPage.do"><img class="panel-img-costom" src="img/main1.JPG"></a>
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					<h4 style="margin: 0px;">농사로</h4>
-						</div>
-					<div class="panel-body" id="panel-body-costom">
-						<a href="http://www.nongsaro.go.kr/portal/portalMain.ps?menuId=PS00001"><img class="panel-img-costom" src="img/main2.JPG"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 첫번째 라인 시작(자세히 알아보기 버튼있는곳) -->
-		<hr style="margin-top: 0px;">
-		<!-- 두번째 라인 시작(유튜브 버튼 있는곳) -->
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;최신 영상 보기
-				</h3>
-			</div>
-			<div class="panel-body">
-			<hr style="margin-top: 12px;">
-				<c:forEach var="dto" items="${video}">
-				<div class="media">
-					<div class="media-left">
-						<a onclick="video('${dto.title}', '${dto.link}')"><img class="media-object" src="${dto.src}"
-							height="120px" width="120px" style="border-radius: 5px;"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">
-							<a onclick="video('${dto.title}', '${dto.link}')">${dto.title}&nbsp;</a>
-							<c:if test="${fn:contains(dto.time,'주') || fn:contains(dto.time,'일')}">
-							<span class="badge" style="background-color: red;">New</span>
-							</c:if>
-						</h4>
-						<small>
-						게시일 ${dto.time}<br>
-						길&nbsp;&nbsp;&nbsp;이 ${dto.lenth}<br>
-						${dto.count}
-						</small>
-					</div>
-				</div>
-				<hr>
-				</c:forEach>
-				<div align="center"><a class="btn btn-success" href="movieService.do">&nbsp;더 보기&nbsp;</a></div>
-			</div>
-		</div>
-		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
-		<!-- 2-2 콘텐트 끝 -->
+	
+	
+	
+	
+	
+	
+	
+	
 	</div>
 	<!-- 2 컨테이너 div라인 끝 -->
 
