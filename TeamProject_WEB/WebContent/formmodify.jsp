@@ -129,11 +129,11 @@
 				<div class="panel panel-primary">
 					<div class="panel panel-heading" >
 						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;소통광장
+							<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;소통광장
 						</h3>
 					</div>
 
-					<table class="table" height="350">
+					<table class="table" >
 						<thead>
 							<tr>
 								<td>${select.num}<input type="hidden" value="${select.num}" name="num"></td>
@@ -154,7 +154,7 @@
 						</tbody>
 					</table>
 					<div class="boardbutton" align="right">		
-							<button class="btn pull" onclick="back('${select.num}')">돌아아가기</button>				
+							<button class="btn pull" onclick="back('${select.num}')">돌아가기</button>				
 							<button class="btn pull" type="submit">수정</button>
 					</div>
 				</div>

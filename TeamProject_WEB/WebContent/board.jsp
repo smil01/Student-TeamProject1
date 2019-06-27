@@ -128,30 +128,30 @@
 				<div class="panel panel-primary">
 					<div class="panel panel-heading" >
 						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;소통광장
-							<c:if test="${sessionScope.member != null}">
+							<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;소통광장
+							<c:if test="${sessionScope.member == null}">
 							<button type="submit" class="btn pull-right" ><a href="writeService.do" >글쓰기</a></button>
 							</c:if>
 						</h3>
 					</div>
 
-					<table class="table">
+					<table class="table" id="table">
 						<thead>
 							<tr>
 							
-								<th>글번호</th>
-								<th>글쓴이</th>
-								<th>글제목</th>
-								<th>작성일</th>
+								<td align="left"><b>글번호</b></td>
+								<td align="left"><b>글쓴이</b></td>
+								<td><b>글제목</b></td>
+								<td align="right"><b>작성일</b></td>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="dto" items="${boardlist}">
 							<tr>
-								<td><a onclick="select('${dto.num}')">${dto.num}</a></td>
-								<td><a onclick="select('${dto.num}')">${dto.writer}</a></td>
+								<td align="left"><a onclick="select('${dto.num}')">${dto.num}</a></td>
+								<td align="left"><a onclick="select('${dto.num}')">${dto.writer}</a></td>
 								<td><a onclick="select('${dto.num}')">${dto.title}</a></td>
-								<td><a onclick="select('${dto.num}')">${dto.date}</a></td>
+								<td align="right"><a onclick="select('${dto.num}')">${dto.date}</a></td>
 							</tr>
 							</c:forEach>
 						</tbody>

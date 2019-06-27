@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <!-- 디스플레이 자동화 -->
 <meta name="viewport" content="width=device-width" , initial-scale="1">
@@ -129,17 +130,21 @@
 				<div class="panel panel-primary">
 					<div class="panel panel-heading" >
 						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;소통광장
+							<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;소통광장
 						</h3>
 					</div>
 
-					<table class="table" height="350">
+					<table class="table" id="table">
 						<thead>
 							<tr>
-								<td>${select.num}</td>
-								<td>${select.title}</td>
-								<td>${select.writer}</td>
-								<td>${select.date}</td>
+								<td align="left"><b>글번호 : </b> ${select.num}</td>
+								<td align="right"><b>날짜  : </b>${select.date}</td>
+							</tr>
+							<tr>
+								
+								<td align="left"><b>제목 : </b> ${select.title}</td>
+								<td align="right"><b>글쓴이 : </b> ${select.writer}</td>
+								
 							</tr>
 						</thead>
 						<tbody>

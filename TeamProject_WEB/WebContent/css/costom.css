@@ -16,10 +16,29 @@ format('woff'); font-weight: normal; font-style: normal; }
 	font-family: 'BMHANNAPro';
 	
 	}
+	
+
 .pull-right{
 	font-size:15px;	
 	font-family: 'Handon3gyeopsal600g';
 }	
+.table{
+	text-align:center;
+
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	font-family: 'Jeju Gothic';
+}
+
+#table td{
+		padding-left: 20px;
+		padding-right: 20px ;
+		box-sizing: content-box ;
+
+}
+
 
 #title{
 	background-color: #bdc3c7;
@@ -70,7 +89,7 @@ format('woff'); font-weight: normal; font-style: normal; }
 }
 
 a {
-	font-family: 'Handon3gyeopsal600g'; 
+	font-family: 'Jeju Gothic';
 	color: #000000;
 	text-decoration: none;
 }
@@ -155,10 +174,19 @@ a:hover {
 		color: #000000;
 	}
 	td, th{
-		font-size:15px;
+		font-size:16px;
+		padding: 0px;
+		font-family: 'Jeju Gothic';
+            
+		
+	}
+	body > div.container > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1){
+	
+	padding: 0px;
 	}
 
 }
+
 
 /* 점보트론 영역 */
 .jumbotron {
@@ -189,6 +217,7 @@ footer {
 	background-color: #44bd32;
 	border-color: #44bd32;
 	color: #ffffff;
+	font-family: 'Jeju Gothic';
 }
 
 footer .container .row .col-sm-3{
