@@ -179,7 +179,7 @@
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;최신 영상 보기
+					<span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;최신 영상 보기
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -386,7 +386,7 @@
 							<div class="panel panel-success">
 								<div class="panel-heading">
 									<h3 class="panel-title">
-										<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;<a id="modal2-title"></a>&nbsp;<span class="badge" style="background-color: red;">New</span>
+										<span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;<a id="modal2-title"></a>&nbsp;<span class="badge" style="background-color: red;">New</span>
 									</h3>
 								</div>
 								<div class="panel-body">
