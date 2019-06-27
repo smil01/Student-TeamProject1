@@ -36,7 +36,8 @@ public class CommandMapper {
 		map.put("selectService.do", new selectService());
 		map.put("deleteService.do", new deleteService());
 		map.put("modifyService.do", new modifyService());
-		map.put("updateService.do", new updateService());		
+		map.put("updateService.do", new updateService());
+
 		return map;
 	}
 }

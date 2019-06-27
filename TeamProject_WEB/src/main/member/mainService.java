@@ -15,10 +15,7 @@ public class mainService implements CommandService{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = null;
-		
-		url = "main.html";
-		return url;
+		return "main.html";
 	}
 
 	@Override
