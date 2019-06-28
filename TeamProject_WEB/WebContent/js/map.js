@@ -13,6 +13,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 
 // 주소
 var arr1 = [ 
+	"서울",
 	"홍천",
 	"합천",
 	"함양",
@@ -43,7 +44,6 @@ var arr1 = [
 	"영덕",
 	"양산시",
 	"안동",
-	"순천",
 	"순창군",
 	"속초",
 	"상주",
@@ -63,11 +63,9 @@ var arr1 = [
 	"금산",
 	"구미",
 	"광주",
-	"광양시",
 	"경주시",
 	"거창",
 	"거제",
-	"강진군",
 	"강릉"
 	];
 
@@ -81,7 +79,6 @@ var arr1 = [
 	"이천",
 	"영광군",
 	"양평",
-	"서울",
 	"서산",
 	"부안",
 
@@ -89,10 +86,13 @@ var arr1 = [
 
 	var arr3 = [
 	"제주",
-	"성산",
+	"성산일출봉",
 	"고흥",
 	"남해",
-	"서귀포"
+	"서귀포",
+	"강진군",
+	"순천",
+	"광양시"
 	];
 
 	var arr4 = [
@@ -109,8 +109,10 @@ var arr1 = [
 	"목포",
 	"보성군",
 	"완도",
-	"고창군"
+	"고창군",
+	"광주광역시"
 	]; 
+
 
 
 // 마커 배열
@@ -156,7 +158,7 @@ function createList1() {
     			var imageOption = {offset: new kakao.maps.Point(0, 50)};
     			
 		        // 마커이미지와 마커를 생성합니다
-		        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon1.png", imageSize, imageOption),    
+		        var markerImage = createMarkerImage("http://192.168.0.21:8081/img/icon1.png", imageSize, imageOption),    
 		            marker = createMarker(coords, markerImage);
 		
 		        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -189,7 +191,7 @@ function createList2() {
     			var imageOption = {offset: new kakao.maps.Point(0, 48)};
     			
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon2.png", imageSize, imageOption),    
+    	        var markerImage = createMarkerImage("http://192.168.0.21:8081/img/icon2.png", imageSize, imageOption),    
     	            marker = createMarker(coords, markerImage);
     	
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -223,7 +225,7 @@ function createList3() {
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon3.png", imageSize, imageOption),   
+    	        var markerImage = createMarkerImage("http://192.168.0.21:8081/img/icon3.png", imageSize, imageOption),   
     	            marker = createMarker(coords, markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -255,7 +257,7 @@ function createList4() {
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon4.png", imageSize, imageOption),   
+    	        var markerImage = createMarkerImage("http://192.168.0.21:8081/img/icon4.png", imageSize, imageOption),   
     	            marker = createMarker(coords, markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -287,7 +289,7 @@ function createList5() {
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon5.png", imageSize, imageOption),   
+    	        var markerImage = createMarkerImage("http://192.168.0.21:8081/img/icon5.png", imageSize, imageOption),   
     	            marker = createMarker(coords, markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
