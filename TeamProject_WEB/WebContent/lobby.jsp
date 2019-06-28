@@ -71,9 +71,8 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">애플망고</a></li>
-							<li><a href="#">파파야</a></li>
-							<li><a href="#">뭐죠</a></li>
+							<li><a href="mapService.do">지도기반분석</a></li>
+							<li><a href="#">차트기반분석</a></li>
 						</ul></li>	
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
@@ -437,7 +436,7 @@
         	<%
         	 	String check = (String)session.getAttribute("check");
         	 	if(check != null){
-        	 		%>$('div.modal').modal();<%
+        	 		%>$('div#modal').modal();<%
         	 		session.removeAttribute("check");
         	 	}
         	%>

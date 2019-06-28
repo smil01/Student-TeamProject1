@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,9 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 부트스트랩js 임포트 -->
 <script src="js/bootstrap.js"></script>
+<!-- 맵 임포트 -->
+<link rel="stylesheet" href="css/map.css">
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a"></script>
 <fmt:requestEncoding value="UTF-8"/>
 </head>
 <body>
@@ -53,27 +57,25 @@
 				<ul class="nav navbar-nav">
 					<!-- 1-2-1 첫번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li class="active main"></li>
-					<li><a href="#">스미원 소개&nbsp;</a></li>
+					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="active"><a href="#">소통광장&nbsp;</a></li>
+					<li><a href="boardService.do">소통광장&nbsp;</a></li>
 
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">작물이야기&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">복숭아</a></li>
-							<li><a href="#">사과</a></li>
-							<li><a href="#">포도</a></li>
+							<li><a href="tempManage.do">온도 관리 </a></li>
+							<li><a href="movieService.do">최신영상보기</a></li>
 						</ul></li>
 					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->	
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">애플망고</a></li>
-							<li><a href="#">파파야</a></li>
-							<li><a href="#">뭐죠</a></li>
+							<li><a href="mapService.do">지도기반분석</a></li>
+							<li><a href="#">차트기반분석</a></li>
 						</ul></li>	
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
@@ -123,51 +125,46 @@
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
-			<div class="row">
-			<div class="col-xs-12">
-				<div class="panel panel-primary">
-					<div class="panel panel-heading" >
-						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;소통광장
-							<c:if test="${sessionScope.member != null}">
-							<button type="submit" class="btn pull-right" ><a href="writeService.do" >글쓰기</a></button>
-							</c:if>
-						</h3>
-					</div>
-
-					<table class="table" id="table">
-						<thead>
-							<tr>
-							
-								<td align="left"><b>글번호</b></td>
-								<td align="left"><b>글쓴이</b></td>
-								<td><b>글제목</b></td>
-								<td align="right"><b>작성일</b></td>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="dto" items="${boardlist}">
-							<tr>
-								<td align="left"><a onclick="select('${dto.num}')">${dto.num}</a></td>
-								<td align="left"><a onclick="select('${dto.num}')">${dto.writer}</a></td>
-								<td><a onclick="select('${dto.num}')">${dto.title}</a></td>
-								<td align="right"><a onclick="select('${dto.num}')">${dto.date}</a></td>
-							</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-				</div>
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;지도기반분석
+				</h3>
 			</div>
-			
-			
+			<div class="panel-body">
+				<div id="mapwrap"> 
+				    <!-- 지도가 표시될 div -->
+				    <div id="map"></div>
+				    <!-- 지도 위에 표시될 마커 카테고리 -->
+				    <div class="category">
+				        <ul>
+				            <li id="allMenu" onclick="changeMarker('all')">
+				            	<img class="mapIcon" src="img/icon0.png" width="60px" height="40px">
+				               	 모든과일
+				            </li>
+				            <li id="coffeeMenu" onclick="changeMarker('coffee')">
+				            	<img class="mapIcon" src="img/icon1.png" width="60px" height="40px">
+				               	 블루베리
+				            </li>
+				            <li id="storeMenu" onclick="changeMarker('store')">
+				            	<img class="mapIcon" src="img/icon2.png" width="60px" height="40px">
+				               	 올리브
+				            </li>
+				            <li id="carparkMenu" onclick="changeMarker('carpark')">
+				            	<img class="mapIcon" src="img/icon3.png" width="60px" height="40px">
+				               	 패션후루츠
+				            </li>
+				        </ul>
+				    </div>
+				</div>
+				<script type="text/javascript" src="js/map.js"></script>
+			</div>
 		</div>
-
-					
-	
-		
+		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
+		<!-- 2-2 콘텐트 끝 -->
 	</div>
-
 	<!-- 2 컨테이너 div라인 끝 -->
+
 	<!-- 3 푸터라인 시작 -->
 	<footer>
 		<div class="container">
@@ -175,33 +172,27 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<h5>Copyright&copy;2019</h5>
-					<h5>오대근(DaegeunOh)</h5>
+					<h5>오대근, 이승경</h5>
+					<h5>김정우, 김수빈</h5>
+					<h5>손은진, 고영윤</h5>
 				</div>
 				<div class="col-sm-3">
-					<h4>대표자 소개</h4>
-					<p>저는 대근 부스터의 대표 오대근 입니다.&nbsp;&nbsp;스마트미디어인재개발원에서 공부를 하고 있습니다.
-						잘부탁드립니다.</p>
+					<h4>프로젝트소개</h4>
+					<h5>머신러닝기반의 아열대작물 추천 시스템입니다. 또한 작물을 키우는데 필요한 각종 정보를 제공하고 있습니다.</h5>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<h4>네비게이션</h4>
 					<div class="list-group">
-						<a href="#" class="list-group-item">소개</a> <a href="#"
-							class="list-group-item">강사진</a> <a href="#"
-							class="list-group-item">강의</a>
+						<a href="introService.do" class="list-group-item">스미원 소개</a> <a href="boardService.do"
+							class="list-group-item">소통광장</a>
 					</div>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<h4>SNS</h4>
 					<div class="list-group">
-						<a href="#" class="list-group-item">페이스북</a> <a href="#"
-							class="list-group-item">유튜브</a> <a href="#"
-							class="list-group-item">네이버TV</a>
+						<a href="https://www.smhrd.or.kr/" class="list-group-item">유튜브</a> <a href="https://www.facebook.com/smhrd0317"
+							class="list-group-item">페이스북</a>
 					</div>
-				</div>
-				<div class="col-sm-2">
-					<h4>
-						<span class="glyphicon glyphicon-ok"></span>&nbsp;by 오대근
-					</h4>
 				</div>
 			</div>
 		</div>
@@ -338,14 +329,47 @@
 			</div>
 		</div>
 	</div>
+
+		<!-- 4 모달영역 시작 -->
+		<div class="row">
+			<div class="modal" id="modal2" tabindex="-1">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-body" style="text-align: left;">
+							<!-- 판넬 -->
+							<div class="panel panel-success">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;<a id="modal2-title"></a>&nbsp;
+									</h3>
+								</div>
+								<div class="panel-body">
+										<div class="embed-responsive embed-responsive-16by9">
+											<iframe class="embed-responsive-item"
+												src="" id="modal2-video"></iframe>
+									</div>
+								</div>
+							</div>
+							<div align="center">
+								<button data-dismiss="modal" class="btn btn-success"><h3 style="margin: 0px;">닫기</h3></button>
+							</div>
+							<!-- 판넬 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
-		function select(num){
-			
-			location.href="selectService.do?num="+num;
-			
-		}
 		window.alert = function() {};
+
+		function video(title, link){
+			document.getElementById("modal2-title").innerText = title;
+			document.getElementById("modal2-video").src = link;
+
+			$('div#modal2').modal();
+		}
+
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');
 			gapi.load('auth2', function() { 
@@ -364,7 +388,7 @@
         	<%
         	 	String check = (String)session.getAttribute("check");
         	 	if(check != null){
-        	 		%>$('div.modal').modal();<%
+        	 		%>$('div#modal').modal();<%
         	 		session.removeAttribute("check");
         	 	}
         	%>
