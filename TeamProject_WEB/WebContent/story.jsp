@@ -9,15 +9,21 @@
 <html>
 <head>
 <style type="text/css">
+
+@font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') 
+format('woff'); font-weight: normal; font-style: normal; }
+
 .imgbox {
 	margin-bottom: 10px;
-	padding: 10px;
-	float: left; 
-	text-align : center;
-
+	padding: 20px;
+	float: left;
+	text-align: center;
 }
 
 .panel-body {
+	align-content: center;
+	font-family: 'Handon3gyeopsal600g';
+
 	
 }
 </style>
@@ -81,6 +87,7 @@
 						aria-expanded="false">작물이야기&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="tempManage.do">온도 관리 </a></li>
+							<li><a href="storyService.do">작물소개 </a></li>
 							<li><a href="movieService.do">최신영상보기</a></li>
 						</ul></li>
 					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->
@@ -146,7 +153,7 @@
 				<h3 class="panel-title">
 
 
-					<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;작물이야기
+					<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;작물소개
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -154,15 +161,13 @@
 
 				<div>
 					<div class="imgbox">
-
-
-						<a><img src="img/avocado.png" width="100px" height="100px"><br>아보카도</a>
-
+						<a href="avocado.jsp"><img src="img/avocado.png" width="100px" height="100px"><br>아보카도</a>
 					</div>
+
 				</div>
 
 				<div class="imgbox">
-					<a><img src="img/papaya.png" width="100px" height="100px"><br>파파야</a>
+					<a data-toggle="modal" data-target="#myModal"><img src="img/papaya.png" width="100px" height="100px"><br>파파야</a>
 				</div>
 
 				<div class="imgbox">
@@ -177,7 +182,7 @@
 
 
 				<div class="imgbox">
-					<a><img src="img/mango.png" width="100px" height="100px"><br>망고</a>
+					<a href="mango.jsp"><img src="img/mango.png" width="100px" height="100px"><br>망고</a>
 				</div>
 				<div class="imgbox">
 					<a><img src="img/artichoke.png" width="100px" height="100px"><br>아티초크</a>
@@ -445,6 +450,12 @@
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#myBtn").click(function() {
+				$("#myModal").modal();
+			});
+		});
+
 		window.alert = function() {
 		};
 

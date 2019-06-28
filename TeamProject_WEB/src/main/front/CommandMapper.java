@@ -19,6 +19,7 @@ import main.member.reLoginService;
 import main.member.reLoginService2;
 import main.menu.introService;
 import main.menu.movieService;
+import main.menu.storyService;
 import main.menu.tempManage;
 
 public class CommandMapper {
@@ -43,7 +44,7 @@ public class CommandMapper {
 		map.put("movieService.do", new movieService());
 		map.put("mapService.do", new mapService());
 		map.put("tempManage.do", new tempManage());
-
+		map.put("storyService.do", new storyService());
 		return map;
 	}
 }
