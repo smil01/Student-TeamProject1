@@ -2,7 +2,7 @@
 
 #mapwrap{position:relative;overflow:hidden;}
 .category, .category *{margin:0;padding:0;color:#000;} /* 가로유지 */
-.category {position:absolute;overflow:hidden;top:10px;left:10px;width:262px;height:70px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;} /* 전체줄 위치고정 */
+.category {position:absolute;overflow:hidden;top:10px;left:10px;width:395px;height:70px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;} /* 전체줄 위치고정 */
 .category .menu_selected {background:#FF5F4A;color:#fff;border-left:1px solid #915B2F;border-right:1px solid #915B2F;margin:0 -1px;} /* 클릭효과 */
 .category li{list-style:none;float:left;width:65px;height:70px;padding-top:5px;cursor:pointer;text-align: center;} /* 칸당 가로 유지 */
 
@@ -23,15 +23,24 @@
 	}
 	
 	.category{
-		width:200px; height:50px;
+		width:300px; height:50px;
 	}
 
 
 	.category li{
-		width:50px;height:100%;
+		width:49px;height:100%;
 		font-size: 2px;
 	}
 	.mapIcon{
 		width:95%; height: 30px;
+	}
+	
+	.btn_div{
+		margin-left: 0px;
+		float: none;
+	}
+	.btn_div2{
+		margin-left: 0px;
+		float: none;
 	}
 }

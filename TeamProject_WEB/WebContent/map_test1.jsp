@@ -13,12 +13,11 @@
 <body>
 	<div id="map" style="width: 700px; height: 800px;"></div>
 	<p>
-		<button onclick="setOverlayMapTypeId('std')">기본지도 보기</button>
-		<button onclick="setOverlayMapTypeId('traffic')">교통정보 보기</button>
-		<button onclick="setOverlayMapTypeId('roadview')">로드뷰 도로정보 보기</button>
-		<button onclick="setOverlayMapTypeId('terrain')">지형정보 보기</button>
-		<button onclick="setOverlayMapTypeId('use_district')">지적편집도
-			보기</button>
+		<button onclick="setOverlayMapTypeId('std')" class="btn btn-primary">기본지도 보기</button>
+		<button onclick="setOverlayMapTypeId('traffic')" class="btn btn-success">교통정보 보기</button>
+		<button onclick="setOverlayMapTypeId('roadview')" class="btn btn-danger">로드뷰 도로정보 보기</button>
+		<button onclick="setOverlayMapTypeId('terrain')" class="btn btn-warning">지형정보 보기</button>
+		<button onclick="setOverlayMapTypeId('use_district')" class="btn btn-info">지적편집도 보기</button>
 	</p>
 	<p id="result"></p>
 

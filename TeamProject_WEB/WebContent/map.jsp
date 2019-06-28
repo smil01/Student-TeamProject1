@@ -28,7 +28,7 @@
 <script src="js/bootstrap.js"></script>
 <!-- 맵 임포트 -->
 <link rel="stylesheet" href="css/map.css">
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a&libraries=services,clusterer,drawing"></script>
 <fmt:requestEncoding value="UTF-8"/>
 </head>
 <body>
@@ -83,9 +83,9 @@
 				
 
 				<!-- 1-2-4 네번째 검색창 시작 -->
-				<form action="#" class="navbar-form navbar-left">
+				<form class="navbar-form navbar-left">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="검색어를 입력하세요.">
+						<input type="text" class="form-control" placeholder="검색어를 입력하세요." id="search">
 					</div>
 				</form>
 				<!-- 1-2-4 네번째 검색창 끝 -->
@@ -138,24 +138,43 @@
 				    <!-- 지도 위에 표시될 마커 카테고리 -->
 				    <div class="category">
 				        <ul>
-				            <li id="allMenu" onclick="changeMarker('all')">
+				            <li id="btn0" onclick="changeMarker('0')">
 				            	<img class="mapIcon" src="img/icon0.png" width="60px" height="40px">
 				               	 모든과일
 				            </li>
-				            <li id="coffeeMenu" onclick="changeMarker('coffee')">
+				            <li id="btn1" onclick="changeMarker('1')">
 				            	<img class="mapIcon" src="img/icon1.png" width="60px" height="40px">
-				               	 블루베리
+				               	 파파야
 				            </li>
-				            <li id="storeMenu" onclick="changeMarker('store')">
+				            <li id="btn2" onclick="changeMarker('2')">
 				            	<img class="mapIcon" src="img/icon2.png" width="60px" height="40px">
 				               	 올리브
 				            </li>
-				            <li id="carparkMenu" onclick="changeMarker('carpark')">
+				            <li id="btn3" onclick="changeMarker('3')">
 				            	<img class="mapIcon" src="img/icon3.png" width="60px" height="40px">
 				               	 패션후루츠
 				            </li>
+				            <li id="btn4" onclick="changeMarker('4')">
+				            	<img class="mapIcon" src="img/icon4.png" width="60px" height="40px">
+				               	 망고
+				            </li>
+				            <li id="btn5" onclick="changeMarker('5')">
+				            	<img class="mapIcon" src="img/icon5.png" width="60px" height="40px">
+				               	 아보카도
+				            </li>
 				        </ul>
 				    </div>
+				<div style="margin-top: 5px; float: left;">
+					<button onclick="setOverlayMapTypeId('std')" class="btn btn-primary">기본지도 보기</button>
+					<button onclick="setOverlayMapTypeId('traffic')" class="btn btn-success">교통정보 보기</button>
+				</div>
+				<div class="btn_div" style="margin-top: 5px; margin-left: 5px; float: left;">
+					<button onclick="setOverlayMapTypeId('roadview')" class="btn btn-danger">로드뷰 도로정보 보기</button>
+					<button onclick="setOverlayMapTypeId('terrain')" class="btn btn-warning">지형정보 보기</button>
+				</div>
+				<div class="btn_div2" style="margin-top: 5px; margin-left: 5px; float: left;">
+					<button onclick="setOverlayMapTypeId('use_district')" class="btn btn-info">지적편집도 보기</button>
+				</div>
 				</div>
 				<script type="text/javascript" src="js/map.js"></script>
 			</div>
@@ -329,46 +348,8 @@
 			</div>
 		</div>
 	</div>
-
-		<!-- 4 모달영역 시작 -->
-		<div class="row">
-			<div class="modal" id="modal2" tabindex="-1">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-body" style="text-align: left;">
-							<!-- 판넬 -->
-							<div class="panel panel-success">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										<span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;<a id="modal2-title"></a>&nbsp;
-									</h3>
-								</div>
-								<div class="panel-body">
-										<div class="embed-responsive embed-responsive-16by9">
-											<iframe class="embed-responsive-item"
-												src="" id="modal2-video"></iframe>
-									</div>
-								</div>
-							</div>
-							<div align="center">
-								<button data-dismiss="modal" class="btn btn-success"><h3 style="margin: 0px;">닫기</h3></button>
-							</div>
-							<!-- 판넬 -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
 		window.alert = function() {};
-
-		function video(title, link){
-			document.getElementById("modal2-title").innerText = title;
-			document.getElementById("modal2-video").src = link;
-
-			$('div#modal2').modal();
-		}
 
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');
@@ -391,36 +372,7 @@
         	 		%>$('div#modal').modal();<%
         	 		session.removeAttribute("check");
         	 	}
-        	%>
-     		var jumbotron = document.getElementById('jimg');
-    		var jtext = document.getElementById('jtitle');
-    		var jurl =  document.getElementById('jurl');
-
-        	 var img_arr = new Array("news1.jpg", "news2.jpg","news3.jpg",
-        			 "news4.jpg","news5.jpg","news6.jpg","news7.jpg","news8.jpg");
-        	 var txt_arr = new Array("RPC 벼 매입자금 배정 ‘중복평가’ 논란", "해남군, 상반기 농민수당 지급 ‘가속’","“신규 농업인 영농 정착 도와요”",
-        			 "진안, 우렁이 친환경 농법 확대","익산시, 농번기 일손 지원 확대 나서","양파·마늘 등 수확시 작업비 지원","여름철 재해 대책, 농작물 피해 예방한다",
-        			 "잡지 못했니 ‘논잡초’…‘후기제초제’로 '방제'");
-        	
-        	 var jurl_arr = new Array("https://www.newsfarm.co.kr/news/articleView.html?idxno=50804",
-        							"https://www.newsfarm.co.kr/news/articleView.html?idxno=50816",
-        						    "https://www.newsfarm.co.kr/news/articleView.html?idxno=50814",
-        						    "https://www.newsfarm.co.kr/news/articleView.html?idxno=50818",
-        							"https://www.newsfarm.co.kr/news/articleView.html?idxno=50739",
-        							"http://www.nongupin.co.kr/news/articleView.html?idxno=65360",
-        							"http://www.newsfarm.co.kr/news/articleView.html?idxno=50735",
-        							"http://www.newsfarm.co.kr/news/articleView.html?idxno=50782");
-        	 
-        	 var i = 0;
-    	      setInterval(function() {
-    	    	  if(i == 8) i = 0;
-    	    	  
-    	    	  jumbotron.style.backgroundImage = "url(img/"+img_arr[i]+")";
-    	    	  jtext.innerHTML = txt_arr[i];
-    	    	  jurl.setAttribute( 'href', jurl_arr[i]); 
-    	    	  i++;
-    	      }, 3000);
-    		
+        	%>   		
     		
         	var access = "${sessionScope.member.access}";
             $('#logout').on('click', function(){
