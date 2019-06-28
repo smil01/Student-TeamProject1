@@ -9,6 +9,7 @@ import main.board.modifyService;
 import main.board.selectService;
 import main.board.updateService;
 import main.board.writeService;
+import main.main.mapService;
 import main.member.errorService;
 import main.member.lobbyService;
 import main.member.loginService;
@@ -40,6 +41,7 @@ public class CommandMapper {
 		map.put("modifyService.do", new modifyService());
 		map.put("updateService.do", new updateService());
 		map.put("movieService.do", new movieService());
+		map.put("mapService.do", new mapService());
 		map.put("tempManage.do", new tempManage());
 
 		return map;
