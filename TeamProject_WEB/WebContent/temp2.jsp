@@ -132,31 +132,102 @@
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-		
-		
-					<span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;온도 관리
+
+					<img src="img/cold.png" width="100px" height="100px">
+					<h1>온도 관리</h1>
 				</h3>
 			</div>
 			<div class="panel-body">
 				<hr style="margin-top: 12px;">
-				
+
 				<ul>
-					<a href="javascript:doDisplay();"> 온풍난방기의 그을음 청소 </a>
-						<span class="caret">
-						</span>
-						
-						<div id="div" style="display:none">
-						<h1>내용</h1>
-						</div>
-					</li>
+					<h1>
+						<a href="javascript:doDisplay1();"><img src="img/tank.PNG"
+							width="100px" height="100px">축열물주머니설치 </a> <span class="caret"></span>
+					</h1>
+
+
+					<div id="div1" style="display: none">
+
+						<p>
+						<h4>축열 물주머니는 낮 동안에 태양열을 물에 축열시켰다가 밤에 방열시켜 이용하는 기능을 말한다.축열
+							물주머니의 설치는 너비 30~4 센티미터 ,두께 0.08~0.1 밀리미터 인 투명 폴리에틸렌(PE) 튜브를 사용하여
+							작물 사이에 설치한다.축열효율은 18~20%로 상당한 수준의 태양열을 집열시킬 수 있으며 일반적으로 2~3℃의
+							기온상승 효과가 있다. 이끼가 끼어 집열효율을 떨어뜨리는 경우를 대비하여 전용 물주머니나 폴리에틸렌(PE)을 두겹으로
+							만들거나 동수화제 등을 넣어 주면 이끼발생을 억제할 수 있다.축열 물주머니는 저비용으로 효율이 높아 실용화된
+							기술이다.
+						</h4>
+						</p>
+
+					</div>
 				</ul>
 
-				<div id="list">
+				<ul>
+					<h1>
+						<a href="javascript:doDisplay2();"><img src="img/wall.png"
+							width="100px" height="100px"> 방풍벽, 단열층 설치 </a> <span
+							class="caret"></span>
+					</h1>
 
-				</div>
+
+					<div id="div2" style="display: none">
+						<p>
+						<h4>시설재배 기간 중 바람의 주방향은 북서 계절풍이므로 이 방향으로 방풍벽을 설치하면 방열억제 효과가
+							크다. 단열층의 설치는 하우스 측면과 지하층의 단열로 구분되는데 지하층 단열은 경제성이 적으므로 손쉽게 할 수 있는
+							것이 측면단열이다. 설치방법은 스티로폼이나 짚 등을 지하 50 센티미터 정도 깊이로 하우스 주변에 묻어 외부 지온을
+							차단한다.
+						</h4>
+						</p>
+					</div>
+				</ul>
+
+
+				<ul>
+					<h1>
+						<a href="javascript:doDisplay3();"><img
+							src="img/reflection.PNG" width="100px" height="100px"> 반사필름
+							설치</a> <span class="caret"></span>
+					</h1>
+
+
+					<div id="div3" style="display: none">
+						<p>
+						<h4>겨울철의 햇볕은 광량이 적고, 태양이 늦게 뜨고 일찍 지기 때문에 하우스 온도를 높이기에는 일사량이
+							부족하며 특히 흐린 날은 턱없이 부족하다. 하우스 내부에 알루미늄호일이 폴리에틸렌(PE)에 부착된 반사필름을 북쪽
+							벽이나 하부에 설치하면 산란되어 나가는 광을 이용할 수 있어서 필름의 반사율이 높은 면이 안에서 보이게 설치한다.
+							반사필름 설치는 작물에 따라 방법이 다른데 토마토와 같이 줄기가 긴 경우는 바닥에 설치하고, 딸기와 같이 줄기가 짧은
+							경우는 벤치 아래에 설치하면 더욱 효과적이다.
+						</h4>
+						</p>
+
+					</div>
+				</ul>
+
+				<ul>
+					<h1>
+						<a href="javascript:doDisplay4();"><img src="img/vhouse.PNG"
+							width="100px" height="100px"> 비닐하우스</a> <span class="caret"></span>
+					</h1>
+
+
+					<div id="div4" style="display: none">
+						<p>
+						<h4>
+							강한 바람에 대비해서 비닐하우스의 고정 끈을 튼튼히 매주고 바람이 강하게 불 때는 환기창과 출입문을 닫아준다. 비닐이
+							손상된 부위는 신속하게 보수해 바람피해 예방은 물론 열이 빠져나가지 않도록 관리한다. 폭설에 대비해 비닐 바깥의
+							보온덮개, 차광망을 걷어 두거나 비닐 덧씌우기를 실시한다. 또 보조 지지대를 설치하고 하우스 지붕 위와 하우스와
+							하우스 사이에 쌓인 눈을 수시로 제거한다.
+
+						</h4>
+						</p>
+					</div>
+				</ul>
+
+
 			</div>
-
 		</div>
+
+	</div>
 
 
 
@@ -403,13 +474,46 @@
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
-		function doDisplay(){
-		
-	    var con = document.getElementById("div");
-	    if(con.style.display=='none'){
-	        con.style.display = 'block';
+		function doDisplay1() {
 
-		} else {
+			var con = document.getElementById("div1");
+			if (con.style.display == 'none') {
+				con.style.display = 'block';
+
+			} else {
+				con.style.display = 'none';
+			}
+		}
+
+		function doDisplay2() {
+
+			var con = document.getElementById("div2");
+			if (con.style.display == 'none') {
+				con.style.display = 'block';
+
+			} else {
+				con.style.display = 'none';
+			}
+		}
+
+		function doDisplay3() {
+
+			var con = document.getElementById("div3");
+			if (con.style.display == 'none') {
+				con.style.display = 'block';
+
+			} else {
+				con.style.display = 'none';
+			}
+		}
+
+		function doDisplay4() {
+
+			var con = document.getElementById("div4");
+			if (con.style.display == 'none') {
+				con.style.display = 'block';
+
+			} else {
 				con.style.display = 'none';
 			}
 		}
@@ -447,8 +551,7 @@
 						function() {
 	<%String check = (String) session.getAttribute("check");
 			if (check != null) {%>
-		$(
-									'div.modal').modal();
+		$('div.modal').modal();
 	<%session.removeAttribute("check");
 			}%>
 		var jumbotron = document.getElementById('jimg');

@@ -18,7 +18,7 @@ public class tempManage implements CommandService {
 		
 		
 	
-		return "temp.jsp";
+		return "temp2.jsp";
 	}
 
 	@Override
