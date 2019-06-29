@@ -9,6 +9,7 @@ import main.board.modifyService;
 import main.board.selectService;
 import main.board.updateService;
 import main.board.writeService;
+import main.main.chartService;
 import main.main.mapService;
 import main.member.errorService;
 import main.member.lobbyService;
@@ -29,11 +30,12 @@ public class CommandMapper {
 		map.put("main.do", new mainService());
 		map.put("loginService.do", new loginService());
 		map.put("logoutService.do", new logoutService());
+
 		map.put("lobbyService.do", new lobbyService());
 		map.put("reLoginService.do", new reLoginService());
 		map.put("reLoginService2.do", new reLoginService2());
 		map.put("introService.do", new introService());
-		map.put("error.do", new errorService());
+
 		map.put("boardService.do", new boardService());
 		map.put("writeService.do", new writeService());
 		map.put("insertService.do", new insertService());
@@ -41,10 +43,14 @@ public class CommandMapper {
 		map.put("deleteService.do", new deleteService());
 		map.put("modifyService.do", new modifyService());
 		map.put("updateService.do", new updateService());
+
 		map.put("movieService.do", new movieService());
 		map.put("mapService.do", new mapService());
 		map.put("tempManage.do", new tempManage());
 		map.put("storyService.do", new storyService());
+		map.put("chartService.do", new chartService());
+
+		map.put("error.do", new errorService());
 		return map;
 	}
 }

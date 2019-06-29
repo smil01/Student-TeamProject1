@@ -41,9 +41,13 @@
 <!-- 부트스트랩js 임포트 -->
 <script src="js/bootstrap.js"></script>
 <!-- 맵 임포트 -->
-<link rel="stylesheet" href="css/map.css">
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a&libraries=services,clusterer,drawing"></script>
+
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
+
+<link rel="stylesheet" href="css/chart.css">
 <fmt:requestEncoding value="UTF-8" />
 </head>
 <body>
@@ -98,15 +102,6 @@
 
 
 
-				<!-- 1-2-4 네번째 검색창 시작 -->
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="검색어를 입력하세요."
-							id="search">
-					</div>
-				</form>
-				<!-- 1-2-4 네번째 검색창 끝 -->
-
 				<!-- 1-2-5 다섯번째 로그인 메뉴 시작 -->
 				<c:if test="${sessionScope.member != null}">
 					<ul class="nav navbar-nav navbar-right">
@@ -142,66 +137,45 @@
 	<!-- 1 네이게이션바 라인 끝 -->
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
-		<div class="panel panel-success">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;히든작물
-					지도로보기 <sub>과일을 클릭하면 퀵분석을 볼 수 있습니다.</sub>
+					<span class="glyphicon glyphicon-signal"></span>&nbsp;&nbsp;히든작물 차트로보기
 				</h3>
 			</div>
 			<div class="panel-body">
-				<div id="mapwrap">
-					<!-- 지도가 표시될 div -->
-					<div id="map"></div>
-					<!-- 지도 위에 표시될 마커 카테고리 -->
-					<div class="category">
-						<ul>
-							<li id="btn0" onclick="changeMarker('0')"><img
-								class="mapIcon" src="img/icon0.png" width="60px" height="40px">
-								모든과일</li>
-							<li id="btn1" onclick="changeMarker('1')"><img
-								class="mapIcon" src="img/icon1.png" width="60px" height="40px">
-								파파야</li>
-							<li id="btn2" onclick="changeMarker('2')"><img
-								class="mapIcon" src="img/icon2.png" width="60px" height="40px">
-								올리브</li>
-							<li id="btn3" onclick="changeMarker('3')"><img
-								class="mapIcon" src="img/icon3.png" width="60px" height="40px">
-								패션후루츠</li>
-							<li id="btn4" onclick="changeMarker('4')"><img
-								class="mapIcon" src="img/icon4.png" width="60px" height="40px">
-								망고</li>
-							<li id="btn5" onclick="changeMarker('5')"><img
-								class="mapIcon" src="img/icon5.png" width="60px" height="40px">
-								아보카도</li>
-						</ul>
-					</div>
-					<div style="margin-top: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('std')"
-							class="btn btn-primary">기본지도 보기</button>
-						<button onclick="setOverlayMapTypeId('traffic')"
-							class="btn btn-success">교통정보 보기</button>
-					</div>
-					<div class="btn_div"
-						style="margin-top: 5px; margin-left: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('roadview')"
-							class="btn btn-danger">로드뷰 도로정보 보기</button>
-						<button onclick="setOverlayMapTypeId('terrain')"
-							class="btn btn-warning">지형정보 보기</button>
-					</div>
-					<div class="btn_div2"
-						style="margin-top: 5px; margin-left: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('use_district')"
-							class="btn btn-info">지적편집도 보기</button>
+				<div class="row">
+					<div class="media">
+						<div class="media-left">
+							<a href="#"><img class="media-object" src="img/블루베리.png" id="title_img"></a>
+						</div>
+						<div class="media-body">
+							<select class="js-example-basic-single" name="state" id="search_box" style="width: 250px">
+							  <option></option>
+							  <option value="0">광주광역시</option>
+							  <option value="1">부산</option>
+							</select>
+							<script type="text/javascript">
+								$(document).ready(function() {
+								    $('#search_box').select2({ // 초기화
+								        placeholder: "지역을 검색하세요",
+								        allowClear: true
+								    });
+								});
+								
+								$('#search_box').change(function() {
+									console.log(this.value); // 변화했을때 감지
+								});
+								
+								//$('#search_box option[value=1]').attr('selected','selected'); // 셋팅하기
+							</script>
+							<br>그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
+							부탁드립니다.
+						</div>
 					</div>
 				</div>
-				<p id="result" style="margin-top: 5px; margin-bottom: 0px"></p>
-				<p id="result2" style="margin-bottom: 0px"></p>
-				<script type="text/javascript" src="js/map.js"></script>
 			</div>
 		</div>
-		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
-		<!-- 2-2 콘텐트 끝 -->
 	</div>
 	<!-- 2 컨테이너 div라인 끝 -->
 
@@ -402,44 +376,6 @@
 						<div align="center">
 							<button data-dismiss="modal" class="btn btn-success">
 								<h3 style="margin: 0px;">닫기</h3>
-							</button>
-						</div>
-						<!-- 판넬 -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- 4 모달영역 시작 -->
-	<div class="row">
-		<div class="modal" id="modal2" tabindex="-1">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-
-					<div class="modal-body" style="text-align: left;">
-						<!-- 판넬 -->
-						<div class="panel panel-success">
-							<div class="panel-heading">
-								<h3 class="panel-title"></h3>
-								<h5 class="panel-title" id="title2"></h5>
-							</div>
-							<div class="panel-body" id="modallist">
-									<p id="min_temp"></p>
-									<br>
-									<p id="max_temp"></p>
-									<br>
-									<p id="avg_temp"></p>
-									<br>
-									<p id="ph"></p>
-							</div>
-						</div>
-						<div align="center">
-							<a class="btn btn-warning" id="chartGo">
-								<h4 style="margin: 0px;">자세히 보기</h4>
-							</a>
-							<button data-dismiss="modal" class="btn btn-success">
-								<h4 style="margin: 0px;">닫기</h4>
 							</button>
 						</div>
 						<!-- 판넬 -->

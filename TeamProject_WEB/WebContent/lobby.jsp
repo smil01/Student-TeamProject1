@@ -72,7 +72,7 @@
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="mapService.do">지도기반분석</a></li>
-							<li><a href="#">차트기반분석</a></li>
+							<li><a href="chartService.do">차트기반분석</a></li>
 						</ul></li>	
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
