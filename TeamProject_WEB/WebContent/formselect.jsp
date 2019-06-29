@@ -63,9 +63,9 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">작물이야기&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">복숭아</a></li>
-							<li><a href="#">사과</a></li>
-							<li><a href="#">포도</a></li>
+							<li><a href="tempManage.do">온도 관리 </a></li>
+							<li><a href="storyService.do">작물소개 </a></li>
+							<li><a href="movieService.do">최신영상보기</a></li>
 						</ul></li>
 					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->	
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -124,7 +124,7 @@
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container" >
-	
+			<hr style="margin-top: 0px;">
 			<div class="row">
 			<div class="col-xs-12">
 				<div class="panel panel-primary">

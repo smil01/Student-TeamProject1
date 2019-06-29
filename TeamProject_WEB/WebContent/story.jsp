@@ -148,12 +148,13 @@ format('woff'); font-weight: normal; font-style: normal; }
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
+			<hr style="margin-top: 0px;">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
 
 
-					<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;작물소개
+					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;작물소개
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -175,7 +176,7 @@ format('woff'); font-weight: normal; font-style: normal; }
 				</div>
 
 				<div class="imgbox">
-					<a><img src="img/blueberry.png" width="100px" height="100px"><br>블루베리</a>
+					<a href="blueberry.jsp"><img src="img/blueberry.png" width="100px" height="100px"><br>블루베리</a>
 
 				</div>
 

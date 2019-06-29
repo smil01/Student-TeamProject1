@@ -9,29 +9,29 @@
 <html>
 <head>
 <style type="text/css">
-@font-face { font-family: 'BMHANNAPro'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') 
-format('woff'); font-weight: normal; font-style: normal; }
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
-@font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') 
-format('woff'); font-weight: normal; font-style: normal; }
+.jejugothic * {
+	font-family: 'Jeju Gothic', sans-serif;
+}
 
-div.panel-body > ul {
+.imgbox {
+	margin-bottom: 10px;
+	padding: 20px;
+	float: left;
 	text-align: center;
-	padding: 20px !important;
-
-	
-}
-div.panel-body > ul > a {
- font-size: 24px;
- font-family: 'BMHANNAPro';
 }
 
-#div1, #div2, #div3, #div4{
-
-margin: 20px;
-text-align: left;
-
+.panel-body h2 {
+	align-content: center;
+	font-family: 'Jeju Gothic';
+	color: #44bd32;
 }
+
+legend {
+	text-align: left;
+}
+
 
 </style>
 <meta charset="UTF-8">
@@ -154,107 +154,95 @@ text-align: left;
 	<!-- 1 네이게이션바 라인 끝 -->
 
 	<!-- 2 컨테이너 div라인 시작 -->
-	<div class="container" align="center">
-		<hr style="margin-top: 0px;">
+	<div class="container">
+			<hr style="margin-top: 0px;">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h3 class="panel-title" align="left">
+				<h3 class="panel-title">
 
-					<span><img src="img/cold.png" width="30px" height="30px">&nbsp;&nbsp;온도관리</span>
+
+					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;블루베리
 				</h3>
 			</div>
 			<div class="panel-body">
 				<hr style="margin-top: 12px;">
 
-				<ul>
+				<div>
 
-					<a href="javascript:doDisplay1();"><img src="img/tank.PNG"
-						width="50px" height="50px"> 축열물주머니설치 </a>
-					<span class="caret"></span>
+					<fieldset>
+						<legend>
+							<h2>&nbsp;&nbsp; 블루베리 재배법</h2>
+							<br>
+						</legend>
+						<p>1. 재배 적지</p>
+						<p>
+							가. 기상조건<br> 온난한 기후조건과 적당한 강수량이 요구되고, 개화기의 서리의 피해가 큰 곳이나 강한
+							바람이 많이 부는 곳은 부적합하다.<br> 나. 토양조건<br> 토심이 깊고 배수가 잘되는
+							사질양토가 적합하다.<br> <br>2. 개원
+						</p>
 
-
-
-					<div id="div1" style="display: none">
-
+						가. 적지 선정<br>
+						 기상조건 및 토양조건이 적합하고 관수가 가능한 곳<br> 
+						 나. 원지의 준비<br>
+						① 평탄화 작업 ②배수 대책 수립 ③ 유기물 시용<br> <br>
+						 3. 묘목의 준비<br>
+						가. 품종 선택<br> 
+						① 성숙의 조만성<br>  ② 과실 수량 <br> ③ 과실 품질 <br> ④ 과실수확의 난이성<br>  ⑤ 내한성 및 <br> ⑥
+						내병성을 고려하여 선택한다.<br> <br>
+						 품종 선택에 있어 우선적으로 고려해야 될 점은 내한성이다. 블루베리의 내한성은 로우부쉬가 가장 강하고, 다음이 하이부쉬이며, 래비트아이 블루베리가 가장 약한데, 같은
+						종 내에서도 품종에 따라 내한성이 다르다. 앞으로 시험재배를 하여 보아야 되겠지만, 중부지방에서는 반수고하이부쉬와
+						하이부쉬가. 남부지방에서는 하이부쉬와 남부하이부쉬가, 그리고 제주에서는 남부하이부쉬와 래비트아이 블루베리가 각각 적합할
+						것으로 생각된다.
+						<br> <br> 
+						<ul><li>lowbush blueberry : 대부분이 야생종을 재배하고
+						있으며, 현재 미국과 카나다에서 품종육성 사업이 진행되고 있다.</li>
+						<br><br><li>highbush blueberry :
+						100개 이상의 품종이 육성·보급되고 있다. 하이부쉬 블루베리의 대표품종은 bluecrop이며, 이 품종이 1990년대
+						중반까지 재배면적의 30% 정도를 차지하였고, jersey 품종도 20% 정도를 차지하였다. 주요 재배품종에는
+						blueray, bluetta, weymouth, collins, croatan, rube 등이 있으며, 비교적 최근에
+						육성된 품종으로는 elliot, patriot, spartan, duke, nelson, brigitta 등이 있다.</li>
+						<br> <br>
+						<li>half-high highbush blueberry : v. corymbosom × v. angustifolium의
+						종간교배로 만들어진 품종들로 수고(樹高)가 하이부쉬 블루베리의 절반 이하로 내한성이 강하며, 저온요구도가 크다. 이에는
+						northland, northblue, northsky, north country, st. cloud 등이 있다.</li>
+						<br> <br>
+						<li>southern highbush blueberry : 미국 남부에서 야생 v. darrowii camp를 육종 소재로
+						이용하여 육성한 잡종 품종들인데 저온요구도가 작아 남부지역과 제주도에서 재배할 수 있는 품종들이다. 이에는
+						sharpblue(표준품종), o`neal, georgiagem 등이 있다.</li>
+						<br> <br>rabbiteye
+						<li>blueberry : 20개 이상의 품종이 육성·보급되고 있다.
+						<br> tifblue가 표준품종이고,
+						climax도 많이 재배되고 있다. 주요 품종으로는 southland, woodard, brightwell,
+						premier 등이 있다. 저온요구도가 대단히 작으며, 생육이 왕성하고, 토양적응성이 넓다.</li>
+						</ul>
+						<br> <br>
 						
-						축열 물주머니는 낮 동안에 태양열을 물에 축열시켰다가 밤에 방열시켜 이용하는 기능을 말한다.<br>축열
-							물주머니의 설치는 너비 30~4 센티미터 ,두께 0.08~0.1 밀리미터 인 투명 폴리에틸렌(PE) 튜브를 사용하여
-							작물 사이에 설치한다.<br>축열효율은 18~20%로 상당한 수준의 태양열을 집열시킬 수 있으며 일반적으로 2~3℃의
-							기온상승 효과가 있다. <br>이끼가 끼어 집열효율을 떨어뜨리는 경우를 대비하여 전용 물주머니나 폴리에틸렌(PE)을 두겹으로
-							만들거나 동수화제 등을 넣어 주면 이끼발생을 억제할 수 있다.<br>축열 물주머니는 저비용으로 효율이 높아 실용화된
-							기술이다.
-						
+						나. 		묘목의 조건
 
-					</div>
-				</ul>
-
-				<ul>
-
-					<a href="javascript:doDisplay2();"><img src="img/wall.png"
-						width="50px" height="50px"> 방풍벽, 단열층 설치 </a>
-					<span class="caret"></span>
-
-
-
-					<div id="div2" style="display: none">
-						
-						시설재배 기간 중 바람의 주방향은 북서 계절풍이므로 이 방향으로 방풍벽을 설치하면 방열억제 효과가
-							크다. <br>단열층의 설치는 하우스 측면과 지하층의 단열로 구분되는데 지하층 단열은 경제성이 적으므로 손쉽게 할 수 있는
-							것이 측면단열이다.<br> 설치방법은 스티로폼이나 짚 등을 지하 50 센티미터 정도 깊이로 하우스 주변에 묻어 외부 지온을
-							차단한다.
-						
-					</div>
-				</ul>
-
-
-				<ul>
-
-					<a href="javascript:doDisplay3();"><img
-						src="img/reflection.PNG" width="50px" height="50px"> 반사필름 설치</a>
-					<span class="caret"></span>
-
-
-
-					<div id="div3" style="display: none">
-					
-						겨울철의 햇볕은 광량이 적고, 태양이 늦게 뜨고 일찍 지기 때문에 하우스 온도를 높이기에는 일사량이
-							부족하며 특히 흐린 날은 턱없이 부족하다.<br> 하우스 내부에 알루미늄호일이 폴리에틸렌(PE)에 부착된 반사필름을 북쪽
-							벽이나 하부에 설치하면 산란되어 나가는 광을 이용할 수 있어서 필름의 반사율이 높은 면이 안에서 보이게 설치한다.<br>
-							반사필름 설치는 작물에 따라 방법이 다른데 토마토와 같이 줄기가 긴 경우는 바닥에 설치하고, <br>딸기와 같이 줄기가 짧은
-							경우는 벤치 아래에 설치하면 더욱 효과적이다.
-					
-
-					</div>
-				</ul>
-
-				<ul>
-
-					<a href="javascript:doDisplay4();"><img src="img/vhouse.PNG"
-						width="50px" height="50px"> 비닐하우스</a>
-					<span class="caret"></span>
-
-
-
-					<div id="div4" style="display: none">
-						
-						강한 바람에 대비해서 비닐하우스의 고정 끈을 튼튼히 매주고 바람이 강하게 불 때는 환기창과 출입문을
-							닫아준다. <br>비닐이 손상된 부위는 신속하게 보수해 바람피해 예방은 물론 열이 빠져나가지 않도록 관리한다. <br>폭설에 대비해
-							비닐 바깥의 보온덮개, 차광망을 걷어 두거나 비닐 덧씌우기를 실시한다.<br> 또 보조 지지대를 설치하고 하우스 지붕 위와
-							하우스와 하우스 사이에 쌓인 눈을 수시로 제거한다.
-						
-					</div>
-				</ul>
-
-
+						<p>
+							① 무병묘이고, ② 폿트육묘한 2년생으로 높이가 30∼50㎝ 정도 되는 것.<br> <br> 4.
+							재식<br> 가. 재식 구덩이<br> 직경 50∼60㎝, 깊이 40㎝ 정도의 구덩이를 파고 재식함.<br>
+							나. 재식 시기<br> 가을 심기(온난한 곳)와 봄 심기(한냉한 곳)가 있다.<br> 다. 재식
+							간격<br> 1.5∼2.0m(포기 사이)×2.5∼3.0m(줄 사이)<br> <br> 5.
+							재식 후의 관리<br> 가. 유기물 멀칭<br> 우드칩 등으로 멀칭하면 토양수분 보존과 잡초발생을
+							억제할 수 있다.<br> <br> 나. 관수<br> 블루베리는 건조에 악하므로 재식 후의
+							봄가뭄의 피해를 입지 않도록 점적관수를 한다.<br> <br> 다. 잡초방제<br>
+							제초제를 쓰지 않고 수제초나 기계제초를 한다.<br> <br> 6. 시비<br> 재식
+							본수가 10a당 180주(1.8m×3.0m)이고 목표수량이 800∼1000㎏일 경우의 기비는 3월 중순경에 10a당
+							질소, 인산 및 가리를 각각 4.5㎏(성분량) 정도 시용한다.<br> <br> 가. 추비<br>추비는
+							여름과 가을에 2회 시용하는데, 여름 추비는 5월 중순 경에, 가을 추비는 8월 하순 경에 질소, 인산 및 가리를
+							각각 2.2㎏씩 시용한다.
+						</p>
+				</div>
 			</div>
+
+			</fieldset>
 		</div>
 
 	</div>
-
-
-
-
 	</div>
+	</div>
+
 	<!-- 2 컨테이너 div라인 끝 -->
 
 	<!-- 3 푸터라인 시작 -->
@@ -496,49 +484,11 @@ text-align: left;
 	</div>
 	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
-		function doDisplay1() {
-
-			var con = document.getElementById("div1");
-			if (con.style.display == 'none') {
-				con.style.display = 'block';
-
-			} else {
-				con.style.display = 'none';
-			}
-		}
-
-		function doDisplay2() {
-
-			var con = document.getElementById("div2");
-			if (con.style.display == 'none') {
-				con.style.display = 'block';
-
-			} else {
-				con.style.display = 'none';
-			}
-		}
-
-		function doDisplay3() {
-
-			var con = document.getElementById("div3");
-			if (con.style.display == 'none') {
-				con.style.display = 'block';
-
-			} else {
-				con.style.display = 'none';
-			}
-		}
-
-		function doDisplay4() {
-
-			var con = document.getElementById("div4");
-			if (con.style.display == 'none') {
-				con.style.display = 'block';
-
-			} else {
-				con.style.display = 'none';
-			}
-		}
+		$(document).ready(function() {
+			$("#myBtn").click(function() {
+				$("#myModal").modal();
+			});
+		});
 
 		window.alert = function() {
 		};
