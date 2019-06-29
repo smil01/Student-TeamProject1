@@ -17,7 +17,7 @@ function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역�
 			$('div#modal2').modal(); // 모달창 열기
 		},
 		error : function(request, status, error) { // 실패 했을때
-			console.log('통신실패 내용 : ' + error);
+			console.log('통신실패 내용1 : ' + error);
 		}
 	});
 }
