@@ -12,12 +12,16 @@ format('woff'); font-weight: normal; font-style: normal; }
 .panel-primary {
   border-color: #44bd32;
 }
-#jtitle{
+#jtitle, #modallist{
 	font-family: 'BMHANNAPro';
 	
 	}
 
-
+.modal-header{
+	
+		font-family: 'BMHANNAPro';
+	
+}
 .pull-right{
 	font-size:15px;	
 	font-family: 'Handon3gyeopsal600g';
