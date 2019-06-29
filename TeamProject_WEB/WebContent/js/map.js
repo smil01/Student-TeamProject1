@@ -9,9 +9,10 @@ function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역�
 		data : {"code" : code, "name" : name}, // 보낼 데이터
 		success : function(data) { // setModal서블릿과 통신이 성공하면 setModal이 out.print로 찍은 값이 넘어옴
 			console.log('통신성공');
-			
+
 			//자바스크립트나 제이쿼리로 modal2창 내의 태그들에 값을 넣어줘야함
 			$("#modal2-title").text("모달창 셋팅 예시");
+			$("#modal2-title2").text("모달창 셋팅 예시 부제목");
 			
 			$('div#modal2').modal(); // 모달창 열기
 		},
@@ -72,7 +73,7 @@ var arr1 = [
 	"남원",
 	"금산",
 	"구미",
-	"광주",
+	"광주광역시",
 	"경주시",
 	"거창",
 	"거제",

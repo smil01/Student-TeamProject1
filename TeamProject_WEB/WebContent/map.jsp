@@ -365,6 +365,7 @@
 								<h3 class="panel-title">
 									<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;
 									<a id="modal2-title"></a> <!-- 모달창 오기전에 ajax에서 값 셋팅한 부분 -->
+									<a id="modal2-title2"></a>
 								</h3>
 							</div>
 							<div class="panel-body">
