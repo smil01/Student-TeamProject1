@@ -122,13 +122,12 @@
 		</div>
 	</nav>
 	<!-- 1 네이게이션바 라인 끝 -->
-
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;지도기반분석
+					<span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;히든작물 지도로보기 <sub>과일을 클릭하면 분석을 볼 수 있습니다.</sub>
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -176,6 +175,8 @@
 					<button onclick="setOverlayMapTypeId('use_district')" class="btn btn-info">지적편집도 보기</button>
 				</div>
 				</div>
+				<p id="result" style="margin-top: 5px; margin-bottom: 0px"></p>
+				<p id="result2" style="margin-bottom: 0px"></p>
 				<script type="text/javascript" src="js/map.js"></script>
 			</div>
 		</div>
@@ -348,6 +349,39 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 4 모달영역 시작 -->
+	<div class="row">
+		<div class="modal" id="modal2" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1>히든작물</h1>
+					</div>
+					<div class="modal-body" style="text-align: left;">
+						<!-- 판넬 -->
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;
+									<a id="modal2-title"></a> <!-- 모달창 오기전에 ajax에서 값 셋팅한 부분 -->
+									<a id="modal2-title2"></a>
+								</h3>
+							</div>
+							<div class="panel-body">
+								
+							</div>
+						</div>
+						<div align="center">
+							<button data-dismiss="modal" class="btn btn-success"><h3 style="margin: 0px;">닫기</h3></button>
+						</div>
+						<!-- 판넬 -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<script type="text/javascript">
 		window.alert = function() {};
 

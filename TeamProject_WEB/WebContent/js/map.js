@@ -1,18 +1,30 @@
 /**
  * 
  */
+function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역번호)
+	$.ajax({
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8", // 한글깨짐을 막기위해서 헤더셋팅
+		url : "./setModal", // 통신할 호출위치
+		type : "post",
+		data : {"code" : code, "name" : name}, // 보낼 데이터
+		success : function(data) { // setModal서블릿과 통신이 성공하면 setModal이 out.print로 찍은 값이 넘어옴
+			console.log('통신성공');
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-mapOption = { 
-    center: new kakao.maps.LatLng(35.900000, 127.70000), // 지도의 중심좌표
-    level: 12 // 지도의 확대 레벨
-};
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
+			//자바스크립트나 제이쿼리로 modal2창 내의 태그들에 값을 넣어줘야함
+			$("#modal2-title").text("모달창 셋팅 예시");
+			$("#modal2-title2").text("모달창 셋팅 예시 부제목");
+			
+			$('div#modal2').modal(); // 모달창 열기
+		},
+		error : function(request, status, error) { // 실패 했을때
+			console.log('통신실패 내용 : ' + error);
+		}
+	});
+}
 
 // 주소
 var arr1 = [ 
+	"서울",
 	"홍천",
 	"합천",
 	"함양",
@@ -43,7 +55,6 @@ var arr1 = [
 	"영덕",
 	"양산시",
 	"안동",
-	"순천",
 	"순창군",
 	"속초",
 	"상주",
@@ -62,12 +73,9 @@ var arr1 = [
 	"남원",
 	"금산",
 	"구미",
-	"광주",
-	"광양시",
 	"경주시",
 	"거창",
 	"거제",
-	"강진군",
 	"강릉"
 	];
 
@@ -81,18 +89,19 @@ var arr1 = [
 	"이천",
 	"영광군",
 	"양평",
-	"서울",
 	"서산",
-	"부안",
-
+	"부안"
 	];
 
 	var arr3 = [
 	"제주",
-	"성산",
+	"성산일출봉",
 	"고흥",
 	"남해",
-	"서귀포"
+	"서귀포",
+	"강진군",
+	"순천",
+	"광양시"
 	];
 
 	var arr4 = [
@@ -100,7 +109,7 @@ var arr1 = [
 	"보령",
 	"김해시",
 	"군산",
-	]; 
+	];  
 
 	var arr5 = [
 	"진도군",
@@ -109,8 +118,18 @@ var arr1 = [
 	"목포",
 	"보성군",
 	"완도",
-	"고창군"
+	"고창군",
+	"광주광역시"
 	]; 
+	
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+	mapOption = { 
+	    center: new kakao.maps.LatLng(35.900000, 127.70000), // 지도의 중심좌표
+	    level: 12 // 지도의 확대 레벨
+	};
+
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 
 // 마커 배열
@@ -136,11 +155,19 @@ function createMarkerImage(src, imageSize, imageOption) {
 function createMarker(position, image) {
     var marker = new kakao.maps.Marker({
         position: position,
-        image: image
+        image: image,
+        clickable: true
     });
     
     return marker;  
-}   
+}
+
+//인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
 
 // 파파야
 function createList1() {
@@ -169,11 +196,15 @@ function createList1() {
 
 function setList1(map) {        
     for (var i = 0; i < list1.length; i++) {  
-    	kakao.maps.event.addListener(list1[i], 'click', function() {
-    		location.href="https://www.naver.com?test=" + i;
-		});
-    	
         list1[i].setMap(map);
+        
+        var content = '<div><h5><a onclick="setModal(1, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var infowindow = new kakao.maps.InfoWindow({
+            content: content,
+            removable : true
+        });
+        
+        kakao.maps.event.addListener(list1[i], 'click', makeOverListener(map, list1[i], infowindow));
     }        
 }
 
@@ -199,13 +230,17 @@ function createList2() {
     }
 }
 
-
 function setList2(map) {        
     for (var i = 0; i < list2.length; i++) {
-    	kakao.maps.event.addListener(list2[i], 'click', function() {
-    		location.href="https://www.naver.com?test=" + i;
-		});
         list2[i].setMap(map);
+        
+        var content = '<div><h5><a onclick="setModal(2, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var infowindow = new kakao.maps.InfoWindow({
+            content: content,
+            removable : true
+        });
+        
+        kakao.maps.event.addListener(list2[i], 'click', makeOverListener(map, list2[i], infowindow));
     }        
 }
 
@@ -236,10 +271,15 @@ function createList3() {
 
 function setList3(map) {        
     for (var i = 0; i < list3.length; i++) { 
-    	kakao.maps.event.addListener(list3[i], 'click', function() {
-    		location.href="https://www.naver.com?test=" + i;
-		});
         list3[i].setMap(map);
+        
+        var content = '<div><h5><a onclick="setModal(3, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var infowindow = new kakao.maps.InfoWindow({
+            content: content,
+            removable : true
+        });
+        
+        kakao.maps.event.addListener(list3[i], 'click', makeOverListener(map, list3[i], infowindow));
     }        
 }
 
@@ -268,10 +308,15 @@ function createList4() {
 
 function setList4(map) {        
     for (var i = 0; i < list4.length; i++) { 
-    	kakao.maps.event.addListener(list4[i], 'click', function() {
-    		location.href="https://www.naver.com?test=" + i;
-		});
         list4[i].setMap(map);
+        
+        var content = '<div><h5><a onclick="setModal(4, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var infowindow = new kakao.maps.InfoWindow({
+            content: content,
+            removable : true
+        });
+        
+        kakao.maps.event.addListener(list4[i], 'click', makeOverListener(map, list4[i], infowindow));
     }        
 }
 
@@ -300,10 +345,15 @@ function createList5() {
 
 function setList5(map) {        
     for (var i = 0; i < list5.length; i++) { 
-    	kakao.maps.event.addListener(list5[i], 'click', function() {
-    		location.href="https://www.naver.com?test=" + i;
-		});
         list5[i].setMap(map);
+        
+        var content = '<div><h5><a onclick="setModal(5, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var infowindow = new kakao.maps.InfoWindow({
+            content: content,
+            removable : true
+        });
+        
+        kakao.maps.event.addListener(list5[i], 'click', makeOverListener(map, list5[i], infowindow));
     }        
 }
 
@@ -468,4 +518,39 @@ function setOverlayMapTypeId(maptype) {
 
 	// 지도에 추가된 타입정보를 갱신합니다
 	currentTypeId = changeMaptype;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+    // 클릭한 위도, 경도 정보를 가져옵니다 
+    var latlng = mouseEvent.latLng;
+    
+    var message = '클릭한 위치 gps : ' + latlng.getLat() + ', '+ latlng.getLng();
+    
+    var resultDiv = document.getElementById('result'); 
+    resultDiv.innerHTML = message; // gps
+    
+});
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+// 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
+kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+    searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+        	var content =  result[0].address.address_name;
+
+            var resultDiv = document.getElementById('result2'); 
+            resultDiv.innerHTML = '클릭한 위치 주소 : ' + content; // 주소
+        }   
+    });
+});
+function searchDetailAddrFromCoords(coords, callback) {
+    // 좌표로 법정동 상세 주소 정보를 요청합니다
+    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+}
+function searchAddrFromCoords(coords, callback) {
+    // 좌표로 행정동 주소 정보를 요청합니다
+    geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
 }
