@@ -153,12 +153,13 @@ legend {
 
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
+			<hr style="margin-top: 0px;">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
 
 
-					<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;아보카도
+					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;아보카도
 				</h3>
 			</div>
 			<div class="panel-body">
