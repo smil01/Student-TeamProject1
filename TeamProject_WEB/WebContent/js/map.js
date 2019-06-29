@@ -9,7 +9,7 @@ function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역�
 		type : "post",
 		data : {"code" : code, "name" : name}, // 보낼 데이터
 		success : function(data) { // setModal서블릿과 통신이 성공하면 setModal이 out.print로 찍은 값이 넘어옴
-			console.log('통신성공');
+			console.log('통신성공  :' + data.crop_code);
 
 			//자바스크립트나 제이쿼리로 modal2창 내의 태그들에 값을 넣어줘야함
 			
@@ -358,7 +358,6 @@ function setList5(map) {
     	list5[i].setMap(map);
         
         var content = '<div><h5><a onclick="setModal(5, '+i+')">&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
-        console.log(content + arr5[i]);
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true

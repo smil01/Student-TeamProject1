@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+
 /**
  * Servlet implementation class setModal
  */
@@ -18,11 +21,22 @@ public class setModal extends HttpServlet {
 		String code = request.getParameter("code");
 		String name = request.getParameter("name");
 		
-		System.out.println("code : "+code);
-		System.out.println("name : "+name);
+		localLvDAO dao = localLvDAO.getDao();
+		localLvDTO dto = dao.getSelect(Integer.parseInt(code), Integer.parseInt(name));
 		
-		PrintWriter out = response.getWriter();
-		out.print("으아아아아아");
+		String result = new Gson().toJson(dto);
+		
+		
+		try {
+			response.setContentType("application/json");
+			PrintWriter out = response.getWriter();
+			out.print(result);
+	        out.flush();
+	        out.close();
+		} catch (JsonIOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
