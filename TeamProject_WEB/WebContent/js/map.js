@@ -2,6 +2,7 @@
  * 
  */
 function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역번호)
+	var content = code + "/" + name + "/";
 	$.ajax({
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8", // 한글깨짐을 막기위해서 헤더셋팅
 		url : "./setModal", // 통신할 호출위치
@@ -11,9 +12,19 @@ function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역�
 			console.log('통신성공');
 
 			//자바스크립트나 제이쿼리로 modal2창 내의 태그들에 값을 넣어줘야함
-			$("#modal2-title").text("모달창 셋팅 예시");
-			$("#modal2-title2").text("모달창 셋팅 예시 부제목");
 			
+			if(code == 1){
+				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr1[name] + '의 히든작물 파파야 퀵분석');
+			} else if(code == 2) {
+				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr2[name] + '의 히든작물 올리브 퀵분석');
+			} else if(code == 3) {
+				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr3[name] + '의 히든작물 패션후루츠 퀵분석');
+			} else if(code == 4) {
+				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr4[name] + '의 히든작물 망고 퀵분석');
+			} else if(code == 5) {
+				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr5[name] + '의 히든작물 아보카도 퀵분석');
+			}
+
 			$('div#modal2').modal(); // 모달창 열기
 		},
 		error : function(request, status, error) { // 실패 했을때
@@ -75,8 +86,7 @@ var arr1 = [
 	"구미",
 	"경주시",
 	"거창",
-	"거제",
-	"강릉"
+	"거제"
 	];
 
 	//
@@ -133,11 +143,11 @@ var arr1 = [
 
 
 // 마커 배열
-var list1 = [],
-    list2 = [],
-    list3 = [],
-    list4 = [],
-    list5 = [];
+var list1 = new Array(),
+    list2 = new Array(),
+    list3 = new Array(),
+    list4 = new Array(),
+    list5 = new Array();
 
 //마커생성
 createList1();
@@ -198,7 +208,7 @@ function setList1(map) {
     for (var i = 0; i < list1.length; i++) {  
         list1[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(1, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var content = '<div><h5><a onclick="setModal(1, '+i+')">&nbsp;&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
@@ -234,7 +244,7 @@ function setList2(map) {
     for (var i = 0; i < list2.length; i++) {
         list2[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(2, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var content = '<div><h5><a onclick="setModal(2, '+i+')">&nbsp;&nbsp;&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
@@ -273,7 +283,7 @@ function setList3(map) {
     for (var i = 0; i < list3.length; i++) { 
         list3[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(3, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var content = '<div><h5><a onclick="setModal(3, '+i+')">&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
@@ -310,7 +320,7 @@ function setList4(map) {
     for (var i = 0; i < list4.length; i++) { 
         list4[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(4, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var content = '<div><h5><a onclick="setModal(4, '+i+')">&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
@@ -345,9 +355,10 @@ function createList5() {
 
 function setList5(map) {        
     for (var i = 0; i < list5.length; i++) { 
-        list5[i].setMap(map);
+    	list5[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(5, '+i+')">히든작물 분석 보러가기</a></h5></div>';
+        var content = '<div><h5><a onclick="setModal(5, '+i+')">&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
+        console.log(content + arr5[i]);
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
