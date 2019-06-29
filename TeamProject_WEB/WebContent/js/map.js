@@ -110,6 +110,18 @@ var arr1 = [
 	"서산",
 	"부안"
 	];
+	var gps2 = [
+		new kakao.maps.LatLng(36.614097305808954, 126.65875111528176),
+		new kakao.maps.LatLng(37.76139110708618, 126.7828325507731),
+		new kakao.maps.LatLng(36.641831063060934, 127.49165946536463),
+		new kakao.maps.LatLng(36.8152299523119, 127.11404670172334),
+		new kakao.maps.LatLng(35.57312010290437, 126.85385085489979),
+		new kakao.maps.LatLng(37.27061892435014, 127.44232251853265),
+		new kakao.maps.LatLng(35.31287373178837, 126.49751329182557),
+		new kakao.maps.LatLng(37.50080717039513, 127.48891276278651),
+		new kakao.maps.LatLng(36.78791543874477, 126.44968932631754),
+		new kakao.maps.LatLng(35.73225772397123, 126.7320587048628)
+	];
 
 	var arr3 = [
 	"제주",
@@ -121,12 +133,28 @@ var arr1 = [
 	"순천",
 	"광양시"
 	];
+	var gps3 = [
+		new kakao.maps.LatLng(33.496047483105876, 126.55681404094825),
+		new kakao.maps.LatLng(33.46117469649603, 126.90843769505094),
+		new kakao.maps.LatLng(34.627965900746034, 127.27952154386965),
+		new kakao.maps.LatLng(34.84657547650191, 127.88834931187971),
+		new kakao.maps.LatLng(33.27142247049519, 126.51398825499413),
+		new kakao.maps.LatLng(34.652289152938756, 126.76437925720295),
+		new kakao.maps.LatLng(34.95326149422943, 127.48696947047753),
+		new kakao.maps.LatLng(34.945903665645204, 127.6950049825787)
+	];
 
 	var arr4 = [
 	"부산",
 	"보령",
 	"김해시",
-	"군산",
+	"군산"
+	];
+	var gps4 = [
+		new kakao.maps.LatLng(35.16342031104764, 129.09427414037023),
+		new kakao.maps.LatLng(36.33915337281735, 126.61682515236083),
+		new kakao.maps.LatLng(35.25664593753409, 128.89697993871857),
+		new kakao.maps.LatLng(35.97371809965286, 126.7002008693685)
 	];  
 
 	var arr5 = [
@@ -137,8 +165,18 @@ var arr1 = [
 	"보성군",
 	"완도",
 	"고창군",
-	"광주광역시"
+	"광주"
 	]; 
+	var gps5 = [
+		new kakao.maps.LatLng(34.46852281024099, 126.25638436237496),
+		new kakao.maps.LatLng(34.57051542838996, 126.60001242382612),
+		new kakao.maps.LatLng(34.77824214752573, 127.65688910857631),
+		new kakao.maps.LatLng(34.807402287585774, 126.404429172103),
+		new kakao.maps.LatLng(34.779415177740475, 127.07376616288316),
+		new kakao.maps.LatLng(34.34522567412016, 126.70194391091921),
+		new kakao.maps.LatLng(35.43381848343666, 126.70010094946895),
+		new kakao.maps.LatLng(35.1583655121762, 126.85424528046488)
+	];
 	
 	
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
@@ -216,7 +254,7 @@ function setList1(map) {
     for (var i = 0; i < list1.length; i++) {  
         list1[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(1, '+i+')">&nbsp;&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
+        var content = '<div><h5><a onclick="setModal(1, '+i+')">&nbsp;&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>'+arr1[i];
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
@@ -228,23 +266,16 @@ function setList1(map) {
 
 // 올리브
 function createList2() {
-    for (var i = 0; i < arr2.length; i++) {
-    	var geocoder = new kakao.maps.services.Geocoder();
-    	geocoder.addressSearch(arr2[i], function(result, status){
-    		if (status === kakao.maps.services.Status.OK) {
-    			var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-    			
+    for (var i = 0; i < arr1.length; i++) {
     			var imageSize = new kakao.maps.Size(20, 40);
     			var imageOption = {offset: new kakao.maps.Point(0, 48)};
     			
     	        // 마커이미지와 마커를 생성합니다
     	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon2.png", imageSize, imageOption),    
-    	            marker = createMarker(coords, markerImage);
+    	            marker = createMarker(gps2[i], markerImage);
     	
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
     	        list2.push(marker);
-    		}
-    	});    
     }
 }
 
@@ -266,23 +297,16 @@ function setList2(map) {
 
 // 패션후루츠
 function createList3() {
-    for (var i = 0; i < arr3.length; i++) {
-    	var geocoder = new kakao.maps.services.Geocoder();
-    	geocoder.addressSearch(arr3[i], function(result, status){
-    		if (status === kakao.maps.services.Status.OK) {
-    			var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
+    for (var i = 0; i < arr1.length; i++) {
     			var imageSize = new kakao.maps.Size(40, 60);
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
     	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon3.png", imageSize, imageOption),   
-    	            marker = createMarker(coords, markerImage);
+    	            marker = createMarker(gps3[i], markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
     	        list3.push(marker);
-    		}
-    	});   
     }
 }
 
@@ -303,23 +327,16 @@ function setList3(map) {
 
 //패션후루츠
 function createList4() {
-    for (var i = 0; i < arr4.length; i++) {
-    	var geocoder = new kakao.maps.services.Geocoder();
-    	geocoder.addressSearch(arr4[i], function(result, status){
-    		if (status === kakao.maps.services.Status.OK) {
-    			var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
+    for (var i = 0; i < arr1.length; i++) {
     			var imageSize = new kakao.maps.Size(40, 60);
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
     	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon4.png", imageSize, imageOption),   
-    	            marker = createMarker(coords, markerImage);
+    	            marker = createMarker(gps4[i], markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
     	        list4.push(marker);
-    		}
-    	});   
     }
 }
 
@@ -340,23 +357,16 @@ function setList4(map) {
 
 //패션후루츠
 function createList5() {
-    for (var i = 0; i < arr5.length; i++) {
-    	var geocoder = new kakao.maps.services.Geocoder();
-    	geocoder.addressSearch(arr5[i], function(result, status){
-    		if (status === kakao.maps.services.Status.OK) {
-    			var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
+    for (var i = 0; i < arr1.length; i++) {
     			var imageSize = new kakao.maps.Size(40, 60);
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
     	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon5.png", imageSize, imageOption),   
-    	            marker = createMarker(coords, markerImage);
+    	            marker = createMarker(gps5[i], markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
     	        list5.push(marker);
-    		}
-    	});   
     }
 }
 
