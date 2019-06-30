@@ -96,60 +96,60 @@ var arr1 = [
 	"거창",
 	"거제"
 	];
-/*var gps1 = [ 
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000),
-	new kakao.maps.LatLng(00.000000000000000, 000.00000000000000)
-	];*/
+var gps1 = [ 
+	new kakao.maps.LatLng(37.5764911645724, 126.97500429204324),
+	new kakao.maps.LatLng(37.703474187115525, 127.88721726251191),
+	new kakao.maps.LatLng(35.56806608459897, 128.16684348998552),
+	new kakao.maps.LatLng(35.52430283139828, 127.72557808851892),
+	new kakao.maps.LatLng(36.03500157307777, 129.34514750326662),
+	new kakao.maps.LatLng(34.86238622068383, 128.43383809695902),
+	new kakao.maps.LatLng(37.170153587926855, 128.98496299333527),
+	new kakao.maps.LatLng(36.99488177227658, 127.92623217196731),
+	new kakao.maps.LatLng(37.88866579523732, 127.7305122241157),
+	new kakao.maps.LatLng(36.21754878599808, 127.99812287208158),
+	new kakao.maps.LatLng(36.44886578779982, 129.05412546777904),
+	new kakao.maps.LatLng(35.252704436959256, 128.67825853917898),
+	new kakao.maps.LatLng(35.18690010710184, 128.10568465969348),
+	new kakao.maps.LatLng(37.20479696701501, 128.28433431100078),
+	new kakao.maps.LatLng(37.474869279638554, 128.7982592871364),
+	new kakao.maps.LatLng(35.81818667581734, 127.20219043097529),
+	new kakao.maps.LatLng(35.66094146871952, 127.35446298506946),
+	new kakao.maps.LatLng(35.66950171044248, 127.53546094906983),
+	new kakao.maps.LatLng(35.66557246946806, 127.34882870586267),
+	new kakao.maps.LatLng(38.1240792352791, 128.15430463811322),
+	new kakao.maps.LatLng(36.377953121690396, 128.7327350177848),
+	new kakao.maps.LatLng(35.359196227090564, 128.29387137985944),
+	new kakao.maps.LatLng(37.38304460724002, 127.97520094830826),
+	new kakao.maps.LatLng(37.0355130908028, 129.38622438426344),
+	new kakao.maps.LatLng(35.5780453998919, 129.3760835860738),
+	new kakao.maps.LatLng(37.503858003674715, 130.85968345579337),
+	new kakao.maps.LatLng(36.000053874556706, 129.00263170385944),
+	new kakao.maps.LatLng(36.8444826458986, 128.6915500174843),
+	new kakao.maps.LatLng(36.394298659627296, 129.38928721710326),
+	new kakao.maps.LatLng(35.366142476737686, 129.1107643516283),
+	new kakao.maps.LatLng(36.61196022711847, 128.8180696127509),
+	new kakao.maps.LatLng(35.402873772965364, 127.20114810162298),
+	new kakao.maps.LatLng(38.202658754925295, 128.54131548041795),
+	new kakao.maps.LatLng(36.45816331552386, 128.21479766763068),
+	new kakao.maps.LatLng(35.44548529850329, 127.9456338382955),
+	new kakao.maps.LatLng(37.768497637230034, 128.8983129959275),
+	new kakao.maps.LatLng(36.31669348133928, 126.96971108033996),
+	new kakao.maps.LatLng(36.916749643756326, 128.7965560058283),
+	new kakao.maps.LatLng(36.508279077695896, 127.7255007225786),
+	new kakao.maps.LatLng(35.50327843605027, 128.7588815786863),
+	new kakao.maps.LatLng(36.60845544489255, 128.17995472966322),
+	new kakao.maps.LatLng(37.52869806538261, 129.03410938089993),
+	new kakao.maps.LatLng(37.9325469501178, 127.04622759766029),
+	new kakao.maps.LatLng(36.35352773699409, 127.39679249339889),
+	new kakao.maps.LatLng(35.87344381833881, 128.60086385184374),
+	new kakao.maps.LatLng(37.68796725266886, 128.6971065536915),
+	new kakao.maps.LatLng(35.42771625229326, 127.41299024338772),
+	new kakao.maps.LatLng(36.12594773661892, 127.487711473157),
+	new kakao.maps.LatLng(36.13896271144829, 128.34814995205423),
+	new kakao.maps.LatLng(35.85510808193732, 129.21113691313573),
+	new kakao.maps.LatLng(35.703040730671255, 127.90659052888284),
+	new kakao.maps.LatLng(34.87062887256776, 128.6294690151787)
+	];
 
 	//
 	var arr2 = [
@@ -281,25 +281,16 @@ function makeOverListener(map, marker, infowindow) {
 
 // 파파야
 function createList1() {
-    
     for (var i = 0; i < arr1.length; i++) {
-    	
-    	var geocoder = new kakao.maps.services.Geocoder();
-    	geocoder.addressSearch(arr1[i], function(result, status){
-    		if (status === kakao.maps.services.Status.OK) {
-    			var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-    			
     			var imageSize = new kakao.maps.Size(20, 40);
     			var imageOption = {offset: new kakao.maps.Point(0, 50)};
     			
 		        // 마커이미지와 마커를 생성합니다
 		        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon1.png", imageSize, imageOption),    
-		            marker = createMarker(coords, markerImage);
+		            marker = createMarker(gps1[i], markerImage);
 		
 		        // 생성된 마커를 커피숍 마커 배열에 추가합니다
 		        list1.push(marker);
-    		}
-    	});
     }     
 }
 
@@ -308,7 +299,7 @@ function setList1(map) {
     for (var i = 0; i < list1.length; i++) {  
         list1[i].setMap(map);
         
-        var content = '<div><h5><a onclick="setModal(1, '+i+')">&nbsp;&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>'+arr1[i];
+        var content = '<div><h5><a onclick="setModal(1, '+i+')">&nbsp;&nbsp;&nbsp;퀵분석 보러가기</a></h5></div>';
         var infowindow = new kakao.maps.InfoWindow({
             content: content,
             removable : true
