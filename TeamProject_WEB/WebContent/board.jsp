@@ -26,11 +26,13 @@
 <!-- 부트스트랩js 임포트 -->
 <script src="js/bootstrap.js"></script>
 <fmt:requestEncoding value="UTF-8"/>
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
 </head>
 <body>
 	<!-- 1 네이게이션바 라인 시작 -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid" style="">
 			<!-- 1-1 헤더부분 시작 -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -41,8 +43,9 @@
 				</button>
 				<!-- 시작부터 윗부분은 사용을 위한 형식적인 의미없는 부분(아직은) -->
 
-				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 시작 --> 
-				<a class="navbar-brand" href="lobbyService.do">Tropic Trophy&nbsp;&nbsp;      </a>
+				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 시작 -->
+				<a class="navbar-brand" href="lobbyService.do">Tropic
+					Trophy&nbsp;&nbsp; </a>
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 끝 -->
 			</div>
 			<!-- 1-1 헤더부분 끝-->
@@ -53,15 +56,15 @@
 				<ul class="nav navbar-nav">
 					<!-- 1-2-1 첫번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li class="active main"></li>
-					<li><a href="#">스미원 소개&nbsp;</a></li>
+					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">소통광장&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="boardService.do">자유게시판 </a></li>
-							<li><a href="snslink.jsp">농업도 SNS </a></li>	
-								
+							<li><a href="snslink.jsp">농업도 SNS </a></li>
+
 						</ul></li>
 
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
@@ -72,53 +75,57 @@
 							<li><a href="tempManage.do">온도 관리 </a></li>
 							<li><a href="storyService.do">작물소개 </a></li>
 							<li><a href="movieService.do">최신영상보기</a></li>
+
 						</ul></li>
-					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->	
+					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="mapService.do">지도기반분석</a></li>
 							<li><a href="chartService.do">차트기반분석</a></li>
-						</ul></li>	
+						</ul></li>
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
 
-				
+
 
 				<!-- 1-2-4 네번째 검색창 시작 -->
 				<form action="#" class="navbar-form navbar-left">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="검색어를 입력하세요.">
+							<select class="js-example-basic-single" id="search_box"
+								style="width: 250px" multiple="multiple">
+							</select>
 					</div>
 				</form>
 				<!-- 1-2-4 네번째 검색창 끝 -->
 
 				<!-- 1-2-5 다섯번째 로그인 메뉴 시작 -->
 				<c:if test="${sessionScope.member != null}">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false" style="padding: 7px;"><img
-							class="img-circle" src="${sessionScope.member.src}" alt="프로필" height="36px"
-							width="36px">&nbsp;${sessionScope.member.name}<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a data-target="#modal" data-toggle="modal">계정연동</a></li>
-							<li><a id="logout">로그아웃</a></li>
-						</ul></li>
-				</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false" style="padding: 7px;"><img
+								class="img-circle" src="${sessionScope.member.src}" alt="프로필"
+								height="36px" width="36px">&nbsp;${sessionScope.member.name}<span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a data-target="#modal" data-toggle="modal">계정연동</a></li>
+								<li><a id="logout">로그아웃</a></li>
+							</ul></li>
+					</ul>
 				</c:if>
 				<c:if test="${sessionScope.member == null}">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false" style="padding: 7px;"><img
-							class="img-circle" src="img/m_img.png" alt="프로필" height="36px"
-							width="36px">&nbsp;로그인<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a id="login" href="main.do">로그인 하러가기</a></li>
-						</ul></li>
-				</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false" style="padding: 7px;"><img
+								class="img-circle" src="img/m_img.png" alt="프로필" height="36px"
+								width="36px">&nbsp;로그인<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a id="login" href="main.do">로그인 하러가기</a></li>
+							</ul></li>
+					</ul>
 				</c:if>
 				<!-- 1-2-5 다섯번째 로그인 메뉴 끝 -->
 			</div>
@@ -126,7 +133,7 @@
 		</div>
 	</nav>
 	<!-- 1 네이게이션바 라인 끝 -->
-
+	<br><br><br><br>
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
 			<hr style="margin-top: 0px;">
@@ -472,5 +479,162 @@
 
 	</script>
 <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+	<script src="https://apis.google.com/js/platform.js?onload=init" async
+		defer></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#search_box').select2({ // 초기화
+				placeholder: "지역을 검색하세요",
+				allowClear: true,
+				"language": {
+			        "noResults": function(){
+			            return "해당지역이 없습니다";
+			        }
+			    },
+			     escapeMarkup: function (markup) {
+			         return markup;
+			     }
+			});
+			
+			$('#search_box').change(function() {
+				var value = this.value;
+				var value_sub = document.getElementById("search_box").options[document.getElementById("search_box").selectedIndex].text;
+				location.href='chartService.do?locals='+value+"&name="+encodeURI(value_sub);
+			});
+		});
+		
+		var arr1 = [ 
+			"서울",
+			"홍천",
+			"합천",
+			"함양",
+			"포항",
+			"통영",
+			"태백",
+			"충주",
+			"춘천",
+			"추풍령",
+			"청송군",
+			"창원",
+			"진주", /*정우형*/
+			"제천",
+			"정선군",
+			"전주",
+			"장흥",
+			"장수",
+			"임실",
+			"인제",
+			"의성",
+			"의령군",
+			"원주",
+			"울진",
+			"울산",
+			"울릉도", /* 승경 */
+			"영천",
+			"영주",
+			"영덕",
+			"양산시",
+			"안동",
+			"순창군",
+			"속초",
+			"상주",
+			"산청",
+			"강릉",
+			"부여",
+			"봉화", /* 영윤 */
+			"보은",
+			"밀양",
+			"문경",
+			"동해",
+			"동두천",
+			"대전",
+			"대구",
+			"대관령",
+			"남원",
+			"금산",
+			"구미",
+			"경주시",
+			"거창",
+			"거제"
+			];
+	
+		var arr2 = [
+			"홍성",
+			"파주",
+			"청주",
+			"천안",
+			"정읍",
+			"이천",
+			"영광군",
+			"양평",
+			"서산",
+			"부안"
+			];
+	
+		var arr3 = [
+			"제주",
+			"성산일출봉",
+			"고흥",
+			"남해",
+			"서귀포",
+			"강진군",
+			"순천",
+			"광양시"
+			];
+	
+		var arr4 = [
+			"부산",
+			"보령",
+			"김해시",
+			"군산"
+			];
+	
+		var arr5 = [
+			"진도군",
+			"해남",
+			"여수",
+			"목포",
+			"보성군",
+			"완도",
+			"고창군",
+			"광주"
+			];
+		
+		$('#search_box').append("<option value='${param.locals}'>${param.name}</option>");
+		for(var i = 0; i < arr1.length; i++){
+			if(arr1[i] != "${param.name}"){
+				var option = $("<option value='1_"+((i<10)?"0":"")+i+"'>"+arr1[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr2.length; i++){     
+			if(arr2[i] != "${param.name}"){
+				var option = $("<option value='2_"+((i<10)?"0":"")+i+"'>"+arr2[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr3.length; i++){  
+			if(arr3[i] != "${param.name}"){
+				var option = $("<option value='3_"+((i<10)?"0":"")+i+"'>"+arr3[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr4.length; i++){      
+			if(arr4[i] != "${param.name}"){         
+				var option = $("<option value='4_"+((i<10)?"0":"")+i+"'>"+arr4[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr5.length; i++){  
+			if(arr5[i] != "${param.name}"){
+				var option = $("<option value='5_"+((i<10)?"0":"")+i+"'>"+arr5[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	</script>
 </body>
 </html>

@@ -9,29 +9,34 @@ function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역�
 		data : {"code" : code, "name" : name}, // 보낼 데이터
 		success : function(data) { // setModal서블릿과 통신이 성공하면 setModal이 out.print로 찍은 값이 넘어옴
 			//자바스크립트나 제이쿼리로 modal2창 내의 태그들에 값을 넣어줘야함
-			
+			var go_name;
 			if(code == 1){
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr1[name] + '의 히든작물 파파야 퀵분석<br>');
 				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 파파야 적합등급(최상5등급, 최하1등급)</h4>');
+				go_name = arr1[name];
 			} else if(code == 2) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr2[name] + '의 히든작물 올리브 퀵분석<br>');
 				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 올리브 적합등급(최상5등급, 최하1등급)</h4>');
+				go_name = arr2[name];
 			} else if(code == 3) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr3[name] + '의 히든작물 패션후루츠 퀵분석<br>');
 				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 패션후루츠 적합등급(최상5등급, 최하1등급)</h4>');
+				go_name = arr3[name];
 			} else if(code == 4) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr4[name] + '의 히든작물 망고 퀵분석<br>');
 				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 망고 적합등급(최상5등급, 최하1등급)</h4>');
+				go_name = arr4[name];
 			} else if(code == 5) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr5[name] + '의 히든작물 아보카도 퀵분석<br>');
 				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 아보카도 적합등급(최상5등급, 최하1등급)</h4>');
+				go_name = arr5[name];
 			}
 			
 			$("#min_temp").text('최저온도등급 : '+data.min_temp+'등급');
 			$("#max_temp").text('최고온도등급 : '+data.max_temp+'등급');
 			$("#avg_temp").text('평균온도등급 : '+data.avg_temp+'등급');
 			$("#ph").text('토양등급 : '+data.ph+'등급');
-			$("#chartGo").attr('href', 'chartService.do?crop_code='+data.crop_code+"&local_code="+data.local_code);
+			$("#chartGo").attr('href', 'chartService.do?locals='+data.crop_code+"_"+((data.local_code<10)?"0":"")+data.local_code+"&name="+encodeURI(go_name));
 
 			$('div#modal2').modal(); // 모달창 열기
 		},

@@ -61,21 +61,22 @@ public class cropDAO {
 		}
 	}
 
-	public ArrayList<cropDTO> getCropSelectAll() {
-		ArrayList<cropDTO> list = new ArrayList<cropDTO>();
+	public cropDTO getCropSelectAll(int x) {
+		cropDTO result = null;
 
 		try {
 			getCon();
 
-			String sql = "select * from crop";
+			String sql = "select * from crop where CROP_CODE = ?";
 
 			pst = conn.prepareStatement(sql);
+			pst.setInt(1, x);
 
 			rs = pst.executeQuery();
 
-			while (rs.next()) {
-				list.add(new cropDTO(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5),
-						rs.getInt(6)));
+			if (rs.next()) {
+				result = new cropDTO(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5),
+						rs.getInt(6));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -83,18 +84,19 @@ public class cropDAO {
 			close();
 		}
 
-		return list;
+		return result;
 	}
 	
-	public ArrayList<localDTO> getLocalSelectAll() {
+	public ArrayList<localDTO> getLocalSelectAll(int x) {
 		ArrayList<localDTO> list = new ArrayList<localDTO>();
 
 		try {
 			getCon();
 
-			String sql = "select * from local";
+			String sql = "select * from LOCAL where LOCAL_CODE = ? ORDER by TIME ASC";
 
 			pst = conn.prepareStatement(sql);
+			pst.setInt(1, x);
 
 			rs = pst.executeQuery();
 

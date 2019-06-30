@@ -25,8 +25,7 @@ public class setModal extends HttpServlet {
 		localLvDTO dto = dao.getSelect(Integer.parseInt(code), Integer.parseInt(name));
 		
 		String result = new Gson().toJson(dto);
-		
-		
+
 		try {
 			response.setContentType("application/json");
 			PrintWriter out = response.getWriter();

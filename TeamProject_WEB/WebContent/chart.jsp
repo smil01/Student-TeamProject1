@@ -99,8 +99,11 @@
 						</ul></li>
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
-
-
+				<form action="#" class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="검색어를 입력하세요.">
+					</div>
+				</form>
 
 				<!-- 1-2-5 다섯번째 로그인 메뉴 시작 -->
 				<c:if test="${sessionScope.member != null}">
@@ -155,24 +158,41 @@
 						</div>
 						<div class="media-body">
 							<select class="js-example-basic-single" id="search_box"
-								style="width: 250px">
-								<option></option>
+								style="width: 250px"><!--  multiple="multiple" -->
 							</select>
-							<script type="text/javascript" src="js/select2.js"></script>
 							<br>
-							<h3 id="content"></h3>
+							<h3 id="content1"></h3>
+							<h4 id="content2"></h4>
 						</div>
 					</div>
-					<div class="col-md-12" id="charts" style="">
-						<hr style="margin-bottom: 5px">
-						<h5>
-							<input type="radio" class="custom-control-input">온도 <input type="radio">강수량 <input
-								type="radio">토양
-						</h5>
-						<h5 style="margin-left: 10px">
-							<sup>L</sup>&nbsp;&nbsp;<input type="radio" class="custom-control-input">막대그래프 <input
-								type="radio">원형그래프 <input type="radio" class="custom-control-input">박스그래프
-						</h5>
+					<div class="col-md-12" id="charts">
+						<hr>
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-primary active">
+								<input type="radio" name="radio2" id="radio2_1" value="1" checked> 막대그래프
+							</label>
+<!-- 							<label class="btn btn-primary">
+								<input type="radio" name="radio2" id="radio2_2" value="2"> 원형그래프
+							</label> -->
+						</div>
+						
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-danger active">
+								<input type="radio" name="radio1" id="radio1_1" value="1" checked> 평균온도
+							</label>
+							<label class="btn btn-danger">
+								<input type="radio" name="radio1" id="radio1_2" value="2"> 최고온도
+							</label>
+							<label class="btn btn-danger">
+								<input type="radio" name="radio1" id="radio1_3" value="3"> 최저온도
+							</label>
+							<label class="btn btn-danger">
+								<input type="radio" name="radio1" id="radio1_3" value="4"> 강수량
+							</label>
+							<label class="btn btn-danger">
+								<input type="radio" name="radio1" id="radio1_3" value="5"> 토양
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -181,14 +201,12 @@
 	<!-- 2 컨테이너 div라인 끝 -->
 	<div class="container">
 	<hr style="margin-top: 0px;" >
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<div class="panel panel-primary">
-			<div class="panel-body" id="charts" >
-			 	<div id="piechart"></div>
+		<div class="panel panel-primary" id="chartDIV">
+			<div class="panel-body" id="charts">
+			 	<iframe id="chartFrame" style="width:100%;" width="98%"  frameborder="0" scrolling="no" onLoad="setIFrameHeight(this)"></iframe>
 			</div>
 		</div>
 		<script type="text/javascript">function setIFrameHeight(obj){obj.height = obj.contentWindow.document.body.scrollHeight;}</script>
-		<script type="text/javascript" src="js/chart.js"></script>
 	</div>
 	<!-- 3 푸터라인 시작 -->
 	<footer>
@@ -512,5 +530,239 @@
 	</script>
 	<script src="https://apis.google.com/js/platform.js?onload=init" async
 		defer></script>
+	<script type="text/javascript">
+	var frame_src = "/setChart";
+		$(document).ready(function() {
+			$('#search_box').select2({ // 초기화
+				placeholder: "지역을 검색하세요",
+				allowClear: true,
+				"language": {
+			        "noResults": function(){
+			            return "해당지역이 없습니다";
+			        }
+			    },
+			     escapeMarkup: function (markup) {
+			         return markup;
+			     }
+			});
+			
+			if("${param.locals}" != ""){
+				$('#search_box option[value="${param.locals}"]').attr('selected','selected');
+				setTitle("${param.locals}");
+			} else {
+				setTitle("${param.locals}");
+			}
+	
+			$('#search_box').change(function() {
+				var value = this.value;
+				setTitle(value);
+			});
+			
+	        $("input[name='radio2']").change(function() {
+	            if ($("input[name='radio2']:checked").val() == '1'){
+	            	frame_src = "/setChart";
+	            	var value = document.getElementById("search_box").value;
+					setTitle(value);
+	            }
+	            else if ($("input[name='radio2']:checked").val() == '2'){
+	            	frame_src = "/setChart";
+					var value = document.getElementById("search_box").value;
+					setTitle(value);
+	            }
+	        });
+	        
+	        $("input[name='radio1']").change(function() {
+	        	var value = document.getElementById("search_box").value;
+				setTitle(value);
+	        });
+		});
+	
+		function setTitle(value) {
+			var img = document.getElementById("title_img");
+			var content1 = document.getElementById("content1");
+			var content2 = document.getElementById("content2");
+			var value_sub = document.getElementById("search_box").options[document.getElementById("search_box").selectedIndex].text;
+			var display = document.getElementById("chartDIV");
+			var display2 = document.getElementById("charts");
+			var frame = document.getElementById("chartFrame");
+			
+			if(value.charAt(0)==""){
+				img.src = 'img/search_mark.png';
+				content1.innerHTML = "히든작물 소개";
+				content2.innerHTML = "&nbsp;지역검색이 필요합니다.";
+				display.style.display="none";
+				display2.style.display="none";
+				frame.src = "";
+			} else if(value.charAt(0)=="1"){
+				img.src = 'img/icon1.png';
+				content1.innerHTML = value_sub +"의 히든작물 소개";
+				content2.innerHTML = "&nbsp;파파야(papaya, 학명：Carica papaya)는 파파야과, 파파야속의 상록 소고목이다. 그 과일도 파파야라고 한다. 목과, 파우파우, 마망, 트리 멜론 등으로 불리기도 한다.";
+				display.style.display="";
+				display2.style.display="";
+				frame.src = frame_src+"?crop_code="+value.charAt(0)+"&local_code="+value.charAt(2)+value.charAt(3)+"&type="+$("input[name='radio1']:checked").val();
+			} else if(value.charAt(0)=="2"){
+				img.src = 'img/icon2.png';
+				content1.innerHTML = value_sub +"의 히든작물 소개";
+				content2.innerHTML = "&nbsp;물푸레나뭇과의 상록 교목. 높이 5∼10m. 잎은 긴 타원형이며 마주나고, 여름·가을에 황백색의 향기로운 꽃이 핌. 소아시아 원산으로 지중해 연안·에스파냐·이탈리아·프랑스·미국 등지에서 재배한다.";
+				display.style.display="";
+				display2.style.display="";
+				frame.src = frame_src + "?crop_code="+value.charAt(0)+"&local_code="+value.charAt(2)+value.charAt(3)+"&type="+$("input[name='radio1']:checked").val();
+			} else if(value.charAt(0)=="3"){
+				img.src = 'img/icon3.png';
+				content1.innerHTML = value_sub +"의 히든작물 소개";
+				content2.innerHTML = "&nbsp;패션후르츠는 측막태좌목 시계꽃과에 속하며 아메리카의 아열대 지역이 원산지인 열대 과일입니다. 백가지 향과 맛이 난다하여 백향과라고도 불립니다.";
+				display.style.display="";
+				display2.style.display="";
+				frame.src = frame_src + "?crop_code="+value.charAt(0)+"&local_code="+value.charAt(2)+value.charAt(3)+"&type="+$("input[name='radio1']:checked").val();
+			} else if(value.charAt(0)=="4"){
+				img.src = 'img/icon4.png';
+				content1.innerHTML = value_sub +"의 히든작물 소개";
+				content2.innerHTML = "&nbsp;열대지방에서 가장 중요하고 가장 널리 심고 있는 열매 중의 하나로 아시아 동부, 미얀마, 인도의 아삼 주가 원산지인 것으로 추정된다. ";
+				display.style.display="";
+				display2.style.display="";
+				frame.src = frame_src + "?crop_code="+value.charAt(0)+"&local_code="+value.charAt(2)+value.charAt(3)+"&type="+$("input[name='radio1']:checked").val();
+			} else if(value.charAt(0)=="5"){
+				img.src = 'img/icon5.png';
+				content1.innerHTML = value_sub +"의 히든작물 소개";
+				content2.innerHTML = "&nbsp;속명의 Persea는 이집트의 단맛을 내는 수목의 옛 그리스명에서 유래. 약 150종이 있다. 높이는 5~20m 정도 자라는 상록 활엽 교목(喬木) 또는 소교목이다";
+				display.style.display="";
+				display2.style.display="";
+				frame.src = frame_src + "?crop_code="+value.charAt(0)+"&local_code="+value.charAt(2)+value.charAt(3)+"&type="+$("input[name='radio1']:checked").val();
+			}
+		}
+	
+		var arr1 = [ 
+			"서울",
+			"홍천",
+			"합천",
+			"함양",
+			"포항",
+			"통영",
+			"태백",
+			"충주",
+			"춘천",
+			"추풍령",
+			"청송군",
+			"창원",
+			"진주", /*정우형*/
+			"제천",
+			"정선군",
+			"전주",
+			"장흥",
+			"장수",
+			"임실",
+			"인제",
+			"의성",
+			"의령군",
+			"원주",
+			"울진",
+			"울산",
+			"울릉도", /* 승경 */
+			"영천",
+			"영주",
+			"영덕",
+			"양산시",
+			"안동",
+			"순창군",
+			"속초",
+			"상주",
+			"산청",
+			"강릉",
+			"부여",
+			"봉화", /* 영윤 */
+			"보은",
+			"밀양",
+			"문경",
+			"동해",
+			"동두천",
+			"대전",
+			"대구",
+			"대관령",
+			"남원",
+			"금산",
+			"구미",
+			"경주시",
+			"거창",
+			"거제"
+			];
+	
+		var arr2 = [
+			"홍성",
+			"파주",
+			"청주",
+			"천안",
+			"정읍",
+			"이천",
+			"영광군",
+			"양평",
+			"서산",
+			"부안"
+			];
+	
+		var arr3 = [
+			"제주",
+			"성산일출봉",
+			"고흥",
+			"남해",
+			"서귀포",
+			"강진군",
+			"순천",
+			"광양시"
+			];
+	
+		var arr4 = [
+			"부산",
+			"보령",
+			"김해시",
+			"군산"
+			];
+	
+		var arr5 = [
+			"진도군",
+			"해남",
+			"여수",
+			"목포",
+			"보성군",
+			"완도",
+			"고창군",
+			"광주"
+			];
+		
+		$('#search_box').append("<option value='${param.locals}'>${param.name}</option>");
+		for(var i = 0; i < arr1.length; i++){
+			if(arr1[i] != "${param.name}"){
+				var option = $("<option value='1_"+((i<10)?"0":"")+i+"'>"+arr1[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr2.length; i++){     
+			if(arr2[i] != "${param.name}"){
+				var option = $("<option value='2_"+((i<10)?"0":"")+i+"'>"+arr2[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr3.length; i++){  
+			if(arr3[i] != "${param.name}"){
+				var option = $("<option value='3_"+((i<10)?"0":"")+i+"'>"+arr3[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr4.length; i++){      
+			if(arr4[i] != "${param.name}"){         
+				var option = $("<option value='4_"+((i<10)?"0":"")+i+"'>"+arr4[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	
+		for(var i = 0; i < arr5.length; i++){  
+			if(arr5[i] != "${param.name}"){
+				var option = $("<option value='5_"+((i<10)?"0":"")+i+"'>"+arr5[i]+"</option>");
+				$('#search_box').append(option);
+			}
+		}
+	</script>
 </body>
 </html>

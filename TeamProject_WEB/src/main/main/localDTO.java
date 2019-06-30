@@ -19,25 +19,7 @@ public class localDTO {
 		this.max_temp = max_temp;
 		this.water = water;
 		this.ph = ph;
-	}
-
-	public int getLocal_code() {
-		return local_code;
-	}
-
-	public void setLocal_code(int local_code) {
-		this.local_code = local_code;
-	}
-
-	public int getTime() {
-		return time;
-	}
-
-	public void setTime(int time) {
-		this.time = time;
-
-		String c_time = null;
-
+		
 		switch (time) {
 		case 1:
 			c_time = "17/01/01";
@@ -129,6 +111,22 @@ public class localDTO {
 		}
 
 		setC_time(c_time);
+	}
+
+	public int getLocal_code() {
+		return local_code;
+	}
+
+	public void setLocal_code(int local_code) {
+		this.local_code = local_code;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;	
 	}
 
 	public int getMin_temp() {
