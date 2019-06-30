@@ -12,19 +12,19 @@ function setModal(code, name) { // 마커가 실행되면 (과일번호, 지역�
 			
 			if(code == 1){
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr1[name] + '의 히든작물 파파야 퀵분석<br>');
-				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 파파야 적합등급(최상1등급, 최하5등급)</h4>');
+				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 파파야 적합등급(최상5등급, 최하1등급)</h4>');
 			} else if(code == 2) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr2[name] + '의 히든작물 올리브 퀵분석<br>');
-				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 올리브 적합등급(최상1등급, 최하5등급)</h4>');
+				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 올리브 적합등급(최상5등급, 최하1등급)</h4>');
 			} else if(code == 3) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr3[name] + '의 히든작물 패션후루츠 퀵분석<br>');
-				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 패션후루츠 적합등급(최상1등급, 최하5등급)</h4>');
+				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 패션후루츠 적합등급(최상5등급, 최하1등급)</h4>');
 			} else if(code == 4) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr4[name] + '의 히든작물 망고 퀵분석<br>');
-				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 망고 적합등급(최상1등급, 최하5등급)</h4>');
+				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 망고 적합등급(최상5등급, 최하1등급)</h4>');
 			} else if(code == 5) {
 				$(".panel-title").html('<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;' + arr5[name] + '의 히든작물 아보카도 퀵분석<br>');
-				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 아보카도 적합등급(최상1등급, 최하5등급)</h4>');
+				$("#title2").html('<h4 style="margin-bottom: 0px">&nbsp;&nbsp;- 아보카도 적합등급(최상5등급, 최하1등급)</h4>');
 			}
 			
 			$("#min_temp").text('최저온도등급 : '+data.min_temp+'등급');

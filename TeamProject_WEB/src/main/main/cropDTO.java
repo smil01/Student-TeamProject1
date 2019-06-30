@@ -1,20 +1,20 @@
 package main.main;
 
-public class localLvDTO {
+public class cropDTO {
 	private int crop_code;
-	private int local_code;
 	private int min_temp;
+	private int mid_temp;
 	private int max_temp;
-	private int avg_temp;
+	private int water;
 	private int ph;
 
-	public localLvDTO(int crop_code, int local_code, int min_temp, int max_temp, int avg_temp, int ph) {
+	public cropDTO(int crop_code, int min_temp, int mid_temp, int max_temp, int water, int ph) {
 		super();
 		this.crop_code = crop_code;
-		this.local_code = local_code;
 		this.min_temp = min_temp;
+		this.mid_temp = mid_temp;
 		this.max_temp = max_temp;
-		this.avg_temp = avg_temp;
+		this.water = water;
 		this.ph = ph;
 	}
 
@@ -26,20 +26,20 @@ public class localLvDTO {
 		this.crop_code = crop_code;
 	}
 
-	public int getLocal_code() {
-		return local_code;
-	}
-
-	public void setLocal_code(int local_code) {
-		this.local_code = local_code;
-	}
-
 	public int getMin_temp() {
 		return min_temp;
 	}
 
 	public void setMin_temp(int min_temp) {
 		this.min_temp = min_temp;
+	}
+
+	public int getMid_temp() {
+		return mid_temp;
+	}
+
+	public void setMid_temp(int mid_temp) {
+		this.mid_temp = mid_temp;
 	}
 
 	public int getMax_temp() {
@@ -50,12 +50,12 @@ public class localLvDTO {
 		this.max_temp = max_temp;
 	}
 
-	public int getAvg_temp() {
-		return avg_temp;
+	public int getWater() {
+		return water;
 	}
 
-	public void setAvg_temp(int avg_temp) {
-		this.avg_temp = avg_temp;
+	public void setWater(int water) {
+		this.water = water;
 	}
 
 	public int getPh() {
@@ -63,13 +63,13 @@ public class localLvDTO {
 	}
 
 	public void setPh(int ph) {
-		this.ph = 6 - ph;
+		this.ph = 6-ph;
 	}
 
 	@Override
 	public String toString() {
-		return "localLvDTO [crop_code=" + crop_code + ", local_code=" + local_code + ", min_temp=" + min_temp
-				+ ", max_temp=" + max_temp + ", avg_temp=" + avg_temp + ", ph=" + ph + "]";
+		return "cropDTO [crop_code=" + crop_code + ", min_temp=" + min_temp + ", mid_temp=" + mid_temp + ", max_temp="
+				+ max_temp + ", water=" + water + ", ph=" + ph + "]";
 	}
 
 }

@@ -181,16 +181,14 @@
 	<!-- 2 컨테이너 div라인 끝 -->
 	<div class="container">
 	<hr style="margin-top: 0px;" >
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<div class="panel panel-primary">
-
-
 			<div class="panel-body" id="charts" >
-			 
-			 
-			 <div id="piechart" style="width: 800px; height: 800px;"> </div>
-
+			 	<div id="piechart"></div>
 			</div>
 		</div>
+		<script type="text/javascript">function setIFrameHeight(obj){obj.height = obj.contentWindow.document.body.scrollHeight;}</script>
+		<script type="text/javascript" src="js/chart.js"></script>
 	</div>
 	<!-- 3 푸터라인 시작 -->
 	<footer>
@@ -514,31 +512,5 @@
 	</script>
 	<script src="https://apis.google.com/js/platform.js?onload=init" async
 		defer></script>
-		
-	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-
-        var options = {
-          title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>	
 </body>
 </html>
