@@ -4,21 +4,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-#modallist {
-	margin: 0px;
-	font-size: 24px;
-	text-align: center;
-}
-
-.modal-lg {
-	width: 450px !important
-}
-</style>
 <meta charset="UTF-8">
 <!-- 디스플레이 자동화 -->
 <meta name="viewport" content="width=device-width" , initial-scale="1">
@@ -40,10 +28,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 부트스트랩js 임포트 -->
 <script src="js/bootstrap.js"></script>
-<!-- 맵 임포트 -->
-<link rel="stylesheet" href="css/map.css">
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a&libraries=services,clusterer,drawing"></script>
 <fmt:requestEncoding value="UTF-8" />
 </head>
 <body>
@@ -73,7 +57,7 @@
 				<ul class="nav navbar-nav">
 					<!-- 1-2-1 첫번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li class="active main"></li>
-					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
+					<li><a href="#">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -99,7 +83,7 @@
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="mapService.do">지도기반분석</a></li>
-							<li><a href="#">차트기반분석</a></li>
+							<li><a href="chartService.do">차트기반분석</a></li>
 						</ul></li>
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
@@ -107,10 +91,9 @@
 
 
 				<!-- 1-2-4 네번째 검색창 시작 -->
-				<form class="navbar-form navbar-left">
+				<form action="#" class="navbar-form navbar-left">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="검색어를 입력하세요."
-							id="search">
+						<input type="text" class="form-control" placeholder="검색어를 입력하세요.">
 					</div>
 				</form>
 				<!-- 1-2-4 네번째 검색창 끝 -->
@@ -148,71 +131,61 @@
 		</div>
 	</nav>
 	<!-- 1 네이게이션바 라인 끝 -->
+
 	<!-- 2 컨테이너 div라인 시작 -->
+
 	<div class="container">
+		<hr style="margin-top: 0px;">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;히든작물
-					지도로보기 <sub>과일을 클릭하면 퀵분석을 볼 수 있습니다.</sub>
-				</h3>
-			</div>
-			<div class="panel-body">
-				<div id="mapwrap">
-					<!-- 지도가 표시될 div -->
-					<div id="map"></div>
-					<!-- 지도 위에 표시될 마커 카테고리 -->
-					<div class="category">
-						<ul>
-							<li id="btn0" onclick="changeMarker('0')"><img
-								class="mapIcon" src="img/icon0.png" width="60px" height="40px">
-								모든과일</li>
-							<li id="btn1" onclick="changeMarker('1')"><img
-								class="mapIcon" src="img/icon1.png" width="60px" height="40px">
-								파파야</li>
-							<li id="btn2" onclick="changeMarker('2')"><img
-								class="mapIcon" src="img/icon2.png" width="60px" height="40px">
-								올리브</li>
-							<li id="btn3" onclick="changeMarker('3')"><img
-								class="mapIcon" src="img/icon3.png" width="60px" height="40px">
-								패션후루츠</li>
-							<li id="btn4" onclick="changeMarker('4')"><img
-								class="mapIcon" src="img/icon4.png" width="60px" height="40px">
-								망고</li>
-							<li id="btn5" onclick="changeMarker('5')"><img
-								class="mapIcon" src="img/icon5.png" width="60px" height="40px">
-								아보카도</li>
-						</ul>
-					</div>
-					<div style="margin-top: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('std')"
-							class="btn btn-primary">기본지도 보기</button>
-						<button onclick="setOverlayMapTypeId('traffic')"
-							class="btn btn-success">교통정보 보기</button>
-					</div>
-					<div class="btn_div"
-						style="margin-top: 5px; margin-left: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('roadview')"
-							class="btn btn-danger">로드뷰 도로정보 보기</button>
-						<button onclick="setOverlayMapTypeId('terrain')"
-							class="btn btn-warning">지형정보 보기</button>
-					</div>
-					<div class="btn_div2"
-						style="margin-top: 5px; margin-left: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('use_district')"
-							class="btn btn-info">지적편집도 보기</button>
-					</div>
-				</div>
-				<p id="result" style="margin-top: 5px; margin-bottom: 0px"></p>
-				<p id="result2" style="margin-bottom: 0px"></p>
-				<script type="text/javascript" src="js/map.js"></script>
-			</div>
-		</div>
-		<!-- 두번째 라인 끝(유튜브 버튼 있는곳) -->
-		<!-- 2-2 콘텐트 끝 -->
-	</div>
-	<!-- 2 컨테이너 div라인 끝 -->
 
+
+					<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;BAND
+					가입하기
+				</h3>
+				<br>
+				<br> <a href="https://band.us/band/59010888?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D">
+				<img src="img/farm1.PNG" width="200px" height="200px"></a>&nbsp;&nbsp; 
+					<a href="https://band.us/band/70950057?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm2.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp; 
+					<a href="https://band.us/band/75489843?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm3.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp;
+					<a href="https://band.us/band/56201675?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm4.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp; 
+					<a href="https://band.us/band/63913110?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm5.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp;
+					<a href="https://band.us/band/68146241?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm6.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp; 
+					<a href="https://band.us/band/62642007?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm7.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp;
+					
+					<a href="https://band.us/band/71710186?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm8.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp;
+					
+					<a href="https://band.us/band/55046316?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm9.PNG"  width="200px" height="200px"></a>&nbsp;&nbsp;
+					
+					<a href="https://band.us/band/57201901?extra_data=%7B%22inflow_method%22%3A%22section%22%2C%22section_no%22%3A19%7D"><img
+					src="img/farm10.PNG"  width="200px" height="200px"></a>
+					
+					
+					
+
+
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+	</div>
+
+
+	<!-- 2 컨테이너 div라인 끝 -->
 	<!-- 3 푸터라인 시작 -->
 	<footer>
 		<div class="container">
@@ -418,49 +391,15 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- 4 모달영역 시작 -->
-	<div class="row">
-		<div class="modal" id="modal2" tabindex="-1">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-
-					<div class="modal-body" style="text-align: left;">
-						<!-- 판넬 -->
-						<div class="panel panel-success">
-							<div class="panel-heading">
-								<h3 class="panel-title"></h3>
-								<h5 class="panel-title" id="title2"></h5>
-							</div>
-							<div class="panel-body" id="modallist">
-									<p id="min_temp"></p>
-									<br>
-									<p id="max_temp"></p>
-									<br>
-									<p id="avg_temp"></p>
-									<br>
-									<p id="ph"></p>
-							</div>
-						</div>
-						<div align="center">
-							<a class="btn btn-warning" id="chartGo">
-								<h4 style="margin: 0px;">자세히 보기</h4>
-							</a>
-							<button data-dismiss="modal" class="btn btn-success">
-								<h4 style="margin: 0px;">닫기</h4>
-							</button>
-						</div>
-						<!-- 판넬 -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<!-- 4 모달영역 끝 -->
 	<script type="text/javascript">
+		function select(num) {
+
+			location.href = "selectService.do?num=" + num;
+
+		}
 		window.alert = function() {
 		};
-
 		function init() { // 시작하자 마자 커넥션
 			console.log('init');
 			gapi
@@ -485,10 +424,47 @@
 	<%String check = (String) session.getAttribute("check");
 			if (check != null) {%>
 		$(
-									'div#modal').modal();
+									'div.modal').modal();
 	<%session.removeAttribute("check");
 			}%>
-		var access = "${sessionScope.member.access}";
+		var jumbotron = document.getElementById('jimg');
+							var jtext = document.getElementById('jtitle');
+							var jurl = document.getElementById('jurl');
+
+							var img_arr = new Array("news1.jpg", "news2.jpg",
+									"news3.jpg", "news4.jpg", "news5.jpg",
+									"news6.jpg", "news7.jpg", "news8.jpg");
+							var txt_arr = new Array("RPC 벼 매입자금 배정 ‘중복평가’ 논란",
+									"해남군, 상반기 농민수당 지급 ‘가속’",
+									"“신규 농업인 영농 정착 도와요”", "진안, 우렁이 친환경 농법 확대",
+									"익산시, 농번기 일손 지원 확대 나서",
+									"양파·마늘 등 수확시 작업비 지원",
+									"여름철 재해 대책, 농작물 피해 예방한다",
+									"잡지 못했니 ‘논잡초’…‘후기제초제’로 '방제'");
+
+							var jurl_arr = new Array(
+									"https://www.newsfarm.co.kr/news/articleView.html?idxno=50804",
+									"https://www.newsfarm.co.kr/news/articleView.html?idxno=50816",
+									"https://www.newsfarm.co.kr/news/articleView.html?idxno=50814",
+									"https://www.newsfarm.co.kr/news/articleView.html?idxno=50818",
+									"https://www.newsfarm.co.kr/news/articleView.html?idxno=50739",
+									"http://www.nongupin.co.kr/news/articleView.html?idxno=65360",
+									"http://www.newsfarm.co.kr/news/articleView.html?idxno=50735",
+									"http://www.newsfarm.co.kr/news/articleView.html?idxno=50782");
+
+							var i = 0;
+							setInterval(function() {
+								if (i == 8)
+									i = 0;
+
+								jumbotron.style.backgroundImage = "url(img/"
+										+ img_arr[i] + ")";
+								jtext.innerHTML = txt_arr[i];
+								jurl.setAttribute('href', jurl_arr[i]);
+								i++;
+							}, 3000);
+
+							var access = "${sessionScope.member.access}";
 							$('#logout')
 									.on(
 											'click',
