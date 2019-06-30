@@ -147,31 +147,21 @@
 				<div class="row">
 					<div class="media">
 						<div class="media-left">
-							<a href="#"><img class="media-object" src="img/블루베리.png" id="title_img"></a>
+							<a href="#"><img class="media-object" src="img/search_mark.png" id="title_img"></a>
 						</div>
 						<div class="media-body">
-							<select class="js-example-basic-single" name="state" id="search_box" style="width: 250px">
+							<select class="js-example-basic-single" id="search_box" style="width: 250px">
 							  <option></option>
-							  <option value="0">광주광역시</option>
-							  <option value="1">부산</option>
 							</select>
-							<script type="text/javascript">
-								$(document).ready(function() {
-								    $('#search_box').select2({ // 초기화
-								        placeholder: "지역을 검색하세요",
-								        allowClear: true
-								    });
-								});
-								
-								$('#search_box').change(function() {
-									console.log(this.value); // 변화했을때 감지
-								});
-								
-								//$('#search_box option[value=1]').attr('selected','selected'); // 셋팅하기
-							</script>
-							<br>그냥 대충 강의하고 있기는 하지만 믿고 들을만 한 강의입니다. 유료결제 하면 대충하지 않습니다. 많은 과금
-							부탁드립니다.
+							<script type="text/javascript" src="js/select2.js"></script>
+							<br>
+							<h5>&nbsp;과일 설명이 들어갈 장소</h5>
 						</div>
+					</div>
+					<div class="col-md-12" id="charts">
+						<hr style="margin-bottom: 5px">
+						<h5><input type="radio">온도 <input type="radio">강수량 <input type="radio">토양</h5>
+						<h5 style="margin-left: 10px"><sup>L</sup>&nbsp;&nbsp;<input type="radio">막대그래프 <input type="radio">원형그래프 <input type="radio">박스그래프</h5>
 					</div>
 				</div>
 			</div>
