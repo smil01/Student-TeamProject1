@@ -181,19 +181,14 @@
 						<button onclick="setOverlayMapTypeId('std')"
 							class="btn btn-primary">기본지도 보기</button>
 						<button onclick="setOverlayMapTypeId('traffic')"
-							class="btn btn-success">교통정보 보기</button>
+							class="btn btn-success">유통 교통 정보 보기</button>
 					</div>
 					<div class="btn_div"
 						style="margin-top: 5px; margin-left: 5px; float: left;">
-						<button onclick="setOverlayMapTypeId('roadview')"
-							class="btn btn-danger">로드뷰 도로정보 보기</button>
 						<button onclick="setOverlayMapTypeId('terrain')"
 							class="btn btn-warning">지형정보 보기</button>
-					</div>
-					<div class="btn_div2"
-						style="margin-top: 5px; margin-left: 5px; float: left;">
 						<button onclick="setOverlayMapTypeId('use_district')"
-							class="btn btn-info">지적편집도 보기</button>
+							class="btn btn-info">지역정보 보기</button>
 					</div>
 				</div>
 				<p id="result" style="margin-top: 5px; margin-bottom: 0px"></p>

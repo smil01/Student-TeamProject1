@@ -33,8 +33,8 @@
 </head>
 <body>
 	<!-- 1 네이게이션바 라인 시작 -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid" style="">
 			<!-- 1-1 헤더부분 시작 -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
