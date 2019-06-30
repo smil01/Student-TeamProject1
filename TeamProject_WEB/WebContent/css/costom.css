@@ -162,7 +162,19 @@ a:hover {
 	color: white;
 }
 
+	#h2{
+	
+	margin: 0px;
+	
+	}
 @media(max-width: 767px){
+	#table td{
+		padding-left: 10px;
+		padding-right: 10px ;
+		box-sizing: content-box ;
+
+}
+	
 	.jumbotron p {
 	  font-size: 25px;
 	}

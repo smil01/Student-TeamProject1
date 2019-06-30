@@ -63,7 +63,8 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">작물이야기&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">복숭아</a></li>
+							<li><a href="tempManage.do">온도 관리 </a></li>
+							<li><a href="storyService.do">작물소개 </a></li>
 							<li><a href="movieService.do">최신영상보기</a></li>
 						</ul></li>
 					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->	
@@ -71,9 +72,8 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">애플망고</a></li>
-							<li><a href="#">파파야</a></li>
-							<li><a href="#">뭐죠</a></li>
+							<li><a href="mapService.do">지도기반분석</a></li>
+							<li><a href="chartService.do">차트기반분석</a></li>
 						</ul></li>	
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->

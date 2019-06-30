@@ -102,9 +102,8 @@ text-align: left;
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="index_dropdown_menu_1.html">애플망고</a></li>
-							<li><a href="#">파파야</a></li>
-							<li><a href="#">뭐죠</a></li>
+							<li><a href="mapService.do">지도기반분석</a></li>
+							<li><a href="chartService.do">차트기반분석</a></li>
 						</ul></li>
 				</ul>
 				<!-- 1-2-3 세번째 메뉴 끝-->
@@ -160,7 +159,7 @@ text-align: left;
 			<div class="panel-heading">
 				<h3 class="panel-title" align="left">
 
-					<span><img src="img/cold.png" width="30px" height="30px">&nbsp;&nbsp;온도관리</span>
+					<span><img src="img/cold.png" width="25px" height="25px">&nbsp;&nbsp;온도관리</span>
 				</h3>
 			</div>
 			<div class="panel-body">
