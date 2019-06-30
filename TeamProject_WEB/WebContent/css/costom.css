@@ -158,7 +158,12 @@ a:hover {
 	{ /* 브랜드 커서나 포커스 */
 	color: #bbbbbb;
 }
-
+#list{
+	
+	float: left;
+	text-align: center;
+	
+}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
 	.navbar-default .navbar-nav>.active>a:focus {
 	/* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
@@ -168,6 +173,7 @@ a:hover {
 
 .navbar-default .navbar-nav>li>a { /* 네비게이션 메뉴바 글씨색 */
 	color: white;
+	font-family: 'BMHANNAPro';
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus

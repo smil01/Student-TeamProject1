@@ -17,7 +17,7 @@
 <!-- 타이틀 아이콘 -->
 <link rel="icon" type="image/png" sizes="96x96"
 	href="assets/img/favicon.png">
-<title>스미원 - 미래창조농업부</title>
+<title>스미원 - Tropic Trophy</title>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript"
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
@@ -45,7 +45,7 @@
 				<!-- 시작부터 윗부분은 사용을 위한 형식적인 의미없는 부분(아직은) -->
 
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 시작 -->
-				<a class="navbar-brand" href="lobbyService.do">미래창조농업부&nbsp;&nbsp;
+				<a class="navbar-brand" href="lobbyService.do">Tropic Trophy&nbsp;&nbsp;
 				</a>
 				<!-- 1-1-1 네비게이션바 가장 우측 브랜드 단 끝 -->
 			</div>
@@ -63,7 +63,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">소통광장&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="boardwrite.jsp">글쓰기 </a></li>
+							<li><a href="boardService.do">자유게시판 </a></li>
 							<li><a href="snslink.jsp">농업도 SNS </a></li>
 
 						</ul></li>
@@ -121,7 +121,7 @@
 								class="img-circle" src="img/m_img.png" alt="프로필" height="36px"
 								width="36px">&nbsp;로그인<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a id="login" href="main.do">로그인하로 가기</a></li>
+								<li><a id="login" href="main.do">로그인 하러가기</a></li>
 							</ul></li>
 					</ul>
 				</c:if>
