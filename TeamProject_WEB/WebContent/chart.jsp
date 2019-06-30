@@ -137,38 +137,61 @@
 	<!-- 1 네이게이션바 라인 끝 -->
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
+	
+	<hr style="margin-top: 0px;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-signal"></span>&nbsp;&nbsp;히든작물 차트로보기
+					<span class="glyphicon glyphicon-signal"></span>&nbsp;&nbsp;히든작물
+					차트로보기
 				</h3>
 			</div>
 			<div class="panel-body">
 				<div class="row">
 					<div class="media">
 						<div class="media-left">
-							<a href="#"><img class="media-object" src="img/search_mark.png" id="title_img"></a>
+							<a href="#"><img class="media-object"
+								src="img/search_mark.png" id="title_img"></a>
 						</div>
 						<div class="media-body">
-							<select class="js-example-basic-single" id="search_box" style="width: 250px">
-							  <option></option>
+							<select class="js-example-basic-single" id="search_box"
+								style="width: 250px">
+								<option></option>
 							</select>
 							<script type="text/javascript" src="js/select2.js"></script>
 							<br>
 							<h5>&nbsp;과일 설명이 들어갈 장소</h5>
 						</div>
 					</div>
-					<div class="col-md-12" id="charts">
+					<div class="col-md-12" id="charts" style="">
 						<hr style="margin-bottom: 5px">
-						<h5><input type="radio">온도 <input type="radio">강수량 <input type="radio">토양</h5>
-						<h5 style="margin-left: 10px"><sup>L</sup>&nbsp;&nbsp;<input type="radio">막대그래프 <input type="radio">원형그래프 <input type="radio">박스그래프</h5>
+						<h5>
+							<input type="radio" class="custom-control-input">온도 <input type="radio">강수량 <input
+								type="radio">토양
+						</h5>
+						<h5 style="margin-left: 10px">
+							<sup>L</sup>&nbsp;&nbsp;<input type="radio" class="custom-control-input">막대그래프 <input
+								type="radio">원형그래프 <input type="radio" class="custom-control-input">박스그래프
+						</h5>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- 2 컨테이너 div라인 끝 -->
+	<div class="container">
+	<hr style="margin-top: 0px;" >
+		<div class="panel panel-primary">
 
+
+			<div class="panel-body" id="charts" >
+			 
+			 
+			 <div id="piechart" style="width: 800px; height: 800px;"> </div>
+
+			</div>
+		</div>
+	</div>
 	<!-- 3 푸터라인 시작 -->
 	<footer>
 		<div class="container">
@@ -402,8 +425,7 @@
 						function() {
 	<%String check = (String) session.getAttribute("check");
 			if (check != null) {%>
-		$(
-									'div#modal').modal();
+		$('div#modal').modal();
 	<%session.removeAttribute("check");
 			}%>
 		var access = "${sessionScope.member.access}";
@@ -492,5 +514,31 @@
 	</script>
 	<script src="https://apis.google.com/js/platform.js?onload=init" async
 		defer></script>
+		
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>	
 </body>
 </html>

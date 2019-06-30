@@ -31,7 +31,7 @@
 <script src="js/bootstrap.js"></script>
 <fmt:requestEncoding value="UTF-8" />
 </head>
-<body>
+<body class="body">
 	<!-- 1 네이게이션바 라인 시작 -->
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid" style="">

@@ -59,9 +59,9 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">소통광장&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="boardwrite.jsp">글쓰기 </a></li>
-							<li><a href="snslink.jsp">농업도 SNS </a></li>
-							
+							<li><a href="boardService.do">자유게시판 </a></li>
+							<li><a href="snslink.jsp">농업도 SNS </a></li>	
+								
 						</ul></li>
 
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->

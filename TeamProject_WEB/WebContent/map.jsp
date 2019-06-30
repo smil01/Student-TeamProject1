@@ -150,6 +150,7 @@
 	<!-- 1 네이게이션바 라인 끝 -->
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
+	<hr style="margin-top: 0px;">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
@@ -211,6 +212,7 @@
 	<!-- 3 푸터라인 시작 -->
 	<footer>
 		<div class="container">
+		
 			<br>
 			<div class="row">
 				<div class="col-sm-3">

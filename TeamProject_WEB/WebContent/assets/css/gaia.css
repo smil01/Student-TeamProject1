@@ -19,6 +19,11 @@
 @font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff')
  format('woff'); font-weight: normal; font-style: normal; }
  
+@font-face { font-family: 'BMHANNAPro'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') 
+format('woff'); font-weight: normal; font-style: normal; }
+ 
+@font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') 
+format('woff'); font-weight: normal; font-style: normal; }
  
 html {
   font-size: 14px;
@@ -172,11 +177,12 @@ a:hover {
 }
 
 .title-modern {
-font-family: 'BMJUA';
-  font-weight: 200;
+font-family: 'BMHANNAPro';
+font-size: 45px;
 }
 .sub-title{
-font-family: 'BMJUA';
+font-family: 'BMHANNAPro';
+font-size: 26px;
 }
 .text-gray {
   color: #777777;
@@ -2786,9 +2792,9 @@ a,
     margin: 0;
   }
   .section-header .content h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     letter-spacing: 0.07em;
-    line-height: 1.7;
+
   }
   .section-header .content h1 span {
     font-size: 1em;

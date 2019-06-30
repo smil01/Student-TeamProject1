@@ -1,94 +1,123 @@
 @charset "UTF-8";
 
 /* 전체영역 */
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
-@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); .jejugothic * { font-family: 'Jeju Gothic', sans-serif; }
-@font-face { font-family: 'BMHANNAPro'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') 
-format('woff'); font-weight: normal; font-style: normal; }
-
-@font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') 
-format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'TmonMonsori'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff'); font-weight: normal; font-style: normal; }
-.panel-primary {
-  border-color: #44bd32;
+.jejugothic * {
+	font-family: 'Jeju Gothic', sans-serif;
 }
-#jtitle, #modallist{
+
+@font-face {
 	font-family: 'BMHANNAPro';
-	
-	}
-
-.modal-header{
-	
-		font-family: 'BMHANNAPro';
-	
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
-.pull-right{
-	font-size:15px;	
-	font-family: 'Handon3gyeopsal600g';
-}	
-.table{
-	text-align:center;
 
+@font-face {
+	font-family: 'Handon3gyeopsal600g';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TmonMonsori';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.panel-primary {
+	border-color: #44bd32;
+}
+
+#jtitle, #modallist {
+	font-family: 'BMHANNAPro';
+}
+
+.body {
+	padding-top: 50px;
+}
+
+.modal-header {
+	font-family: 'BMHANNAPro';
+}
+
+.pull-right {
+	font-size: 15px;
+	font-family: 'Handon3gyeopsal600g';
+}
+
+.table {
+	text-align: center;
 	vertical-align: middle;
 	padding-left: 10px;
 	padding-right: 10px;
-	
 	font-family: 'Jeju Gothic';
 }
 
-#table td{
-		padding-left: 20px;
-		padding-right: 20px ;
-		box-sizing: content-box ;
-
+#table td {
+	padding-left: 20px;
+	padding-right: 20px;
+	box-sizing: content-box;
 }
 
-
-#title{
+#title {
 	background-color: #bdc3c7;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	padding-top:5px;
-
-	padding-bottom:5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	border-radius: 10px;
 	color: white;
-}	
-#formtext{
- 	height: 300px;
-}	
-#btnsubmit{
-	margin-left: 10px;	
 }
 
-#jurl{
+#formtext {
+	height: 300px;
+}
+
+#btnsubmit {
+	margin-left: 10px;
+}
+
+#jurl {
 	font-family: 'BMHANNAPro';
 }
-.media-heading{
+
+.media-heading {
 	font-family: 'BMHANNAPro';
 }
-.pull-right{
+
+.pull-right {
 	
 }
 
-
-#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li > a{
+#bs-example-navbar-collapse-1>ul.nav.navbar-nav.navbar-right>li>a {
 	font-family: 'BMHANNAPro';
 }
 /* 가운데 판넬 영역 */
-.panel-success > .panel-heading {
-  color: #ffffff;
-  background-color: #44bd32;
-  border-color: #44bd32;
+.panel-success>.panel-heading {
+	color: #ffffff;
+	background-color: #44bd32;
+	border-color: #44bd32;
 }
 /*강의목록 선 색깔*/
-.panel-success{
- border-color: #44bd32;
+.panel-success {
+	border-color: #44bd32;
 }
-.panel-title{
+
+.panel-title {
 	font-family: 'BMHANNAPro'
 }
-.col-md-4 h4{
+
+.col-md-4 h4 {
 	font-family: 'BMHANNAPro'
 }
 
@@ -97,11 +126,10 @@ a {
 	color: #000000;
 	text-decoration: none;
 }
-.sub-title{
-	font-size:18px;
-	
-}
 
+.sub-title {
+	font-size: 18px;
+}
 
 a:hover {
 	color: #44bd32;
@@ -110,104 +138,105 @@ a:hover {
 }
 
 /* 가운데 바 영역 */
-.panel-primary > .panel-heading{ 
+.panel-primary>.panel-heading {
 	background-color: #44bd32;
 	border-color: #44bd32;
 }
 
 /* 네비게이션바 영역 */
-.navbar-default{ /* 배경색 */
+.navbar-default { /* 배경색 */
 	background-color: #44bd32;
 	border-color: #44bd32;
 }
-
 
 .navbar-default .navbar-brand { /* 브랜드 부분 글씨색 */
 	font-family: 'BMHANNAPro';
 	color: #ffffff;
 }
 
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus{ /* 브랜드 커서나 포커스 */
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+	{ /* 브랜드 커서나 포커스 */
 	color: #bbbbbb;
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus{ /* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	/* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
 	color: white;
 	background-color: #f8b62e;
 }
 
-.navbar-default .navbar-nav > li > a{ /* 네비게이션 메뉴바 글씨색 */
+.navbar-default .navbar-nav>li>a { /* 네비게이션 메뉴바 글씨색 */
 	color: white;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus{ /* 네비게이션바 메뉴바 커서 또는 클릭상태 */
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{ /* 네비게이션바 메뉴바 커서 또는 클릭상태 */
 	color: white;
 	background-color: #f8b62e;
 }
 
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus{ /* 드랍다운 배경색 및 글씨색 */
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover,
+	.navbar-default .navbar-nav>.open>a:focus { /* 드랍다운 배경색 및 글씨색 */
 	color: #000000;
 	background-color: #f8b62e;
 	text-decoration: none;
 }
 
-.navbar-default .navbar-nav > li > a{ /* 네비게이션 기본색상 */
+.navbar-default .navbar-nav>li>a { /* 네비게이션 기본색상 */
 	color: white;
 }
 
-	#h2{
-	
+#h2 {
 	margin: 0px;
-	
-	}
-@media(max-width: 767px){
-	#table td{
-		padding-left: 10px;
-		padding-right: 10px ;
-		box-sizing: content-box ;
-
 }
+
+@media ( max-width : 767px) {
+	#table td {
+		padding-left: 10px;
+		padding-right: 10px;
+		box-sizing: content-box;
+	}
 	
+
+    #charts { 
+     max-width: 100%; 
+     max-height:100%;
+     border: none; 
+     border-bottom: 1px solid white; 
+    } 
+
+	
+
+	#sub {
+		font-size: 50%
+	}
 	.jumbotron p {
-	  font-size: 25px;
+		font-size: 25px;
 	}
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a{
-		color: #ffffff; 
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		color: #ffffff;
 	}
-	
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
 		color: #000000;
 	}
-	
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
 		color: #000000;
 	}
-	td, th{
-		font-size:16px;
+	td, th {
+		font-size: 16px;
 		padding: 0px;
 		font-family: 'Jeju Gothic';
-            
-		
 	}
-	body > div.container > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1){
-	
-	padding: 0px;
+	body>div.container>div>div>div>table>tbody>tr:nth-child(1)>td:nth-child(1)
+		{
+		padding: 0px;
 	}
-
 }
-
 
 /* 점보트론 영역 */
 .jumbotron {
 	/* 편하려구 이미지 다운 대신 링크로 넣음 */
-
 	background-size: 100% 100%;
 	text-shadow: black 0.2em 0.2em 0.2em;
 	color: white;
@@ -215,14 +244,15 @@ a:hover {
 	padding: 0px;
 }
 
-.boardbutton{
-	
+.boardbutton {
 	margin: 10px;
 }
-#boardwrite{
+
+#boardwrite {
 	font-size: 12px;
 }
-.btnsubmit{
+
+.btnsubmit {
 	text-align: right;
 	margin-top: 10px;
 	color: gray;
@@ -236,40 +266,39 @@ footer {
 	font-family: 'Jeju Gothic';
 }
 
-footer .container .row .col-sm-3{
+footer .container .row .col-sm-3 {
 	text-align: center;
 }
 
-.row .col-sm-2 h4{
+.row .col-sm-2 h4 {
 	text-align: center;
 }
 
-footer .container .row .col-sm-2 h4{
+footer .container .row .col-sm-2 h4 {
 	text-align: center;
 }
 
-.row .modal-body{
+.row .modal-body {
 	text-align: center;
 }
 
-.btn .btn-primary .btn-lg{
-	
+.btn .btn-primary .btn-lg {
 	background-color: #44bd32;
 	border-color: #44bd32;
 }
 
-.panel-img-costom{
+.panel-img-costom {
 	width: 100%;
 	height: 100%;
 	margin: 0px;
 	border-radius: 2.5px;
 }
 
-.panel-img-costom:hover{
+.panel-img-costom:hover {
 	border: 3px solid;
 }
 
-#panel-body-costom{
+#panel-body-costom {
 	padding: 7px;
 	height: 195px;
 	text-align: center;
