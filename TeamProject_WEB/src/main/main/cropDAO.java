@@ -92,7 +92,7 @@ public class cropDAO {
 		try {
 			getCon();
 
-			String sql = "select * from crop";
+			String sql = "select * from local";
 
 			pst = conn.prepareStatement(sql);
 

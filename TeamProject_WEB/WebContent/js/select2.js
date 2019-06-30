@@ -13,7 +13,29 @@ $(document).ready(function() {
 	});
 	
 	$('#search_box').change(function() {
-		console.log(this.value); // 변화했을때 감지
+		var value = this.value;
+		var img = document.getElementById("title_img");
+		var content = document.getElementById("content");
+		
+		if(value.charAt(0)==""){
+			img.src = 'img/search_mark.png';
+			content.innerHTML = "";
+		} else if(value.charAt(0)=="1"){
+			img.src = 'img/icon1.png';
+			content.innerHTML = "&nbsp;파파야(papaya, 학명：Carica papaya)는 파파야과, 파파야속의 상록 소고목이다. 그 과일도 파파야라고 한다. 목과, 파우파우, 마망, 트리 멜론 등으로 불리기도 한다.";
+		} else if(value.charAt(0)=="2"){
+			img.src = 'img/icon2.png';
+			content.innerHTML = "&nbsp;물푸레나뭇과의 상록 교목. 높이 5∼10m. 잎은 긴 타원형이며 마주나고, 여름·가을에 황백색의 향기로운 꽃이 핌. 소아시아 원산으로 지중해 연안·에스파냐·이탈리아·프랑스·미국 등지에서 재배한다.";
+		} else if(value.charAt(0)=="3"){
+			img.src = 'img/icon3.png';
+			content.innerHTML = "&nbsp;패션후르츠는 측막태좌목 시계꽃과에 속하며 아메리카의 아열대 지역이 원산지인 열대 과일입니다. 백가지 향과 맛이 난다하여 백향과라고도 불립니다.";
+		} else if(value.charAt(0)=="4"){
+			img.src = 'img/icon4.png';
+			content.innerHTML = "&nbsp;열대지방에서 가장 중요하고 가장 널리 심고 있는 열매 중의 하나로 아시아 동부, 미얀마, 인도의 아삼 주가 원산지인 것으로 추정된다. ";
+		} else if(value.charAt(0)=="5"){
+			img.src = 'img/icon5.png';
+			content.innerHTML = "&nbsp;속명의 Persea는 이집트의 단맛을 내는 수목의 옛 그리스명에서 유래. 약 150종이 있다. 높이는 5~20m 정도 자라는 상록 활엽 교목(喬木) 또는 소교목이다";
+		}
 	});
 									
 	//$('#search_box option[value=1]').attr('selected','selected'); // 셋팅하기
@@ -118,27 +140,27 @@ var arr5 = [
 	]; 
 
 for(var i = 0; i < arr1.length; i++){                
-	var option = $("<option value='1_"+i+"'>"+arr1[i]+"</option>");
+	var option = $("<option value='1_"+((i<10)?"0":"")+i+"'>"+arr1[i]+"</option>");
 	$('#search_box').append(option);
 }
 
 for(var i = 0; i < arr2.length; i++){                
-	var option = $("<option value='2_"+i+"'>"+arr2[i]+"</option>");
+	var option = $("<option value='2_"+((i<10)?"0":"")+i+"'>"+arr2[i]+"</option>");
 	$('#search_box').append(option);
 }
 
 for(var i = 0; i < arr3.length; i++){                
-	var option = $("<option value='3_"+i+"'>"+arr3[i]+"</option>");
+	var option = $("<option value='3_"+((i<10)?"0":"")+i+"'>"+arr3[i]+"</option>");
 	$('#search_box').append(option);
 }
 
 for(var i = 0; i < arr4.length; i++){                
-	var option = $("<option value='4_"+i+"'>"+arr4[i]+"</option>");
+	var option = $("<option value='4_"+((i<10)?"0":"")+i+"'>"+arr4[i]+"</option>");
 	$('#search_box').append(option);
 }
 
 for(var i = 0; i < arr5.length; i++){                
-	var option = $("<option value='5_"+i+"'>"+arr5[i]+"</option>");
+	var option = $("<option value='5_"+((i<10)?"0":"")+i+"'>"+arr5[i]+"</option>");
 	$('#search_box').append(option);
 }
 

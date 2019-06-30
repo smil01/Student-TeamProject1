@@ -160,7 +160,7 @@
 							</select>
 							<script type="text/javascript" src="js/select2.js"></script>
 							<br>
-							<h5>&nbsp;과일 설명이 들어갈 장소</h5>
+							<h3 id="content"></h3>
 						</div>
 					</div>
 					<div class="col-md-12" id="charts" style="">
