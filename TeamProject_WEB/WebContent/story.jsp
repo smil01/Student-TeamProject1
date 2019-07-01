@@ -23,9 +23,11 @@ format('woff'); font-weight: normal; font-style: normal; }
 .panel-body {
 	align-content: center;
 	font-family: 'Handon3gyeopsal600g';
-
+    margin-right: auto;
+    margin-left: auto;
 	
 }
+
 </style>
 <meta charset="UTF-8">
 <!-- 디스플레이 자동화 -->

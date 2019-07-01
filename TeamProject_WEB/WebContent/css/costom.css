@@ -7,6 +7,17 @@
 	font-family: 'Jeju Gothic', sans-serif;
 }
 
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.btn-group{
+	
+	margin: 2px;
+	
+	
+}
+.nanumgothic * {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
 @font-face {
 	font-family: 'BMHANNAPro';
 	src:
@@ -14,6 +25,19 @@
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
+}
+
+#content1 {
+	font-size: 24px;
+	font-family: 'BMHANNAPro';
+
+}
+
+#content2 {
+	font-size: 16px;
+	font-family: 'Eoe_Zno_L';
+	line-height: 1.5;
+	margin-right: 5px;
 }
 
 @font-face {
@@ -158,12 +182,12 @@ a:hover {
 	{ /* 브랜드 커서나 포커스 */
 	color: #bbbbbb;
 }
-#list{
-	
+
+#list {
 	float: left;
 	text-align: center;
-	
 }
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
 	.navbar-default .navbar-nav>.active>a:focus {
 	/* 네비게이션 메뉴중 엑티브 상태의 글씨색 및 배경 */
@@ -203,17 +227,12 @@ a:hover {
 		padding-right: 10px;
 		box-sizing: content-box;
 	}
-	
-
-    #charts { 
-     max-width: 100%; 
-     max-height:100%;
-     border: none; 
-     border-bottom: 1px solid white; 
-    } 
-
-	
-
+	#charts {
+		max-width: 100%;
+		max-height: 100%;
+		border: none;
+		border-bottom: 1px solid white;
+	}
 	#sub {
 		font-size: 50%
 	}
