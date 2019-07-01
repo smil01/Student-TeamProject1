@@ -291,7 +291,7 @@ function createList1() {
     			var imageOption = {offset: new kakao.maps.Point(0, 50)};
     			
 		        // 마커이미지와 마커를 생성합니다
-		        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon1.png", imageSize, imageOption),    
+		        var markerImage = createMarkerImage("http://goddaegeun.ml/img/icon1.png", imageSize, imageOption),    
 		            marker = createMarker(gps1[i], markerImage);
 		
 		        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -321,7 +321,7 @@ function createList2() {
     			var imageOption = {offset: new kakao.maps.Point(0, 48)};
     			
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon2.png", imageSize, imageOption),    
+    	        var markerImage = createMarkerImage("http://goddaegeun.ml/img/icon2.png", imageSize, imageOption),    
     	            marker = createMarker(gps2[i], markerImage);
     	
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -352,7 +352,7 @@ function createList3() {
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon3.png", imageSize, imageOption),   
+    	        var markerImage = createMarkerImage("http://goddaegeun.ml/img/icon3.png", imageSize, imageOption),   
     	            marker = createMarker(gps3[i], markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -382,7 +382,7 @@ function createList4() {
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon4.png", imageSize, imageOption),   
+    	        var markerImage = createMarkerImage("http://goddaegeun.ml/img/icon4.png", imageSize, imageOption),   
     	            marker = createMarker(gps4[i], markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다
@@ -412,7 +412,7 @@ function createList5() {
     			var imageOption = {offset: new kakao.maps.Point(0, 58)};
 
     	        // 마커이미지와 마커를 생성합니다
-    	        var markerImage = createMarkerImage("http://127.0.0.1:8081/img/icon5.png", imageSize, imageOption),   
+    	        var markerImage = createMarkerImage("http://goddaegeun.ml/img/icon5.png", imageSize, imageOption),   
     	            marker = createMarker(gps5[i], markerImage);
 
     	        // 생성된 마커를 커피숍 마커 배열에 추가합니다

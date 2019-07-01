@@ -29,8 +29,8 @@
         description: '#스마트미디어인재개발원 #미래창조농업부 #농사 #작물 #소통',
         imageUrl: 'https://postfiles.pstatic.net/MjAxOTA2MjVfMTQ2/MDAxNTYxNDI5NzgwNjY4.ilRtUxHn_jD5iO-S1StQNHTg6WgQ4svALnYie3bLYu8g.K3B67yyAJGGkdssCJxwIMSE-hQsBdDZ2NbIjmWEAPXog.PNG.odd01/m_img.png?type=w773',
         link: {
-          mobileWebUrl: 'http://192.168.0.20:8081/main.do',
-          webUrl: 'http://192.168.0.20:8081/main.do'
+          mobileWebUrl: 'http://goddaegeun.ml/main.do',
+          webUrl: 'http://goddaegeun.ml/main.do'
         }
       },
       social: {
@@ -42,15 +42,15 @@
         {
           title: '웹으로 보기',
           link: {
-            mobileWebUrl: 'http://192.168.0.20:8081/main.do',
-            webUrl: 'http://192.168.0.20:8081/main.do'
+            mobileWebUrl: 'http://goddaegeun.ml/main.do',
+            webUrl: 'http://goddaegeun.ml/main.do'
           }
         },
         {
           title: '앱으로 보기',
           link: {
-            mobileWebUrl: 'http://192.168.0.20:8081/main.do',
-            webUrl: 'http://192.168.0.20:8081/main.do'
+            mobileWebUrl: 'http://goddaegeun.ml/main.do',
+            webUrl: 'http://goddaegeun.ml/main.do'
           }
         }
       ]

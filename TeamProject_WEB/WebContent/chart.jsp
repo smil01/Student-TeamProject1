@@ -490,10 +490,10 @@
 						});
 
 		var naver_id_login = new naver_id_login("XsWuw1QRFltibzeqedSC",
-				"http://192.168.0.20:8081/CALLBACK2.html");
+				"http://goddaegeun.ml/CALLBACK2.html");
 		var state = naver_id_login.getUniqState();
 		naver_id_login.setButton("green", 3, 48);
-		naver_id_login.setDomain("http://192.168.0.20:8081");
+		naver_id_login.setDomain("http://goddaegeun.ml");
 		naver_id_login.setState(state);
 		naver_id_login.setPopup();
 		naver_id_login.init_naver_id_login();
