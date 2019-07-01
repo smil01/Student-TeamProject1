@@ -58,7 +58,7 @@
 					<li class="active main"></li>
 					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown  active" ><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">소통광장&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">

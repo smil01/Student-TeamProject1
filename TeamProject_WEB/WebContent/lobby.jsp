@@ -62,11 +62,11 @@
 					<li class="active main"></li>
 					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown" ><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">소통광장&nbsp;<span class="caret"></span></a>
+						aria-expanded="false">소통광장&nbsp;<span class="caret" ></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="boardService.do">자유게시판 </a></li>
+							<li><a href="boardService.do" >자유게시판 </a></li>
 							<li><a href="snslink.jsp">농업도 SNS </a></li>
 
 						</ul></li>
@@ -139,7 +139,7 @@
 	<!-- 1 네이게이션바 라인 끝 -->
 
 	<!-- 2 컨테이너 div라인 시작 -->
-	<div class="container">
+	<div class="container" id="container">
 		<!-- 2-1 점보트론 div라인 시작 -->
 		<div class="jumbotron" id='jimg'>
 

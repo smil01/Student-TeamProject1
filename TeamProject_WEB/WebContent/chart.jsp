@@ -97,7 +97,7 @@
 							<li><a href="movieService.do">최신영상보기</a></li>
 						</ul></li>
 					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown  active"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">

@@ -77,7 +77,7 @@
 					<li class="active main"></li>
 					<li><a href="introService.do">스미원 소개&nbsp;</a></li>
 					<!-- 1-2-2 두번째 메뉴 (active는 현재 선택이 되어있는 효과를 줌) -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown" ><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">소통광장&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -97,9 +97,9 @@
 
 						</ul></li>
 					<!-- 1-2-3-4 네번째 메뉴 (드랍다운 리스트 시작) 시작 -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown  active" ><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">히든작물&nbsp;<span class="caret"></span></a>
+						aria-expanded="false" >히든작물&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="mapService.do">지도기반분석</a></li>
 							<li><a href="chartService.do">차트기반분석</a></li>
@@ -155,6 +155,7 @@
 	<br><br>
 	<!-- 2 컨테이너 div라인 시작 -->
 	<div class="container">
+	
 	<hr style="margin-top: 0px;">
 		<div class="panel panel-success">
 			<div class="panel-heading">

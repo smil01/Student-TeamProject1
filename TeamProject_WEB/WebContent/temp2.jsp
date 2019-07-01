@@ -98,7 +98,7 @@ text-align: left;
 						</ul></li>
 
 					<!-- 1-2-3 세번째 메뉴 (드랍다운 리스트 시작) 시작 -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown  active" ><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">작물이야기&nbsp;<span class="caret"></span></a>
 						<ul class="dropdown-menu">

@@ -8,16 +8,19 @@
 }
 
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.nanumgothic * {
+	font-family: 'Nanum Gothic', sans-serif;
+}
 .btn-group{
 	
 	margin: 2px;
 	
 	
 }
-.nanumgothic * {
+#div1, #div2, #div3, #div4{
+	
 	font-family: 'Nanum Gothic', sans-serif;
 }
-
 @font-face {
 	font-family: 'BMHANNAPro';
 	src:
