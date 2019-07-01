@@ -125,7 +125,7 @@ function drawVisualization() {
     ]);
 
   var options = {
-    vAxis: {title: '온도(℃)'},
+    vAxis: {title: '강수량(mm)'},
     hAxis: {title: '날짜(yy/mm/dd)'},
     seriesType: 'bars',
     series: {1: {type: 'line'}, 2: {type: 'line'}},
@@ -151,7 +151,7 @@ function drawVisualization() {
     ]);
 
   var options = {
-    vAxis: {title: '온도(℃)'},
+    vAxis: {title: 'ph'},
     hAxis: {title: '날짜(yy/mm/dd)'},
     seriesType: 'bars',
 	'width' : '100%',
