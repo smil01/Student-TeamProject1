@@ -18,7 +18,7 @@
 <!-- 타이틀 아이콘 -->
 <link rel="icon" type="image/png" sizes="96x96"
 	href="assets/img/favicon.png">
-<title>스미원 - Tropic Trophy </title>
+<title>Tropic Trophy </title>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">
@@ -189,39 +189,34 @@
 	<!-- 2 컨테이너 div라인 끝 -->
 
 	<!-- 3 푸터라인 시작 -->
-	<footer>
+<footer>
 		<div class="container">
 			<br>
 			<div class="row">
 				<div class="col-sm-3">
 					<h5>Copyright&copy;2019</h5>
-					<h5>오대근(DaegeunOh)</h5>
+					<h5>오대근, 이승경</h5>
+					<h5>김정우, 김수빈</h5>
+					<h5>손은진, 고영윤</h5>
 				</div>
 				<div class="col-sm-3">
-					<h4>대표자 소개</h4>
-					<p>저는 대근 부스터의 대표 오대근 입니다.&nbsp;&nbsp;스마트미디어인재개발원에서 공부를 하고 있습니다.
-						잘부탁드립니다.</p>
+					<h4>프로젝트소개</h4>
+					<h5>머신러닝기반의 아열대작물 추천 시스템입니다. 또한 작물을 키우는데 필요한 각종 정보를 제공하고 있습니다.</h5>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<h4>네비게이션</h4>
 					<div class="list-group">
-						<a href="#" class="list-group-item">소개</a> <a href="#"
-							class="list-group-item">강사진</a> <a href="#"
-							class="list-group-item">강의</a>
+						<a href="introService.do" class="list-group-item">스미원 소개</a> <a
+							href="boardService.do" class="list-group-item">소통광장</a>
 					</div>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<h4>SNS</h4>
 					<div class="list-group">
-						<a href="#" class="list-group-item">페이스북</a> <a href="#"
-							class="list-group-item">유튜브</a> <a href="#"
-							class="list-group-item">네이버TV</a>
+						<a href="https://www.smhrd.or.kr/" class="list-group-item">유튜브</a>
+						<a href="https://www.facebook.com/smhrd0317"
+							class="list-group-item">페이스북</a>
 					</div>
-				</div>
-				<div class="col-sm-2">
-					<h4>
-						<span class="glyphicon glyphicon-ok"></span>&nbsp;by 오대근
-					</h4>
 				</div>
 			</div>
 		</div>

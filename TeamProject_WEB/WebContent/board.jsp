@@ -17,7 +17,7 @@
 <!-- 타이틀 아이콘 -->
 <link rel="icon" type="image/png" sizes="96x96"
 	href="assets/img/favicon.png">
-<title>스미원 - Tropic Trophy </title>
+<title>Tropic Trophy</title>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <meta name="google-signin-client_id" content="183312277531-653eugt70bdeqd1s2gb2u51fg3lev3gu.apps.googleusercontent.com">

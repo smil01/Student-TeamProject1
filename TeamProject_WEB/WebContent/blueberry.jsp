@@ -44,7 +44,7 @@ legend {
 <!-- 타이틀 아이콘 -->
 <link rel="icon" type="image/png" sizes="96x96"
 	href="assets/img/favicon.png">
-<title>스미원 - Tropic Trophy</title>
+<title>Tropic Trophy</title>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript"
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
